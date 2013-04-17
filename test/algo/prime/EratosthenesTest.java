@@ -30,32 +30,22 @@ public class EratosthenesTest {
     }
 
     @Test
-    public void testSieve1Performance() {
-        System.out.println("Testing sieve1 performance");
+    public void testSievePerformance() {
+        System.out.println("Testing sieve performance");
 
-        int n = 1000;
+        int n = 1000; // 10^3
         Stopwatch.start();
-        boolean[] test = Eratosthenes.sieve1(n);
+        Eratosthenes.sieve(n);
         Stopwatch.stop(n);
 
-        n *= 10;
+        n *= 1000; // 10^6
         Stopwatch.start();
-        test = Eratosthenes.sieve1(n);
+        Eratosthenes.sieve(n);
         Stopwatch.stop(n);
 
-        n *= 10;
+        n *= 100; // 10^8
         Stopwatch.start();
-        test = Eratosthenes.sieve1(n);
-        Stopwatch.stop(n);
-
-        n *= 10;
-        Stopwatch.start();
-        test = Eratosthenes.sieve1(n);
-        Stopwatch.stop(n);
-
-        n *= 100;
-        Stopwatch.start();
-        test = Eratosthenes.sieve1(n);
+        Eratosthenes.sieve(n);
         Stopwatch.stop(n);
     }
 }
