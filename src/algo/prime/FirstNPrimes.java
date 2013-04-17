@@ -1,5 +1,7 @@
 package algo.prime;
 
+import algo.Stopwatch;
+
 /**
  * First N primes
  *
@@ -14,26 +16,16 @@ package algo.prime;
  */
 public class FirstNPrimes {
 
-    private final static double NANO_FACTOR = 1000.0 * 1000 * 1000;
-
     private static long primes[];
     private static int count;
 
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
 
-        long start = System.nanoTime();
+        Stopwatch.start();
         findPrimes(n);
 
-        long end = System.nanoTime();
-        double time = (end - start)/NANO_FACTOR;
-        System.out.println("N=" + n);
-        System.out.println("Execution time: " + time);
-
-        /*if (n <= 100) {
-            for (long p: primes)
-                System.out.println(p);
-        }*/
+        Stopwatch.stop(n);
     }
 
     public static void findPrimes(int n) {
