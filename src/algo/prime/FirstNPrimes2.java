@@ -1,5 +1,7 @@
 package algo.prime;
 
+import algo.Stopwatch;
+
 /**
  * First primes for a given N
  * Using PrimeTest.isPrime2 function
@@ -13,9 +15,7 @@ package algo.prime;
  *
  * @author Artur Khalikov
  */
-public class FirstNPrimesMod1 {
-
-    private final static double NANO_FACTOR = 1000.0 * 1000 * 1000;
+public class FirstNPrimes2 {
 
     private static long primes[];
     private static int count;
@@ -23,18 +23,10 @@ public class FirstNPrimesMod1 {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
 
-        long start = System.nanoTime();
+        Stopwatch.start();
         findPrimes(n);
 
-        long end = System.nanoTime();
-        double time = (end - start)/NANO_FACTOR;
-        System.out.println("N=" + n);
-        System.out.println("Execution time: " + time);
-
-        /*if (n <= 100) {
-            for (long p: primes)
-                System.out.println(p);
-        }*/
+        Stopwatch.stop(n);
     }
 
     public static void findPrimes(int n) {
