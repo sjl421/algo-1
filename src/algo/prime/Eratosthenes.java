@@ -5,6 +5,10 @@ import algo.Stopwatch;
 
 /**
  * Sieve of Eratosthenes
+ * 
+ * Problem: prime numbers
+ * Input: n <= 10^8
+ * Output: prime numbers from 0 to n
  *
  * @author Artur Khalikov
  */
