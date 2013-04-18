@@ -13,7 +13,7 @@ public class EratosthenesTest {
     @Test
     public void testSieve1() throws Exception {
         int n = 1000*1000;
-        boolean[] primes = Eratosthenes.sieve1(n);
+        boolean[] primes = Eratosthenes.sieve(n);
         assertFalse(primes[0]);
         assertFalse(primes[1]);
         assertTrue(primes[2]);
