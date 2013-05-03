@@ -29,10 +29,10 @@ public class MergeSort {
                 a[k] = aux[j++];
             else if (j >= hi)
                 a[k] = aux[i++];
-            else if (aux[i] < aux[j])
-                a[k] = aux[i++];
-            else
+            else if (aux[j] < aux[i])
                 a[k] = aux[j++];
+            else
+                a[k] = aux[i++];
         }
     }
 
