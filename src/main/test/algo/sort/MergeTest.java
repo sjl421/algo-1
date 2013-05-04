@@ -1,31 +1,29 @@
-package algo.mergesort;
+package algo.sort;
 
 import algo.ArrayUtils;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 import static org.junit.Assert.*;
 
 /**
  * @author: Artur Khalikov
  */
-public class MergeSortTest {
+public class MergeTest {
 
     @Test
     public void testSort() throws Exception {
         int[] actual = {5, 4, 1, 8, 7, 2, 6, 3};
         int[] expected = {1, 2, 3, 4, 5, 6, 7, 8};
-        MergeSort.sort(actual);
-        assertArrayEquals(expected, actual);
+        Merge.sort(actual);assertArrayEquals(expected, actual);
     }
 
     @Test
     public void testSort2() throws Exception {
         int[] actual = {5, 4, 1, 8, 0, 7, 2, 6, 0};
         int[] expected = {0, 0, 1, 2, 4, 5, 6, 7, 8};
-        MergeSort.sort(actual);
+        Merge.sort(actual);
         assertArrayEquals(expected, actual);
     }
 
@@ -33,7 +31,7 @@ public class MergeSortTest {
     public void testSortEmpty() throws Exception {
         int[] actual = {};
         int[] expected = {};
-        MergeSort.sort(actual);
+        Merge.sort(actual);
         assertArrayEquals(expected, actual);
     }
 
@@ -41,7 +39,7 @@ public class MergeSortTest {
     public void testSortOneElement() throws Exception {
         int[] actual = {1};
         int[] expected = {1};
-        MergeSort.sort(actual);
+        Merge.sort(actual);
         assertArrayEquals(expected, actual);
     }
 
@@ -53,7 +51,7 @@ public class MergeSortTest {
 
         int[] actual = Arrays.copyOf(expected, expected.length);
         ArrayUtils.shuffle(actual);
-        MergeSort.sort(actual);
+        Merge.sort(actual);
 
         assertArrayEquals(expected, actual);
     }
