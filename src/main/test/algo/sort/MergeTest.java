@@ -1,6 +1,6 @@
 package algo.sort;
 
-import algo.ArrayUtils;
+import util.ArrayUtils;
 import org.junit.Test;
 
 import java.util.Arrays;
