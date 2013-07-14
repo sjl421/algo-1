@@ -1,5 +1,6 @@
-package algo.sort;
+package src.test.java.algo.sort;
 
+import algo.sort.Merge;
 import util.ArrayUtils;
 import org.junit.Test;
 

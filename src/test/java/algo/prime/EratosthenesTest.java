@@ -1,11 +1,12 @@
-package algo.prime;
+package src.test.java.algo.prime;
 
 import algo.Stopwatch;
+import algo.prime.Eratosthenes;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Test {@link Eratosthenes}
+ * Test {@link algo.prime.Eratosthenes}
  *
  * @author Artur Khalikov
  */

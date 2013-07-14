@@ -1,4 +1,4 @@
-package algo.sort;
+package src.test.java.algo.sort;
 
 import algo.sort.Inversions;
 import org.junit.Test;
