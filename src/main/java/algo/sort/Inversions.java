@@ -63,7 +63,7 @@ public class Inversions {
         File f = new File("/home/artur/work/study/algo/data/IntegerArray.txt");
         int[] a = FileUtils.getIntArrayFromFile(f);
         assert a.length != 0: "array is empty";
-        System.out.println("Input array lenght=" + a.length);
+        System.out.println("Input array length=" + a.length);
         System.out.println("Inversions: " + count(a));
     }
 }
