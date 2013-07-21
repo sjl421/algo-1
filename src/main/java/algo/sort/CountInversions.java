@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author: Artur Khalikov
  */
-public class Inversions {
+public class CountInversions {
 
     private static int[] aux;
     private static long inversions;
@@ -21,11 +21,18 @@ public class Inversions {
     public static long count(int[] a) {
         if (a.length < 2)
             return 0;
-
         aux = new int[a.length];
-        inversions = 0;
         count(a, 0, a.length);
         return inversions;
+    }
+
+    public static void main(String[] args) throws Exception {
+        inversions = 0;
+        File f = new File("/home/artur/work/study/algo/data/IntegerArray.txt");
+        int[] a = FileUtils.getIntArrayFromFile(f);
+        assert a.length != 0: "array is empty";
+        System.out.println("Input array length=" + a.length);
+        System.out.println("Inversions: " + count(a));
     }
 
     private static void count(int[] a, int lo, int hi) {
@@ -57,13 +64,5 @@ public class Inversions {
     private static void save(int[] a, int lo, int hi) {
         for (int i = lo; i < hi; i++)
             aux[i] = a[i];
-    }
-
-    public static void main(String[] args) throws Exception {
-        File f = new File("/home/artur/work/study/algo/data/IntegerArray.txt");
-        int[] a = FileUtils.getIntArrayFromFile(f);
-        assert a.length != 0: "array is empty";
-        System.out.println("Input array length=" + a.length);
-        System.out.println("Inversions: " + count(a));
     }
 }

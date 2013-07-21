@@ -1,4 +1,4 @@
-package src.test.java.algo.prime;
+package algo.prime;
 
 import algo.prime.PrimeTest;
 import org.junit.Test;

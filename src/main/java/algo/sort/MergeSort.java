@@ -3,7 +3,7 @@ package algo.sort;
 /**
  * @author: Artur Khalikov
  */
-public class Merge {
+public class MergeSort {
 
     private static int[] aux;
 
