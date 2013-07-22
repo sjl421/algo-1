@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 /**
  * @author: Artur Khalikov
  */
-public class InversionsTest {
+public class CountInversionsTest {
     @Test
     public void testCountBoundaryCases() throws Exception {
         int[] a = {};

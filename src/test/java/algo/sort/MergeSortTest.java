@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 /**
  * @author: Artur Khalikov
  */
-public class MergeTest {
+public class MergeSortTest {
 
     @Test
     public void testSort() throws Exception {
