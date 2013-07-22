@@ -25,23 +25,23 @@ public class QuickSort2 {
     private static void sort(int[] a, int lo, int hi) {
         if (hi - lo > 1) {
             comparisons += hi - lo - 1;
+            swap(a, hi-1, lo);
             int j = partition(a, lo, hi);
-            sort(a, lo, j);
-            sort(a, j+1, hi);
+            sort(a, lo, j-1);
+            sort(a, j, hi);
         }
     }
 
     private static int partition(int[]a, int lo, int hi) {
-        int pivotIndex = hi-1;
-        int pivot = a[pivotIndex];
-        int i = lo;
-        for (int j = lo; j < hi; j++) {
+        int pivot = a[lo];
+        int i = lo + 1, j;
+        for (j = lo + 1; j < hi; j++) {
             if (a[j] < pivot) {
-                swap(a, i, j);
+                swap(a, j, i);
                 i++;
             }
         }
-        swap(a, pivotIndex, i);
+        swap(a, lo, i-1);
         return i;
     }
 

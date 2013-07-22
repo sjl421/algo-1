@@ -25,23 +25,24 @@ public class QuickSort3 {
     private static void sort(int[] a, int lo, int hi) {
         if (hi - lo > 1) {
             comparisons += hi - lo - 1;
+            int pivot = findPivot(a, lo, hi-1);
+            swap(a, lo, pivot);
             int j = partition(a, lo, hi);
             sort(a, lo, j-1);
-            sort(a, j+1, hi);
+            sort(a, j, hi);
         }
     }
 
     private static int partition(int[]a, int lo, int hi) {
-        int p = findPivot(a, lo, hi);
-        int pivot = a[p];
-        int i = lo;
-        for (int j = lo; j < hi; j++) {
-            if (i != j && a[j] < pivot) {
-                swap(a, i, j);
+        int pivot = a[lo];
+        int i = lo + 1, j;
+        for (j = lo + 1; j < hi; j++) {
+            if (a[j] < pivot) {
+                swap(a, j, i);
                 i++;
             }
         }
-        swap(a, p, i);
+        swap(a, lo, i-1);
         return i;
     }
 
@@ -51,14 +52,11 @@ public class QuickSort3 {
      * @return
      */
     public static int findPivot(int[] a, int lo, int hi) {
-        int middle = (lo + hi)/2 - 1;
-        if (a[lo] > a[middle])
-            swap(a, lo, middle);
-        if (a[lo] > a[hi-1])
-            swap(a, lo, hi-1);
-        if (a[middle] > a[hi-1])
-            swap(a, middle, hi-1);
-        return middle;
+        int middle = (lo + hi)/2;
+        int x = a[lo], y = a[middle], z = a[hi];
+        if ((x < y && y < z) || (z < y && y < x)) return middle;
+        else if ((x < z && z < y) || (y < z && z < x)) return hi;
+        return lo;
     }
 
     private static void swap(int[] a, int i, int j) {

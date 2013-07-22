@@ -49,13 +49,13 @@ public class QuickSort3Test {
     public void testFindPivot() throws Exception {
         int[] a = {4, 5, 6, 7};
         int expected = 1;
-        int actual = findPivot(a, 0, a.length);
+        int actual = findPivot(a, 0, a.length-1);
         assertEquals(expected, actual);
         assertEquals(5, a[actual]);
 
         a = new int[] {5, 7, 10, 2, 3};
-        expected = 2;
-        actual = findPivot(a, 0, a.length);
+        expected = 0;
+        actual = findPivot(a, 0, a.length-1);
         assertEquals(expected, actual);
         assertEquals(5, a[actual]);
     }
