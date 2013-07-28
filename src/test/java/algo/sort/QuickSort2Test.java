@@ -2,7 +2,7 @@ package algo.sort;
 
 import org.junit.Test;
 import util.ArrayUtils;
-import util.FileUtils;
+import util.InputFile;
 
 import java.io.File;
 import java.util.Arrays;
@@ -54,7 +54,7 @@ public class QuickSort2Test {
 
     @Test
     public void testComparisons2() throws Exception {
-        int[] a = FileUtils.getIntArrayFromFile(new File("/home/artur/work/study/algo/data/100.txt"));
+        int[] a = new InputFile("/home/artur/work/study/algo/data/100.txt").getIntegerArray();
         int expected = 587;
         QuickSort2.sort(a);
         assertEquals(expected, QuickSort2.comparisons);
@@ -62,7 +62,7 @@ public class QuickSort2Test {
 
     @Test
     public void testComparisons3() throws Exception {
-        int[] a = FileUtils.getIntArrayFromFile(new File("/home/artur/work/study/algo/data/1000.txt"));
+        int[] a = new InputFile("/home/artur/work/study/algo/data/1000.txt").getIntegerArray();
         int expected = 10184;
         QuickSort2.sort(a);
         assertEquals(expected, QuickSort2.comparisons);

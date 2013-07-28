@@ -1,6 +1,6 @@
 package algo.sort;
 
-import util.FileUtils;
+import util.InputFile;
 
 import java.io.File;
 
@@ -66,8 +66,8 @@ public class QuickSort3 {
     }
 
     public static void main(String[] args) {
-        File f = new File("/home/artur/work/study/algo/data/QuickSort.txt");
-        int[] a = FileUtils.getIntArrayFromFile(f);
+        InputFile file = new InputFile("/home/artur/work/study/algo/data/QuickSort.txt");
+        int[] a = file.getIntegerArray();
         assert a.length != 0: "array is empty";
         sort(a);
         System.out.println("Input array length=" + a.length);

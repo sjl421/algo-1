@@ -1,11 +1,8 @@
 package algo.sort;
 
-import util.FileUtils;
+import util.InputFile;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.util.Scanner;
 
 /**
  * Algorithms: Design and Analysis, Part I
@@ -28,8 +25,7 @@ public class CountInversions {
 
     public static void main(String[] args) throws Exception {
         inversions = 0;
-        File f = new File("/home/artur/work/study/algo/data/IntegerArray.txt");
-        int[] a = FileUtils.getIntArrayFromFile(f);
+        int[] a = new InputFile("/home/artur/work/study/algo/data/IntegerArray.txt").getIntegerArray();
         assert a.length != 0: "array is empty";
         System.out.println("Input array length=" + a.length);
         System.out.println("Inversions: " + count(a));
