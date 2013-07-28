@@ -24,8 +24,10 @@ public class CountInversions {
     }
 
     public static void main(String[] args) throws Exception {
+        if (args.length == 0)
+            throw new IllegalArgumentException("Input file name expected");
+        int[] a = new InputFile(args[0]).getIntegerArray();
         inversions = 0;
-        int[] a = new InputFile("/home/artur/work/study/algo/data/IntegerArray.txt").getIntegerArray();
         assert a.length != 0: "array is empty";
         System.out.println("Input array length=" + a.length);
         System.out.println("Inversions: " + count(a));

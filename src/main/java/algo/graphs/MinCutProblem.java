@@ -10,8 +10,9 @@ import util.InputFile;
 public class MinCutProblem {
 
     public static void main(String[] args) {
-        int[][] graph = new InputFile("/home/artur/work/study/algo/data/kargerMinCut.txt")
-                .getAdjacentMatrix();
+        if (args.length == 0)
+            throw new IllegalArgumentException("Input file name expected");
+        int[][] graph = new InputFile(args[0]).getAdjacentMatrix();
         for (int i = 0; i < graph[0].length; i++) {
             System.out.println(graph[0][i]);
         }

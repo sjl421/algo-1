@@ -66,8 +66,9 @@ public class QuickSort3 {
     }
 
     public static void main(String[] args) {
-        InputFile file = new InputFile("/home/artur/work/study/algo/data/QuickSort.txt");
-        int[] a = file.getIntegerArray();
+        if (args.length == 0)
+            throw new IllegalArgumentException("Input file name expected");
+        int[] a = new InputFile(args[0]).getIntegerArray();
         assert a.length != 0: "array is empty";
         sort(a);
         System.out.println("Input array length=" + a.length);
