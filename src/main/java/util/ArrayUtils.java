@@ -23,9 +23,26 @@ public class ArrayUtils {
             a[i] = from++;
     }
 
-    private static void swap(int[] a, int i, int j) {
+    public static void swap(int[] a, int i, int j) {
         int t = a[i];
         a[i] = a[j];
         a[j] = t;
+    }
+
+    public static int[] copyOf(int[] array) {
+        int[] copy = new int[array.length];
+        for (int i = 0; i < array.length; i++)
+            copy[i] = array[i];
+        return copy;
+    }
+
+    public static int[][] copyOf(int[][] array) {
+        int[][] copy = new int[array.length][];
+        for (int i = 0; i < array.length; i++) {
+            copy[i] = new int[array[i].length];
+            for (int j = 0; j < array[i].length; j++)
+                copy[i][j] = array[i][j];
+        }
+        return copy;
     }
 }
