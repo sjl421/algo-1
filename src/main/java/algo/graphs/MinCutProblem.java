@@ -10,19 +10,22 @@ import java.util.Random;
  * Randomized contraction algorithm for the min cut problem
  * Input: adjacency list representation of a simple undirected graph
  *
+ * TODO: class should have name of an algorithm
+ * TODO: output should be min cut nodes, not only number of them
+ *
  * @author: Artur Khalikov
  */
-public class MinCut {
+public class MinCutProblem {
 
-    private Graph graph = null;
+    private UGraph graph = null;
     private int[] nodes = null;
     private Random rand = new Random();
 
-    public MinCut(Graph g) {
+    public MinCutProblem(UGraph g) {
         this.graph = g;
     }
 
-    public int findMinCut() {
+    public int solve() {
         int trials = getNumberOfTrials();
         int[] cuts = new int[trials];
         for (int i = 0; i < trials; i++) {
@@ -44,12 +47,12 @@ public class MinCut {
     }
 
     private int getNumberOfTrials() {
-        int n = graph.rowsNumber();
+        int n = graph.verticesNumber();
         return n * n;
     }
 
     private void initNodes() {
-        int n = graph.rowsNumber();
+        int n = graph.verticesNumber();
         nodes = new int[n];
         for (int i = 0; i < n; i++) nodes[i] = i+1;
     }

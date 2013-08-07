@@ -1,11 +1,15 @@
 package util;
 
+import algo.graphs.DiGraph;
+import com.google.common.base.Splitter;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.Scanner;
+import java.util.*;
 
 /**
+ * Utility class for getting input data from file
  * @author: Artur Khalikov
  */
 public class InputFile {
@@ -18,26 +22,12 @@ public class InputFile {
         this.file = new File(fileName);
     }
 
-    public int linesNumber() {
-        int length = 0;
-        try {
-            BufferedReader reader = null;
-            try {
-                reader = new BufferedReader(new FileReader(file));
-                while (reader.readLine() != null)
-                    length++;
-            } finally {
-                if (reader != null)
-                    reader.close();
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        return length;
-    }
-
+    /**
+     * Return plain array of integer primitives from the given file
+     * @return array of ints
+     */
     public int[] getIntegerArray() {
-        int linesNumber = linesNumber();
+        int linesNumber = getLinesNumber();
         int[] array = new int[linesNumber];
         try {
             BufferedReader reader = null;
@@ -48,6 +38,7 @@ public class InputFile {
                 while ((line = reader.readLine()) != null) {
                     array[i++] = Integer.parseInt(line);
                 }
+                return array;
             } finally {
                 if (reader != null)
                     reader.close();
@@ -55,11 +46,23 @@ public class InputFile {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return array;
     }
 
+    /**
+     * Return arcs matrix representing undirected graph
+     *
+     * TODO: analyze running time of this implementation
+     * TODO: optimize data structure and reading algorithm     *
+     *
+     * Example:
+     * 1 2 4
+     * 2 1 3 4
+     * 3 2 4
+     * 4 1 2 3
+     * @return
+     */
     public int[][] getAdjacentMatrix() {
-        int n = linesNumber();
+        int n = getLinesNumber();
         int[][] matrix = new int[n][];
         try {
             BufferedReader reader = null;
@@ -68,8 +71,10 @@ public class InputFile {
                 String line;
                 int i = 0;
                 while ((line = reader.readLine()) != null) {
-                    matrix[i++] = parseIntString(line);
+                    matrix[i] = parseIntString(line);
+                    i++;
                 }
+                return matrix;
             } finally {
                 if (reader != null)
                     reader.close();
@@ -77,7 +82,29 @@ public class InputFile {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return matrix;
+    }
+
+    /**
+     * Counts number of lines by reading them
+     * @return
+     */
+    private int getLinesNumber() {
+        int length = 0;
+        try {
+            BufferedReader reader = null;
+            try {
+                reader = new BufferedReader(new FileReader(file));
+                while (reader.readLine() != null) {
+                    length++;
+                }
+                return length;
+            } finally {
+                if (reader != null)
+                    reader.close();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private int[] parseIntString(String s) {

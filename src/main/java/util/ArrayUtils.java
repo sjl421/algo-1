@@ -45,4 +45,14 @@ public class ArrayUtils {
         }
         return copy;
     }
+
+    public static int[] add(int[] array, int newElement) {
+        int[] copy = new int[array.length + 1];
+        int i;
+        for (i = 0; i < array.length; i++) {
+            copy[i] = array[i];
+        }
+        copy[i] = newElement;
+        return copy;
+    }
 }

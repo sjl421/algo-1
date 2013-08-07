@@ -5,14 +5,33 @@ package algo.graphs;
  *
  * @author: Artur Khalikov
  */
-public class SccProblem {
+public class SCC {
 
-    private int[][] graph;
+    private boolean[] marked;
+    private int[] leader;
+    private int count = 0;
 
-    public int[] findScc() {
-        return null;
+    public SCC(DiGraph g) {
+        int N = g.size() + 1; // 0 index is not used
+        this.marked = new boolean[N];
+        this.leader = new int[N];
+
+        DiGraph reverse = g.reverse();
+        DeptFirstSearch dfs = new DeptFirstSearch(reverse);
+        for (int v: dfs.reversePost()) {
+            if (!marked[v]) {
+                dfs(g, v);
+                count++;
+            }
+        }
     }
 
+    public void dfs(DiGraph g, int v) {
+        marked[v] = true;
+        leader[v] = count;
+        for (int w: g.arcs(v))
+            if (!marked[w]) dfs(g, w);
+    }
 }
 
 /***
