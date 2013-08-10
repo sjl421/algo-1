@@ -31,21 +31,21 @@ public class DiGraphTest {
 
     @Test
     public void testArcs() throws Exception {
-        List<Vertex> arcs1 = testGraph.arcs(new Vertex(1));
+        List<Integer> arcs1 = testGraph.adj(1);
         assertEquals(1, arcs1.size());
-        assertEquals(2, arcs1.get(0).id());
+        assertEquals(2, arcs1.get(0).intValue());
 
-        List<Vertex> arcs2 = testGraph.arcs(new Vertex(2));
+        List<Integer> arcs2 = testGraph.adj(2);
         assertEquals(2, arcs2.size());
-        assertEquals(3, arcs2.get(0).id());
-        assertEquals(4, arcs2.get(1).id());
+        assertEquals(3, arcs2.get(0).intValue());
+        assertEquals(4, arcs2.get(1).intValue());
 
-        List<Vertex> arcs3 = testGraph.arcs(new Vertex(3));
+        List<Integer> arcs3 = testGraph.adj(3);
         assertEquals(2, arcs3.size());
-        assertEquals(1, arcs3.get(0).id());
-        assertEquals(4, arcs3.get(1).id());
+        assertEquals(1, arcs3.get(0).intValue());
+        assertEquals(4, arcs3.get(1).intValue());
 
-        List<Vertex> arcs4 = testGraph.arcs(new Vertex(4));
+        List<Integer> arcs4 = testGraph.adj(4);
         assertEquals(0, arcs4.size());
     }
 
