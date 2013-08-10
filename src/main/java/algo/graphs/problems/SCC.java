@@ -1,4 +1,6 @@
-package algo.graphs;
+package algo.graphs.problems;
+
+import algo.graphs.DiGraph;
 
 /**
  * Strongly Connected Components problem
@@ -17,20 +19,20 @@ public class SCC {
         this.leader = new int[N];
 
         DiGraph reverse = g.reverse();
-        DeptFirstSearch dfs = new DeptFirstSearch(reverse);
+        /*DepthFirstIterator dfs = new DepthFirstIterator(reverse);
         for (int v: dfs.reversePost()) {
             if (!marked[v]) {
                 dfs(g, v);
                 count++;
             }
-        }
+        }*/
     }
 
     public void dfs(DiGraph g, int v) {
         marked[v] = true;
         leader[v] = count;
-        for (int w: g.arcs(v))
-            if (!marked[w]) dfs(g, w);
+        //for (int w: g.arcs(v))
+        //    if (!marked[w]) dfs(g, w);
     }
 }
 

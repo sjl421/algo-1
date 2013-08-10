@@ -1,5 +1,6 @@
-package algo.graphs;
+package algo.graphs.problems;
 
+import algo.graphs.UGraph;
 import com.google.common.collect.ImmutableMap;
 import org.junit.Test;
 import util.InputFile;
@@ -10,11 +11,11 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 
 /**
- * Tests {@link MinCutProblem}
+ * Tests {@link MinCut}
  *
  * @author Artur Khalikov
  */
-public class MinCutProblemTest {
+public class MinCutTest {
 
     private static final String DATA_DIR = "D:/work/study/algo/data/";
     private static final ImmutableMap<String, Integer> TESTS = ImmutableMap.of(
@@ -38,7 +39,7 @@ public class MinCutProblemTest {
             assertNotNull("input array  is null", matrix);
 
             UGraph graph = new UGraph(matrix);
-            int actual = new MinCutProblem(graph).solve();
+            int actual = new MinCut(graph).solve();
             int expected = test.getValue();
             assertEquals("Min cut edges", expected, actual);
         }
@@ -50,7 +51,7 @@ public class MinCutProblemTest {
         assertNotNull("input array is null", matrix);
 
         UGraph graph = new UGraph(matrix);
-        int actual = new MinCutProblem(graph).solve();
+        int actual = new MinCut(graph).solve();
         System.out.println("testAssignment: " + actual);
     }
 }

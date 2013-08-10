@@ -1,8 +1,5 @@
 package util;
 
-import algo.graphs.DiGraph;
-import com.google.common.base.Splitter;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -52,7 +49,7 @@ public class InputFile {
      * Return arcs matrix representing undirected graph
      *
      * TODO: analyze running time of this implementation
-     * TODO: optimize data structure and reading algorithm     *
+     * TODO: optimize data structure and reading algorithm
      *
      * Example:
      * 1 2 4

@@ -1,5 +1,6 @@
-package algo.graphs;
+package algo.graphs.problems;
 
+import algo.graphs.UGraph;
 import util.ArrayUtils;
 
 import java.util.Arrays;
@@ -15,13 +16,13 @@ import java.util.Random;
  *
  * @author: Artur Khalikov
  */
-public class MinCutProblem {
+public class MinCut {
 
     private UGraph graph = null;
     private int[] nodes = null;
     private Random rand = new Random();
 
-    public MinCutProblem(UGraph g) {
+    public MinCut(UGraph g) {
         this.graph = g;
     }
 
@@ -47,12 +48,12 @@ public class MinCutProblem {
     }
 
     private int getNumberOfTrials() {
-        int n = graph.verticesNumber();
+        int n = graph.size();
         return n * n;
     }
 
     private void initNodes() {
-        int n = graph.verticesNumber();
+        int n = graph.size();
         nodes = new int[n];
         for (int i = 0; i < n; i++) nodes[i] = i+1;
     }

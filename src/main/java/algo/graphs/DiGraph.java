@@ -10,14 +10,14 @@ import java.util.*;
  *
  * @author: Artur Khalikov
  */
-public class DiGraph {
+public class DiGraph implements Graph {
     /**
-     * Array of LinkedLists representing vertices and edges
+     * Map of LinkedLists representing vertices and edges
      */
-    private LinkedList<Integer>[] graph;
+    private Map<Vertex, LinkedList<Vertex>> graph;
 
     /**
-     * NUmber of vertices
+     * Number of vertices
      */
     private int vertices = 0;
 
@@ -27,12 +27,12 @@ public class DiGraph {
     private int edges = 0;
 
     /**
-     * Creat empty directed graph
-     * @param vertices
+     * Create empty directed graph
+     * @param numberOfVertices
      */
-    public DiGraph(int vertices) {
-        this.vertices = vertices + 1;
-        initGraph();
+    public DiGraph(int numberOfVertices) {
+        this.vertices = numberOfVertices;
+        initMap();
     }
 
     /**
@@ -48,30 +48,7 @@ public class DiGraph {
      * @param file Input file
      */
     public DiGraph(File file) {
-        try {
-            BufferedReader reader = null;
-            try {
-                reader = new BufferedReader(new FileReader(file));
-
-                // number of vertices
-                String line = reader.readLine();
-                vertices = Integer.parseInt(line) + 1;
-                initGraph();
-
-                // reading vertices
-                while ((line = reader.readLine()) != null) {
-                    String[] split = line.split(" ");
-                    Integer tail = Integer.valueOf(split[0]);
-                    Integer head = Integer.valueOf(split[1]);
-                    addEdge(tail, head);
-                }
-            } finally {
-                if (reader != null)
-                    reader.close();
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        readFromFile(file);
     }
 
     /**
@@ -79,8 +56,28 @@ public class DiGraph {
      * @param v tail
      * @param w head
      */
-    public void addEdge(Integer v, Integer w) {
-        graph[v].add(w);
+    public void addEdge(Vertex v, Vertex w) {
+        graph.get(v).add(w);
+        edges++;
+    }
+
+    /**
+     * Add the edge v -> w to the graph
+     * @param v tail
+     * @param w head
+     */
+    public void addEdge(int v, Vertex w) {
+        graph.get(new Vertex(v)).add(w);
+        edges++;
+    }
+
+    /**
+     * Add the edge v -> w to the graph
+     * @param v tail
+     * @param w head
+     */
+    public void addEdge(int v, int w) {
+        graph.get(new Vertex(v)).add(new Vertex(w));
         edges++;
     }
 
@@ -96,8 +93,8 @@ public class DiGraph {
      */
     public DiGraph reverse() {
         DiGraph reverse = new DiGraph(vertices);
-        for (int v = 1; v <= vertices; v++) {
-            for (Integer w: arcs(v))
+        for (Vertex v: graph.keySet()) {
+            for (Vertex w: arcs(v))
                 reverse.addEdge(w, v);
         }
         return reverse;
@@ -106,25 +103,63 @@ public class DiGraph {
     /**
      * Return vertices adjacent (arcs) to the given vertex
      */
-    public Iterable<Integer> arcs(int v) {
-        if (v >= vertices || v < 0)
-            throw new IllegalArgumentException("v is out of range [0, " + vertices + ")");
-        return graph[v];
+    @Override
+    public List<Vertex> arcs(Vertex v) {
+        if (!graph.containsKey(v))
+            throw new IllegalArgumentException("v is not in Graph");
+        return graph.get(v);
+    }
+
+    public Iterator<Vertex> breathFirstIterator(Vertex start) {
+        return new BreadthFirstIterator(this, start);
+    }
+
+    public Iterator<Vertex> depthFirstIterator(Vertex start) {
+        return new DepthFirstIterator(this, start);
     }
 
     public void print() {
-        for (int i = 1; i <= graph.length; i++) {
-            LinkedList<Integer> edges = graph[i];
-            System.out.print((i+1) + " ");
-            for (Integer w: edges)
+        for (Vertex v: graph.keySet()) {
+            List<Vertex> edges = graph.get(v);
+            System.out.print(v + " ");
+            for (Vertex w: edges)
                 System.out.print(w + " ");
             System.out.println();
         }
     }
 
-    private void initGraph() {
-        graph = new LinkedList[vertices];
-        for (int i = 1; i <= vertices; i++)
-            graph[i] = new LinkedList();
+    private void initMap() {
+        graph = new TreeMap();
+        for (int i = 0; i < vertices; i++) {
+            Vertex v = new Vertex(i + 1);
+            graph.put(v, new LinkedList());
+        }
+    }
+
+    private void readFromFile(File file) {
+        try {
+            BufferedReader reader = null;
+            try {
+                reader = new BufferedReader(new FileReader(file));
+
+                // number of vertices
+                String line = reader.readLine();
+                vertices = Integer.parseInt(line);
+                initMap();
+
+                // reading vertices
+                while ((line = reader.readLine()) != null) {
+                    String[] split = line.split(" ");
+                    Vertex tail = Vertex.valueOf(split[0]);
+                    Vertex head = Vertex.valueOf(split[1]);
+                    addEdge(tail, head);
+                }
+            } finally {
+                if (reader != null)
+                    reader.close();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
