@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.Iterator;
 
 /**
- * Test {@link DepthFirstIterator}
+ * Test {@link DepthFirstSearch}
  *
  * @author Artur Khalikov
  */
@@ -27,19 +27,19 @@ public class DepthFirstIteratorTest {
     @Test
     public void testNext() throws Exception {
         System.out.println("Test starting from 1");
-        Iterator<Vertex> iterator = dg1.depthFirstIterator(new Vertex(1));
+        Iterator<Vertex> iterator = dg1.depthFirstSearch(new Vertex(1));
         print(iterator);
 
         System.out.println("Test starting from 2");
-        iterator = dg1.depthFirstIterator(new Vertex(2));
+        iterator = dg1.depthFirstSearch(new Vertex(2));
         print(iterator);
 
         System.out.println("Test starting from 3");
-        iterator = dg1.depthFirstIterator(new Vertex(3));
+        iterator = dg1.depthFirstSearch(new Vertex(3));
         print(iterator);
 
         System.out.println("Test starting from 4");
-        iterator = dg1.depthFirstIterator(new Vertex(4));
+        iterator = dg1.depthFirstSearch(new Vertex(4));
         print(iterator);
     }
 

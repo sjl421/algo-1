@@ -3,14 +3,12 @@ package algo.graphs;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Iterator;
-
 /**
- * Test {@link BreadthFirstIterator}
+ * Test {@link BreadthFirstSearch}
  *
  * @author Artur Khalikov
  */
-public class BreadthFirstIteratorTest {
+public class BreadthFirstSearchTest {
 
     private DiGraph dg1;
 
@@ -27,25 +25,20 @@ public class BreadthFirstIteratorTest {
     @Test
     public void testNext() throws Exception {
         System.out.println("Test starting from 1");
-        Iterator<Vertex> iterator = dg1.breathFirstIterator(new Vertex(1));
-        print(iterator);
+        print(dg1.breathFirstSearch(new Vertex(1)));
 
         System.out.println("Test starting from 2");
-        iterator = dg1.breathFirstIterator(new Vertex(2));
-        print(iterator);
+        print(dg1.breathFirstSearch(new Vertex(2)));
 
         System.out.println("Test starting from 3");
-        iterator = dg1.breathFirstIterator(new Vertex(3));
-        print(iterator);
+        print(dg1.breathFirstSearch(new Vertex(3)));
 
         System.out.println("Test starting from 4");
-        iterator = dg1.breathFirstIterator(new Vertex(4));
-        print(iterator);
+        print(dg1.breathFirstSearch(new Vertex(4)));
     }
 
-    private void print(Iterator<Vertex> iterator) {
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+    private void print(Iterable<Vertex> vertices) {
+        for (Vertex v: vertices)
+            System.out.println(v);
     }
 }

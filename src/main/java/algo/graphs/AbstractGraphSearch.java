@@ -7,16 +7,14 @@ import java.util.Iterator;
  *
  * @author Artur Khalikov
  */
-public abstract class AbstractGraphIterator implements Iterator<Vertex> {
+public abstract class AbstractGraphSearch {
 
     protected Graph graph;
-    protected Vertex current;
     protected boolean explored[];
 
-    protected AbstractGraphIterator(Graph graph, Vertex start) {
+    protected AbstractGraphSearch(Graph graph) {
         this.graph = graph;
         explored = new boolean[graph.size()];
-        setExplored(start);
     }
 
     protected void setExplored(Vertex v) {
@@ -25,10 +23,5 @@ public abstract class AbstractGraphIterator implements Iterator<Vertex> {
 
     protected boolean isExplored(Vertex v) {
         return explored[v.id()-1] == true;
-    }
-
-    @Override
-    public void remove() {
-        throw new UnsupportedOperationException();
     }
 }

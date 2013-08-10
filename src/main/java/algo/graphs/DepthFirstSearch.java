@@ -7,24 +7,18 @@ import java.util.*;
  *
  * @author: Artur Khalikov
  */
-class DepthFirstIterator extends AbstractGraphIterator {
+class DepthFirstSearch extends AbstractGraphSearch {
 
     private Deque<Vertex> stack;
 
-    public DepthFirstIterator(Graph graph, Vertex start) {
-        super(graph, start);
+    public DepthFirstSearch(Graph graph, Vertex start) {
+        super(graph);
         stack = new LinkedList();
         stack.add(start);
     }
 
-    @Override
-    public boolean hasNext() {
-        return !stack.isEmpty();
-    }
-
-    @Override
     public Vertex next() {
-        current = stack.pop();
+        Vertex current = stack.pop();
         for (Vertex v: graph.arcs(current)) {
             if (!isExplored(v)) {
                 setExplored(v);

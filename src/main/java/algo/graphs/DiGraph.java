@@ -14,7 +14,7 @@ public class DiGraph implements Graph {
     /**
      * Map of LinkedLists representing vertices and edges
      */
-    private Map<Vertex, LinkedList<Vertex>> graph;
+    private TreeMap<Vertex, LinkedList<Vertex>> graph;
 
     /**
      * Number of vertices
@@ -110,12 +110,17 @@ public class DiGraph implements Graph {
         return graph.get(v);
     }
 
-    public Iterator<Vertex> breathFirstIterator(Vertex start) {
-        return new BreadthFirstIterator(this, start);
+    public Iterable<Vertex> breathFirstSearch(Vertex start) {
+        return new BreadthFirstSearch(this, start).getResult();
     }
 
-    public Iterator<Vertex> depthFirstIterator(Vertex start) {
-        return new DepthFirstIterator(this, start);
+    public Iterator<Vertex> depthFirstSearch(Vertex start) {
+        //return new DepthFirstSearch(this, start).getResult();
+        return null;
+    }
+
+    public Vertex getLastVertex() {
+        return graph.lastKey();
     }
 
     public void print() {

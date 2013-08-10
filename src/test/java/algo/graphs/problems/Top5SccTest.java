@@ -12,7 +12,7 @@ import static org.junit.Assert.assertArrayEquals;
 /**
  * @author: Artur Khalikov
  */
-public class SCCTest {
+public class Top5SccTest {
 
     private static final String DATA_DIR = "D:/work/study/algo/data/";
     private static final String[] TESTS = {"scc0", "scc1", "scc2"};
@@ -29,11 +29,10 @@ public class SCCTest {
             String fileName = DATA_DIR + testName + ".txt";
             DiGraph graph = new DiGraph(new File(fileName));
             assertNotNull("graph is null", graph);
-            graph.print();
 
-            //SCC scc = new SCC(graph);
-            //int[] expected = {3,3,3,0,0};
-            //assertArrayEquals("Test: " + fileName, actual, expected);
+            Top5Scc scc = new Top5Scc(graph);
+            int[] expected = {3,3,3,0,0};
+            assertArrayEquals("Test: " + fileName, expected, scc.getResult());
         }
     }
 
