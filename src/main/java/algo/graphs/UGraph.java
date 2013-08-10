@@ -42,23 +42,28 @@ public class UGraph implements Graph {
         return array.length;
     }
 
-    /**
-     * Returns new Graph object representing reversed directed graph
-     * @return
-     */
     @Override
     public UGraph reverse() {
-        return null;
-    }
-
-    @Override
-    public List<Vertex> arcs(Vertex v) {
-        return null; // not yet implemented
-    }
-
-    @Override
-    public void addEdge(Vertex v, Vertex w) {
         // not yet implemented
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public List<Integer> adj(int v) {
+        // not yet implemented
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void addEdge(int v, int w) {
+        // not yet implemented
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean hasVertex(int v) {
+        // not yet implemented
+        throw new UnsupportedOperationException();
     }
 
     @Override
