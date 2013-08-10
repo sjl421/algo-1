@@ -14,7 +14,7 @@ public class DiGraph implements Graph {
     /**
      * Map of LinkedLists representing vertices and edges
      */
-    private TreeMap<Vertex, LinkedList<Vertex>> graph;
+    private TreeMap<Integer, LinkedList<Integer>> graph;
 
     /**
      * Number of vertices
@@ -56,34 +56,16 @@ public class DiGraph implements Graph {
      * @param v tail
      * @param w head
      */
-    public void addEdge(Vertex v, Vertex w) {
-        graph.get(v).add(w);
-        edges++;
-    }
-
-    /**
-     * Add the edge v -> w to the graph
-     * @param v tail
-     * @param w head
-     */
-    public void addEdge(int v, Vertex w) {
-        graph.get(new Vertex(v)).add(w);
-        edges++;
-    }
-
-    /**
-     * Add the edge v -> w to the graph
-     * @param v tail
-     * @param w head
-     */
+    @Override
     public void addEdge(int v, int w) {
-        graph.get(new Vertex(v)).add(new Vertex(w));
+        graph.get(v).add(w);
         edges++;
     }
 
     /**
      * Return number of vertices of the graph
      */
+    @Override
     public int size() {
         return vertices;
     }
@@ -91,43 +73,36 @@ public class DiGraph implements Graph {
     /**
      * Return the reverse if the graph
      */
+    @Override
     public DiGraph reverse() {
         DiGraph reverse = new DiGraph(vertices);
-        for (Vertex v: graph.keySet()) {
-            for (Vertex w: arcs(v))
+        for (Integer v: graph.keySet()) {
+            for (Integer w: adj(v))
                 reverse.addEdge(w, v);
         }
         return reverse;
     }
 
     /**
-     * Return vertices adjacent (arcs) to the given vertex
+     * Return vertices adjacent (adj) to the given vertex
      */
     @Override
-    public List<Vertex> arcs(Vertex v) {
+    public List<Integer> adj(int v) {
         if (!graph.containsKey(v))
             throw new IllegalArgumentException("v is not in Graph");
         return graph.get(v);
     }
 
-    public Iterable<Vertex> breathFirstSearch(Vertex start) {
-        return new BreadthFirstSearch(this, start).getResult();
-    }
-
-    public Iterator<Vertex> depthFirstSearch(Vertex start) {
-        //return new DepthFirstSearch(this, start).getResult();
-        return null;
-    }
-
-    public Vertex getLastVertex() {
-        return graph.lastKey();
+    @Override
+    public boolean hasVertex(int v) {
+        return graph.containsKey(v);
     }
 
     public void print() {
-        for (Vertex v: graph.keySet()) {
-            List<Vertex> edges = graph.get(v);
+        for (Integer v: graph.keySet()) {
+            List<Integer> edges = graph.get(v);
             System.out.print(v + " ");
-            for (Vertex w: edges)
+            for (Integer w: edges)
                 System.out.print(w + " ");
             System.out.println();
         }
@@ -136,7 +111,7 @@ public class DiGraph implements Graph {
     private void initMap() {
         graph = new TreeMap();
         for (int i = 0; i < vertices; i++) {
-            Vertex v = new Vertex(i + 1);
+            Integer v = new Integer(i + 1);
             graph.put(v, new LinkedList());
         }
     }
@@ -155,8 +130,8 @@ public class DiGraph implements Graph {
                 // reading vertices
                 while ((line = reader.readLine()) != null) {
                     String[] split = line.split(" ");
-                    Vertex tail = Vertex.valueOf(split[0]);
-                    Vertex head = Vertex.valueOf(split[1]);
+                    Integer tail = Integer.valueOf(split[0]);
+                    Integer head = Integer.valueOf(split[1]);
                     addEdge(tail, head);
                 }
             } finally {
