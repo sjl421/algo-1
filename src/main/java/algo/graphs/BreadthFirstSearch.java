@@ -19,7 +19,7 @@ class BreadthFirstSearch {
         this.start = start;
         explored = new boolean[graph.size()];
         edgeTo = new TreeMap();
-        search(graph, start);
+        search(start);
     }
 
     public Iterable<Integer> pathTo(int v) {
@@ -36,7 +36,11 @@ class BreadthFirstSearch {
         return explored[v-1];
     }
 
-    private void search(Graph graph, int start) {
+    /**
+     * BFS routine
+     * @param start
+     */
+    private void search(int start) {
         Queue<Integer> queue = new LinkedList();
         explored[start-1] = true;
         queue.add(start);
