@@ -13,7 +13,9 @@ public interface Graph {
 
     Graph reverse();
 
-    List<Vertex> arcs(Vertex v);
+    List<Integer> adj(int v);
 
-    void addEdge(Vertex v, Vertex w);
+    void addEdge(int v, int w);
+
+    boolean hasVertex(int v);
 }
