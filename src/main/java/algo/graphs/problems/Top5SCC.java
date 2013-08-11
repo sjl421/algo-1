@@ -1,7 +1,6 @@
 package algo.graphs.problems;
 
 import algo.graphs.DiGraph;
-import algo.graphs.Vertex;
 
 import java.util.Iterator;
 
@@ -25,11 +24,11 @@ public class Top5Scc {
     }
 
     private void findFinishingTimes(DiGraph graph) {
-        Vertex last = graph.getLastVertex();
+        /*Vertex last = graph.getLastVertex();
         Iterator<Vertex> iterator = graph.depthFirstSearch(last);
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
-        }
+        }*/
     }
 
     public int[] getResult() {
