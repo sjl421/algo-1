@@ -1,8 +1,10 @@
 package algo.graphs.problems;
 
+import algo.graphs.DepthFirstOrder;
 import algo.graphs.DiGraph;
+import algo.graphs.Graph;
 
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Assignment 4
@@ -13,26 +15,79 @@ import java.util.Iterator;
  */
 public class Top5Scc {
 
-    private DiGraph graph;
-    private int[] result;
+    private Graph graph;
+    private boolean explored[];
+    private int leader;
+    private int[] sccSizes;
 
     public Top5Scc(DiGraph graph) {
         this.graph = graph;
-        DiGraph reversed = graph.reverse();
-        reversed.print();
-        findFinishingTimes(reversed);
+        explored = new boolean[graph.size()+1];
+        sccSizes = new int[graph.size()+1];
+
+        Graph reverse = graph.reverse();
+        DepthFirstOrder order = new DepthFirstOrder(reverse);
+        for (int v: order.getReversePostOrder()) {
+            if (!explored[v]) {
+                leader = v;
+                searchNonRecursively(v);
+            }
+        }
     }
 
-    private void findFinishingTimes(DiGraph graph) {
-        /*Vertex last = graph.getLastVertex();
-        Iterator<Vertex> iterator = graph.depthFirstSearch(last);
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }*/
+    /**
+     * Non-recirsive DFS
+     * @param root
+     */
+    private void searchNonRecursively(int root) {
+        Deque<Integer> stack = new LinkedList();
+        stack.push(root);
+        sccSizes[leader]++;
+        explored[root] = true;
+        while (!stack.isEmpty()) {
+            int v = stack.peek();
+            Integer w = getUnexploredAdj(v);
+            if (w != null) {
+                explored[w] = true;
+                sccSizes[leader]++;
+                stack.push(w);
+            } else {
+                stack.pop();
+            }
+        }
     }
 
-    public int[] getResult() {
-        return result;
+    /**
+     * Recursive DFS
+     * @param v
+     */
+    private void search(int v) {
+        sccSizes[leader]++;
+        explored[v] = true;
+        for (int w: graph.adj(v)) {
+            if (!explored[w])
+                search(w);
+        }
+    }
+
+    private Integer getUnexploredAdj(int v) {
+        for (Integer w: graph.adj(v)) {
+            if (!explored[w])
+                return w;
+        }
+        return null;
+    }
+
+    public int[] getTop5SccSizes() {
+        Arrays.sort(sccSizes);
+        int[] res = new int[5];
+        for (int i = 0; i < 5; i++)
+            res[i] = sccSizes[sccSizes.length-i-1];
+        return res;
+    }
+
+    public int[] getSccSizes() {
+        return sccSizes;
     }
 }
 

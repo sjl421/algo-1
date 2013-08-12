@@ -15,24 +15,28 @@ import static org.junit.Assert.assertArrayEquals;
 public class Top5SccTest {
 
     private static final String DATA_DIR = "D:/work/study/algo/data/";
-    private static final String[] TESTS = {"scc0", "scc1", "scc2"};
-    private static final int[][] TEST_ANSWERS = {
+    private static final String[] TESTS = {"scc0", "scc1", "scc2", "scc3", "scc4"};
+    private static final int[][] EXPECTED = {
             {3,3,3,0,0},
             {3,3,2,0,0},
-            {3,3,1,1,0}
+            {3,3,1,1,0},
+            {7,1,0,0,0},
+            {6,3,2,1,0}
     };
     private static final String ASSIGNMENT = "scc.txt";
 
     @Test
-    public void testSolve() throws Exception {
-        for (String testName: TESTS) {
-            String fileName = DATA_DIR + testName + ".txt";
+    public void test() throws Exception {
+        for (int i=0; i < TESTS.length; i++) {
+            String fileName = DATA_DIR + "scc" + i + ".txt";
+            System.out.print("Testing: " + fileName);
             DiGraph graph = new DiGraph(new File(fileName));
             assertNotNull("graph is null", graph);
 
             Top5Scc scc = new Top5Scc(graph);
-            int[] expected = {3,3,3,0,0};
-            assertArrayEquals("Test: " + fileName, expected, scc.getResult());
+            int[] actual = scc.getTop5SccSizes();
+            assertArrayEquals(EXPECTED[i], actual);
+            System.out.println("...OK");
         }
     }
 
@@ -42,9 +46,8 @@ public class Top5SccTest {
         DiGraph graph = new DiGraph(new File(fileName));
         assertNotNull("graph is null", graph);
 
-        System.out.println("Test completed");
-
-        //UGraph graph = new UGraph(matrix);
-        //int[] actual = new SccProblem(graph).solve();
+        Top5Scc scc = new Top5Scc(graph);
+        for (int s: scc.getTop5SccSizes())
+            System.out.println(s + " ");
     }
 }

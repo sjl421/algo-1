@@ -98,6 +98,10 @@ public class DiGraph implements Graph {
         return graph.containsKey(v);
     }
 
+    public int getLastVertex() {
+        return graph.lastKey();
+    }
+
     public void print() {
         for (Integer v: graph.keySet()) {
             List<Integer> edges = graph.get(v);
