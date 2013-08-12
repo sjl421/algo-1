@@ -1,6 +1,7 @@
 package algo.graphs.problems;
 
 import algo.graphs.DiGraph;
+import algo.graphs.Graph;
 import org.junit.Test;
 
 import java.io.File;
@@ -30,7 +31,7 @@ public class Top5SccTest {
         for (int i=0; i < TESTS.length; i++) {
             String fileName = DATA_DIR + "scc" + i + ".txt";
             System.out.print("Testing: " + fileName);
-            DiGraph graph = new DiGraph(new File(fileName));
+            Graph graph = Top5Scc.readGraph(fileName);
             assertNotNull("graph is null", graph);
 
             Top5Scc scc = new Top5Scc(graph);
@@ -43,7 +44,7 @@ public class Top5SccTest {
     @Test
     public void testSolveAssignment() throws Exception {
         String fileName = DATA_DIR + ASSIGNMENT;
-        DiGraph graph = new DiGraph(new File(fileName));
+        Graph graph = Top5Scc.readGraph(fileName);
         assertNotNull("graph is null", graph);
 
         Top5Scc scc = new Top5Scc(graph);

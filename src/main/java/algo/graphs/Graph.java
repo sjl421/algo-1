@@ -15,7 +15,7 @@ public interface Graph {
 
     List<Integer> adj(int v);
 
-    void addEdge(int v, int w);
+    void addEdge(int u, int v);
 
     boolean hasVertex(int v);
 }

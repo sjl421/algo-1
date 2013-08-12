@@ -55,7 +55,7 @@ public class UGraph implements Graph {
     }
 
     @Override
-    public void addEdge(int v, int w) {
+    public void addEdge(int u, int v) {
         // not yet implemented
         throw new UnsupportedOperationException();
     }

@@ -4,6 +4,9 @@ import algo.graphs.DepthFirstOrder;
 import algo.graphs.DiGraph;
 import algo.graphs.Graph;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.*;
 
 /**
@@ -20,7 +23,7 @@ public class Top5Scc {
     private int leader;
     private int[] sccSizes;
 
-    public Top5Scc(DiGraph graph) {
+    public Top5Scc(Graph graph) {
         this.graph = graph;
         explored = new boolean[graph.size()+1];
         sccSizes = new int[graph.size()+1];
@@ -32,6 +35,50 @@ public class Top5Scc {
                 leader = v;
                 searchNonRecursively(v);
             }
+        }
+    }
+
+    public static Graph readGraph(String fileName) {
+        return readGraph(new File(fileName));
+    }
+
+    /**
+     * Read directed graph from file
+     * Example input:
+     *
+     * 3
+     * 1 4
+     * 2 8
+     * 3 6
+     *
+     * @param file Input file
+     */
+    public static Graph readGraph(File file) {
+        try {
+            BufferedReader reader = null;
+            try {
+                reader = new BufferedReader(new FileReader(file));
+
+                // number of vertices
+                String line = reader.readLine();
+                int vertices = Integer.parseInt(line);
+                DiGraph g = new DiGraph(vertices);
+
+                // reading vertices
+                while ((line = reader.readLine()) != null) {
+                    String[] split = line.split(" ");
+                    Integer tail = Integer.valueOf(split[0]);
+                    Integer head = Integer.valueOf(split[1]);
+                    g.addEdge(tail, head);
+                }
+
+                return g;
+            } finally {
+                if (reader != null)
+                    reader.close();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
