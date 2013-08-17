@@ -20,20 +20,31 @@ public class InputFile {
     }
 
     /**
-     * Return plain array of integer primitives from the given file
+     * Return array of integers from the given file
      * @return array of ints
      */
     public int[] getIntegerArray() {
         int linesNumber = getLinesNumber();
-        int[] array = new int[linesNumber];
+        return getIntegerArray(linesNumber);
+    }
+
+    /**
+     * Return array of integers size-of "size" from the given file
+     * @param size
+     * @return array of int's size of size
+     */
+    public int[] getIntegerArray(int size) {
+        int[] array = new int[size];
         try {
             BufferedReader reader = null;
             try {
                 reader = new BufferedReader(new FileReader(file));
                 String line;
-                int i= 0;
-                while ((line = reader.readLine()) != null) {
-                    array[i++] = Integer.parseInt(line);
+                for (int i = 0; i < size; i++) {
+                    if ((line = reader.readLine()) != null)
+                        array[i] = Integer.parseInt(line);
+                    else
+                        break;
                 }
                 return array;
             } finally {

@@ -55,4 +55,14 @@ public class ArrayUtils {
         copy[i] = newElement;
         return copy;
     }
+
+    public static void print(int[] array) {
+        for (int i = 0; i < array.length; i++)
+            System.out.println(array[i]);
+    }
+
+    public static void print(long[] array) {
+        for (int i = 0; i < array.length; i++)
+            System.out.println(array[i]);
+    }
 }
