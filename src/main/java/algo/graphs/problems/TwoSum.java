@@ -8,18 +8,19 @@ import java.util.Set;
 /**
  * A Two-Sum problem
  * Assignment 6, question 1
- * This is a quick implementation using HashSet collection provided by JDK
+ * This is a straightforward quick implementation using HashSet collection provided by JDK
+ *
+ * Using hash-table:
  * TODO: implement your own HashTable data structure
+ * TODO: use domain knowledge to optimize hash function
  * TODO: implement optional challenge
+ *
+ * Using binary tree:
+ * TODO: try implementing
  *
  * @author Artur Khalikov
  */
 public class TwoSum {
-    /**
-     * Input size of 1 million integers
-     */
-    public static final int INPUT_SIZE = 1000 * 1000;
-
     /**
      * Target Min = -10,000
      */
@@ -45,11 +46,12 @@ public class TwoSum {
         for (long t = TARGET_MIN; t <= TARGET_MAX; t++) {
             for (Long x: numbers) {
                 Long y = t - x;
-                if (y != x && numbers.contains(y)) {
+                if (!y.equals(x) && numbers.contains(y)) {
                     targetNumber++;
                     break;
                 }
             }
+            System.out.println(t + ": " + targetNumber);
         }
     }
 
