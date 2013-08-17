@@ -1,12 +1,12 @@
-package algo.graphs.problems;
+package algo.datasctructure.problems;
 
+import algo.datasctructure.problems.TwoSum;
 import org.junit.Test;
-import util.InputFile;
 
 import static junit.framework.Assert.assertEquals;
 
 /**
- * Tests {@link TwoSum}
+ * Tests {@link algo.datasctructure.problems.TwoSum}
  *
  * @author Artur Khalikov
  */

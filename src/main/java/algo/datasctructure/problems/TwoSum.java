@@ -1,4 +1,4 @@
-package algo.graphs.problems;
+package algo.datasctructure.problems;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
