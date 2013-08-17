@@ -12,6 +12,9 @@ import java.util.Set;
  * Assignment 6, question 1
  * This is a straightforward and very slow implementation using HashSet collection provided by JDK
  *
+ * Reading of million numbers: 1.95 sec
+ * Two-sum running time:
+ *
  * Using hash-table:
  * TODO: implement your own HashTable data structure
  * TODO: use domain knowledge to optimize hash function

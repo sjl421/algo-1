@@ -10,6 +10,8 @@ import java.util.PriorityQueue;
 /**
  * Dijkstra's Shortest Path problem
  *
+ * TODO: implement your own Priority queue data structure
+ *
  * @author Artur Khalikov
  */
 public class DijkstrasShortestPath {
