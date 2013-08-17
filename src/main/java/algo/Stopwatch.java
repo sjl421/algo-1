@@ -18,4 +18,10 @@ public class Stopwatch {
         double interval = (stop - start) / NANO_FACTOR;
         System.out.println("Execution time for input (" + input + "): " + interval);
     }
+
+    public static void stop(String label) {
+        stop = System.nanoTime();
+        double interval = (stop - start) / NANO_FACTOR;
+        System.out.println(label + ": " + interval);
+    }
 }

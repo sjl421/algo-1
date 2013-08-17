@@ -1,5 +1,7 @@
 package algo.datasctructure.problems;
 
+import algo.Stopwatch;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashSet;
@@ -8,7 +10,7 @@ import java.util.Set;
 /**
  * A Two-Sum problem
  * Assignment 6, question 1
- * This is a straightforward quick implementation using HashSet collection provided by JDK
+ * This is a straightforward and very slow implementation using HashSet collection provided by JDK
  *
  * Using hash-table:
  * TODO: implement your own HashTable data structure
@@ -42,7 +44,13 @@ public class TwoSum {
     private int targetNumber = 0;
 
     public TwoSum(String fileName) {
+        // Reading numbers
+        Stopwatch.start();
         readNumbers(fileName);
+        Stopwatch.stop("Reading input");
+
+        // Two-sum routine
+        Stopwatch.start();
         for (long t = TARGET_MIN; t <= TARGET_MAX; t++) {
             for (Long x: numbers) {
                 Long y = t - x;
@@ -51,8 +59,8 @@ public class TwoSum {
                     break;
                 }
             }
-            System.out.println(t + ": " + targetNumber);
         }
+        Stopwatch.stop("Two sum");
     }
 
     public static void main(String[] args) {
