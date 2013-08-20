@@ -1,5 +1,6 @@
 package util;
 
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -64,5 +65,10 @@ public class ArrayUtils {
     public static void print(long[] array) {
         for (int i = 0; i < array.length; i++)
             System.out.println(array[i]);
+    }
+
+    public static void print(List list) {
+        for (Object o: list)
+            System.out.println(o.toString());
     }
 }

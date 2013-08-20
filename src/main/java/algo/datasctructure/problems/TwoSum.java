@@ -13,7 +13,7 @@ import java.util.Set;
  * This is a straightforward and very slow implementation using HashSet collection provided by JDK
  *
  * Reading of million numbers: 1.95 sec
- * Two-sum running time:
+ * Two-sum running time: 2878 sec = 47 min
  *
  * Using hash-table:
  * TODO: implement your own HashTable data structure
