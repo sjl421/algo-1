@@ -1,40 +1,42 @@
 package algo.datasctructure.problems;
 
-import util.ArrayUtils;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * A Median maintenance problem
  * Assignment 6, question 2
  *
+ * TODO: This is naive implementation. Try to figure out more clever solutions.
+ * TODO: what is running time?
+ *
  * @author Artur Khalikov
  */
 public class MedianMaintenance {
 
-    private List<Integer> numbers;
+    private static final int MOD_FACTOR = 10 * 1000;
+    private int sum = 0;
 
     public MedianMaintenance(String fileName) {
-        readNumbers(fileName);
-
-
-
-        ArrayUtils.print(numbers);
+        scan(fileName);
     }
 
-    private void readNumbers(String fileName) {
+    private void scan(String fileName) {
         try {
             BufferedReader reader = null;
+            List<Integer> numbers = new ArrayList();
             try {
-                numbers = new ArrayList();
                 reader = new BufferedReader(new FileReader(fileName));
                 String line;
+                int i = 0;
                 while ((line = reader.readLine()) != null) {
                     numbers.add(Integer.parseInt(line));
+                    Collections.sort(numbers);
+                    sum += numbers.get(i / 2);
+                    i++;
                 }
+                sum = sum % MOD_FACTOR;
             } finally {
                 if (reader != null)
                     reader.close();
@@ -49,7 +51,11 @@ public class MedianMaintenance {
             throw new IllegalArgumentException("Path to input file expected");
 
         MedianMaintenance mm = new MedianMaintenance(args[0]);
-        assert mm.numbers != null: "Input array is null";
+        System.out.println(mm.sum);
+    }
+
+    public int getSum() {
+        return sum;
     }
 }
 
@@ -58,8 +64,8 @@ public class MedianMaintenance {
  * on heap applications).
  *
  * The text file contains a list of the integers from 1 to 10000 in unsorted order; you should treat this as a
- * stream of numbers, arriving one by one. Letting xi denote the ith number of the file, the kth median mk
- * is defined as the median of the numbers x1,…,xk.
+ * stream of heap, arriving one by one. Letting xi denote the ith number of the file, the kth median mk
+ * is defined as the median of the heap x1,…,xk.
  * (So, if k is odd, then mk is ((k+1)/2)th smallest number among x1,…,xk; if k is even,
  * then mk is the (k/2)th smallest number among x1,…,xk.)
  *
