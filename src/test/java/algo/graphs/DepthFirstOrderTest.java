@@ -1,6 +1,6 @@
 package algo.graphs;
 
-import algo.graphs.problems.Top5Scc;
+import algo.graphs.problems.Top5SCC;
 import org.junit.Test;
 
 import java.io.File;
@@ -37,7 +37,7 @@ public class DepthFirstOrderTest {
         for (int i=0; i < TESTS.length; i++) {
             String fileName = DATA_DIR + "scc" + i + ".txt";
             System.out.print("Testing: " + fileName);
-            Graph graph = Top5Scc.readGraph(fileName);
+            Graph graph = Top5SCC.readGraph(fileName);
             assertNotNull("graph is null", graph);
 
             Graph reverse = graph.reverse();

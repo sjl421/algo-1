@@ -16,14 +16,14 @@ import java.util.*;
  *
  * @author: Artur Khalikov
  */
-public class Top5Scc {
+public class Top5SCC {
 
     private Graph graph;
     private boolean explored[];
     private int leader;
     private int[] sccSizes;
 
-    public Top5Scc(Graph graph) {
+    public Top5SCC(Graph graph) {
         this.graph = graph;
         explored = new boolean[graph.size()+1];
         sccSizes = new int[graph.size()+1];
