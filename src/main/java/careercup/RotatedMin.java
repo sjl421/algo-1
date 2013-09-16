@@ -1,4 +1,4 @@
-package algo.sort.problems;
+package careercup;
 
 /**
  * A sorted array has been rotated so that the elements might appear in the 

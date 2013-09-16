@@ -16,7 +16,8 @@ public class MergeSortTest {
     public void testSort() throws Exception {
         int[] actual = {5, 4, 1, 8, 7, 2, 6, 3};
         int[] expected = {1, 2, 3, 4, 5, 6, 7, 8};
-        MergeSort.sort(actual);assertArrayEquals(expected, actual);
+        MergeSort.sort(actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
