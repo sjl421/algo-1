@@ -1,11 +1,14 @@
 package algo.datasctructure.problems;
 
 import algo.Stopwatch;
+import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashSet;
 import java.util.Set;
+
+import static junit.framework.Assert.assertEquals;
 
 /**
  * A Two-Sum problem
@@ -97,6 +100,21 @@ public class TwoSum {
 
     public int getTargetNumber() {
         return targetNumber;
+    }
+
+    /**** TEST ****/
+
+    private static final String DATA_DIR = "D:/work/study/algo/data/";
+    private static final String[] TESTS = {"2sum1", "2sum2"};
+    private static final int[] EXPECTED = {3, 5};
+
+    @Test
+    public void test() throws Exception {
+        for (int i = 0; i < TESTS.length; i++) {
+            String fileName = DATA_DIR + TESTS[i] + ".txt";
+            int actual = new TwoSum(fileName).getTargetNumber();
+            assertEquals(EXPECTED[i], actual);
+        }
     }
 }
 
