@@ -6,7 +6,10 @@ public class BinarySearch {
         return search(arr, key, 0, arr.length);
     }
     
-    public static int search(int[] arr, int key, int fromIndex, int toIndex) {                
+    public static int search(int[] arr, int key, int fromIndex, int toIndex) {
+        if (arr.length == 0)
+            return -1; // empty array
+
         if (key < arr[fromIndex] || key > arr[toIndex-1])
             return -1; // not found
             
