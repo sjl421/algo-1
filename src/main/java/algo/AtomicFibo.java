@@ -1,14 +1,12 @@
 import java.util.concurrent.atomic.AtomicReference;
-// TODO: test
 
-public class Fibo {
+/**
+ * Lock-free implementation of Fibonacci sequence 
+ */
+public class AtomicFibo {
     
     private AtomicReference<BigDecimal> prev1 = new AtomicReference<BigDecimal>(BigDecimal.ZERO); 
     private AtomicReference<BigDecimal> prev2 = new AtomicReference<BigDecimal>(BigDecimal.ONE);
-    
-    public static void main(String[] args) {
-        
-    }
     
     
     public BigDecimal next() {
@@ -18,5 +16,9 @@ public class Fibo {
         prev1.set(val2);
         prev2.set(val);
         return val;
+    }
+    
+    public static void main(String[] args) {
+        // main    
     }
 }
