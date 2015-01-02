@@ -5,6 +5,8 @@ import java.util.Scanner
 /**
  * acm.timus.ru #1002
  * Created by Artur on 02-Jan-15.
+ * 
+ * Best result so far: 804 KB, 0.39 sec
  */
 object Sum2 {
   def main(args: Array[String]) {
@@ -20,6 +22,9 @@ object Sum2 {
     } else {
       val x:Int = math.abs(n)
       if (n > 0) ((x+1)*x)/2 else -1*(((x+1)*x)/2)+1
+      /* interestingly that making (x+1)*x) >> 1 increases used memory from 804 KB to 808 KB
+         and does not improve execution time.
+       */
     }
   }
   
