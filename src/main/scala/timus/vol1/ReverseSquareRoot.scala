@@ -3,6 +3,7 @@ package timus.vol1
 import scala.io.{BufferedSource, Source}
 
 /**
+ * acm.timus.ru #1001
  * Created by Artur on 01-Jan-15.
  */
 object ReverseSquareRoot {
