@@ -59,16 +59,19 @@ public class ArrayUtils {
 
     public static void print(int[] array) {
         for (int i = 0; i < array.length; i++)
-            System.out.println(array[i]);
+            System.out.print(array[i] + " ");
+        System.out.println("");
     }
 
     public static void print(long[] array) {
         for (int i = 0; i < array.length; i++)
-            System.out.println(array[i]);
+            System.out.print(array[i] + " ");
+        System.out.println("");
     }
 
     public static void print(List list) {
         for (Object o: list)
-            System.out.println(o.toString());
+            System.out.println(o.toString() + " ");
+        System.out.println("");
     }
 }
