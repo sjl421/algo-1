@@ -4,7 +4,7 @@ package algo;
  * Given two sorted arrays of numbers.
  * Merge them into one sorted array.
  */
-class MergeArrays {
+class ArrayMerger {
 
 	static int[] merge(int[] arr1, int[] arr2) {
 		int i = 0, j = 0, n = arr1.length + arr2.length;
