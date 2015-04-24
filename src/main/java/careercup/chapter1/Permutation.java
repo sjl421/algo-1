@@ -1,4 +1,4 @@
-package careercup;
+package careercup.chapter1;
 
 import java.util.List;
 

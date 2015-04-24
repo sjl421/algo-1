@@ -1,4 +1,4 @@
-package careercup;
+package careercup.chapter1;
 
 /**
  * A sorted array has been rotated so that the elements might appear in the 
