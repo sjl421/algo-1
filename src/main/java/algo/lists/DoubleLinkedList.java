@@ -1,4 +1,4 @@
-package algo;
+package algo.lists;
 
 /**
  * Double linked list
