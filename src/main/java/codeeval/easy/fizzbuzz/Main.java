@@ -1,8 +1,11 @@
-package codeeval.fizzbuzz;
+package codeeval.easy.fizzbuzz;
 
 import java.io.*;
 import java.util.Scanner;
 
+/**
+ * FizzBuzz challenge
+ */
 public class Main {
     public static void main(String[] args) throws Exception {
         File file = new File(args[0]);
