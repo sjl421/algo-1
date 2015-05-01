@@ -5,8 +5,7 @@ package algo;
  * Merge them into one sorted array.
  */
 class ArrayMerger {
-
-	static int[] merge(int[] arr1, int[] arr2) {
+    static int[] merge(int[] arr1, int[] arr2) {
 		int i = 0, j = 0, n = arr1.length + arr2.length;
 		int res[] = new int[n];
 		for (int k = 0; k < n; k++) {
