@@ -12,14 +12,14 @@ class FixedSizeQueueTest extends FunSuite {
   test("basic test") {
 
     val q:FixedSizeQueue[String] = new FixedSizeQueue[String](3);
-    q.push("One");
-    q.push("Two");
-    q.push("Three");
+    q.enqueue("One");
+    q.enqueue("Two");
+    q.enqueue("Three");
 
     assert(q.size() == 3);
     assert(!q.isEmpty);
 
-    assert("One".equals(q.pop()));
+    assert("One".equals(q.dequeue()));
     assert(q.size() == 2);
   }
 
