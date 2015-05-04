@@ -1,4 +1,4 @@
-package codeeval.easy.fizzbuzz;
+package codeeval.easy.FizzBuzz;
 
 import java.io.*;
 import java.util.Scanner;
