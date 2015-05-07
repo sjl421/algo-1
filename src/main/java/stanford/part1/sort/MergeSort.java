@@ -1,8 +1,5 @@
 package stanford.part1.sort;
 
-/**
- * @author: Artur Khalikov
- */
 public class MergeSort {
 
     private static int[] aux;
