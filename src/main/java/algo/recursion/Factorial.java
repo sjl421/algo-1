@@ -1,0 +1,24 @@
+package algo.recursion;
+
+class Factorial {
+
+    public static final int MAX_FACTORIAL = 20;
+
+    public static long calculate(int n) {
+        if (n > MAX_FACTORIAL)
+            throw new IllegalArgumentException("Can't calculate factorial > 20");
+
+        if (n < 0)
+            throw new IllegalArgumentException("Expected only positive numbers");
+
+        return calculateRecursively(n);
+    }
+
+    private static long calculateRecursively(int n) {
+        // simplest case
+        if (n <= 1)
+            return 1;
+        else
+            return n * calculateRecursively(n - 1);
+    }
+}
