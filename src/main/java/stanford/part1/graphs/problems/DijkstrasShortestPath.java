@@ -53,7 +53,7 @@ public class DijkstrasShortestPath {
         for (int v = 1; v <= graph.size(); v++)
             dist[v] = UNDEFINED_DEST;
         dist[source] = 0;
-        // Main loop
+        // FizzBuzz loop
         pq.add(new VertexScore(source, 0));
         while (!pq.isEmpty())
             relax(pq.remove());

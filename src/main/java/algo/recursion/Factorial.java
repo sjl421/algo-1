@@ -4,6 +4,11 @@ class Factorial {
 
     public static final int MAX_FACTORIAL = 20;
 
+    /**
+     * Calculates factorial for positive number less than 21
+     *
+     * O(n) recursive calls
+     */
     public static long calculate(int n) {
         if (n > MAX_FACTORIAL)
             throw new IllegalArgumentException("Can't calculate factorial > 20");

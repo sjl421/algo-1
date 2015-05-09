@@ -1,4 +1,4 @@
-package codeeval.easy.MatrixRotation;
+package codeeval.easy;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,7 +14,7 @@ import java.io.FileReader;
  *  Algorithm O(n^2): transposition (in-place) + swap of columns
  *
  */
-public class Main {
+public class MatrixRotation {
     public static void main(String[] args) throws Exception {
         BufferedReader buffer = new BufferedReader(new FileReader(args[0]));
         String line;

@@ -1,4 +1,4 @@
-package codeeval.easy.FizzBuzz;
+package codeeval.easy;
 
 import java.io.*;
 import java.util.Scanner;
@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * FizzBuzz challenge
  */
-public class Main {
+public class FizzBuzz {
     public static void main(String[] args) throws Exception {
         File file = new File(args[0]);
         BufferedReader buffer = new BufferedReader(new FileReader(file));

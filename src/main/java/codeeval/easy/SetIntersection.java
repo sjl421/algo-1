@@ -1,11 +1,11 @@
-package codeeval.easy.SetIntersection;
+package codeeval.easy;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Main {
+public class SetIntersection {
     public static void main(String[] args) throws Exception {
         BufferedReader buffer = new BufferedReader(new FileReader(args[0]));
         String line;
