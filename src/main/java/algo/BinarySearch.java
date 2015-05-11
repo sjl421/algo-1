@@ -1,7 +1,7 @@
 package algo;
 
 /**
- * Binary search integer array using while loop
+ * Iterative binary search of an integer array
  */
 public class BinarySearch {
 
