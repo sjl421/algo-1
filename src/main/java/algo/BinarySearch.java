@@ -1,5 +1,8 @@
 package algo;
 
+/**
+ * Binary search integer array using while loop
+ */
 public class BinarySearch {
 
     public static int search(int[] arr, int key) {
