@@ -19,13 +19,13 @@ public class MatrixRotation {
         BufferedReader buffer = new BufferedReader(new FileReader(args[0]));
         String line;
         while ((line = buffer.readLine()) != null) {
-            char[][] matrix = transpose(line);
+            char[][] matrix = rotate(line);
             int n = matrix.length;
-            for (int j = 0; j < n; j++) {
-                for (int i = 0; i < n; i++) {
-                    if (j < n / 2)
-                        matrix = swap(matrix, i, j, i, n - j - 1);
-                    System.out.print(matrix[j][i] + " ");
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (i + j > 0)
+                        System.out.print(" ");
+                    System.out.print(matrix[i][j]);
                 }
             }
             System.out.println();
@@ -33,22 +33,16 @@ public class MatrixRotation {
         buffer.close();
     }
 
-    static char[][] transpose(String line) {
+    static char[][] rotate(String line) {
         String[] items = line.split(" ");
         int n = (int) Math.sqrt(items.length);
         char[][] trans = new char[n][n];
         for (int i = 0; i < n; i++) {
+            int x = n - i - 1;
             for (int j = 0; j < n; j++) {
-                trans[j][i] = items[j + n*i].charAt(0);
+                trans[j][x] = items[j + n*i].charAt(0);
             }
         }
         return trans;
-    }
-
-    static char[][] swap(char[][] matrix, int x1, int y1, int x2, int y2) {
-        char item = matrix[x1][y1];
-        matrix[x1][y1] = matrix[x2][y2];
-        matrix[x2][y2] = item;
-        return matrix;
     }
 }
