@@ -1,1 +1,1 @@
-# Algorithms Study
+# Algorithms sandbox
