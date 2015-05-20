@@ -2,8 +2,6 @@ package algo.tree;
 
 /**
  * Binary tree implementation
- *
- * @author ahalikov
  */
 public class Tree<E> {
 
