@@ -2,8 +2,6 @@ package algo.lists;
 
 /**
  * Single linked list
- *
- * Created by ahalikov on 24/04/15.
  */
 public class SingleLinkedList<E> {
 
@@ -11,18 +9,55 @@ public class SingleLinkedList<E> {
 
     private int size;
 
+    public SingleLinkedList(E...items) {
+        for (E item: items) {
+            add(item);
+        }
+    }
+
     /**
      * Insert item to the head - O(1)
      */
     public void addFirst(E item) {
-        Node<E> node = new Node<>(item, first);
-        first = node;
+        Node<E> node = new Node<>(item);
+        if (first == null) {
+            first = node;
+        } else {
+            first = node;
+        }
         size++;
+    }
+
+    /**
+     * Add item to the tail of the list - O(n)
+     */
+    public void add(E item) {
+        if (first == null) {
+            addFirst(item);
+        } else {
+            Node<E> curr = first;
+            Node<E> prev = first;
+            while (curr != null) {
+                prev = curr;
+                curr = curr.next;
+            }
+            final Node<E> l = new Node<>(item, null);
+            prev.next = l;
+            size++;
+        }
     }
 
     public E search(E key) {
         Node<E> node = searchRecursively(key, first);
         return node != null ? node.item : null;
+    }
+
+    public E getFirst() {
+        return first != null ? first.item : null;
+    }
+
+    public int size() {
+        return size;
     }
 
     /**
@@ -46,10 +81,14 @@ public class SingleLinkedList<E> {
             return searchRecursively(item, node.next);
     }
 
-    private static final class Node<E> {
+    static final class Node<E> {
         E item;
 
         Node<E> next;
+
+        public Node(E item) {
+            this.item = item;
+        }
 
         public Node(E item, Node<E> next) {
             this.item = item;
