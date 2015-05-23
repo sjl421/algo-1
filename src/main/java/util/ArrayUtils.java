@@ -1,5 +1,7 @@
 package util;
 
+import org.junit.Assert;
+
 import java.util.List;
 import java.util.Random;
 
@@ -63,6 +65,15 @@ public class ArrayUtils {
         System.out.println("");
     }
 
+    public static void print(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void print(long[] array) {
         for (int i = 0; i < array.length; i++)
             System.out.print(array[i] + " ");
@@ -73,5 +84,12 @@ public class ArrayUtils {
         for (Object o: list)
             System.out.println(o.toString() + " ");
         System.out.println("");
+    }
+
+    public static void assertMatrixEquals(int[][] expected, int[][] actual) {
+        Assert.assertEquals(expected.length, actual.length);
+        for (int i = 0; i < expected.length; i++) {
+            Assert.assertArrayEquals(expected[i], actual[i]);
+        }
     }
 }
