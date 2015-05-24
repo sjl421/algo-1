@@ -60,7 +60,11 @@ public class SingleLinkedList<E> implements MyList<E> {
     }
 
     public void remove(E item) {
+        Node<E> prev = previousNode(item, first);
+        if (prev != null) {
+            Node<E> removed = prev.next;
 
+        }
     }
 
     public int size() {
@@ -83,11 +87,23 @@ public class SingleLinkedList<E> implements MyList<E> {
         return new IteratorImpl(first);
     }
 
-    Node<E> searchRecursively(E item, Node<E> node) {
+    private Node<E> searchRecursively(E item, Node<E> node) {
         if (node == null)
             return null;
         return node.item.equals(item)
                 ? node: searchRecursively(item, node.next);
+    }
+
+    private Node<E> previousNode(E item, Node<E> node) {
+        if (item == null)
+            throw new NullPointerException("item is null");
+
+        if (node == null || node.next == null)
+            throw new NullPointerException("list is null");
+
+        return item.equals(node.next.item)
+                ? node
+                : previousNode(item, node.next);
     }
 
     private class IteratorImpl implements Iterator<E> {
