@@ -1,9 +1,12 @@
 package algo.lists;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
  * Single linked list
  */
-public class SingleLinkedList<E> {
+public class SingleLinkedList<E> implements MyList<E> {
 
     private Node<E> first;
 
@@ -56,6 +59,10 @@ public class SingleLinkedList<E> {
         return first != null ? first.item : null;
     }
 
+    public void remove(E item) {
+
+    }
+
     public int size() {
         return size;
     }
@@ -72,13 +79,39 @@ public class SingleLinkedList<E> {
         size--;
     }
 
+    public Iterator<E> iterator() {
+        return new IteratorImpl(first);
+    }
+
     Node<E> searchRecursively(E item, Node<E> node) {
         if (node == null)
             return null;
-        else if (node.item.equals(item))
-            return node;
-        else
-            return searchRecursively(item, node.next);
+        return node.item.equals(item)
+                ? node: searchRecursively(item, node.next);
+    }
+
+    private class IteratorImpl implements Iterator<E> {
+        private Node<E> next;
+        private Node<E> lastReturned;
+
+        public IteratorImpl(Node<E> next) {
+            this.next = next;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return next != null;
+        }
+
+        @Override
+        public E next() {
+            if (hasNext()) {
+                lastReturned = next;
+                next = next.next;
+                return lastReturned.item;
+            }
+            throw new NoSuchElementException();
+        }
     }
 
     static final class Node<E> {
