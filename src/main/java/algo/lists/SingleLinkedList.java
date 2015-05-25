@@ -8,9 +8,9 @@ import java.util.NoSuchElementException;
  */
 public class SingleLinkedList<E> implements MyList<E> {
 
-    private Node<E> first;
+    protected Node<E> first;
 
-    private int size;
+    protected int size;
 
     public SingleLinkedList(E...items) {
         for (E item: items) {
@@ -63,7 +63,9 @@ public class SingleLinkedList<E> implements MyList<E> {
         Node<E> prev = previousNode(item, first);
         if (prev != null) {
             Node<E> removed = prev.next;
-
+            prev.next = removed.next;
+            removed.item = null;
+            removed.next = null;
         }
     }
 
@@ -87,14 +89,14 @@ public class SingleLinkedList<E> implements MyList<E> {
         return new IteratorImpl(first);
     }
 
-    private Node<E> searchRecursively(E item, Node<E> node) {
+    protected Node<E> searchRecursively(E item, Node<E> node) {
         if (node == null)
             return null;
         return node.item.equals(item)
                 ? node: searchRecursively(item, node.next);
     }
 
-    private Node<E> previousNode(E item, Node<E> node) {
+    protected Node<E> previousNode(E item, Node<E> node) {
         if (item == null)
             throw new NullPointerException("item is null");
 
@@ -106,7 +108,7 @@ public class SingleLinkedList<E> implements MyList<E> {
                 : previousNode(item, node.next);
     }
 
-    private class IteratorImpl implements Iterator<E> {
+    protected class IteratorImpl implements Iterator<E> {
         private Node<E> next;
         private Node<E> lastReturned;
 
@@ -130,10 +132,10 @@ public class SingleLinkedList<E> implements MyList<E> {
         }
     }
 
-    static final class Node<E> {
-        E item;
+    protected static final class Node<E> {
+        protected E item;
 
-        Node<E> next;
+        protected Node<E> next;
 
         public Node(E item) {
             this.item = item;
