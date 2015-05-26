@@ -28,4 +28,12 @@ public class ListExercisesTest {
         Assert.assertEquals(3, res.next.next.item);
         Assert.assertNull(res.next.next.next);
     }
+
+    @Test
+    public void testMergeLists() throws Exception {
+        Node list1 = new Node(1, new Node(3, new Node(5, new Node(6, null))));
+        Node list2 = new Node(2, new Node(4, new Node(7, null)));
+
+        Node res = ListExercises.mergeLists(list1, list2);
+    }
 }
