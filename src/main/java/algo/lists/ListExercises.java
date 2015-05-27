@@ -54,9 +54,9 @@ public class ListExercises {
     }
 
     /**
-     * Merging of sorted linked lists
+     * Merging of two sorted linked lists recursively
      */
-    static Node mergeLists(Node list1, Node list2) {
+    static Node mergeLists1(Node list1, Node list2) {
         if (list1 == null) return list2;
         if (list2 == null) return list1;
         if (list1.item < list2.item) {
@@ -66,5 +66,14 @@ public class ListExercises {
             list2.next = mergeLists(list1, list2.next); 
             return list2;
         }
+    }
+    
+    /**
+     * Merging of two sorted linked lists iteratively
+     */
+    static Node mergeLists2(Node list1, Node list2) {
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
+        
     }
 }
