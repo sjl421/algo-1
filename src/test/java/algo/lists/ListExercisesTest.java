@@ -19,10 +19,7 @@ public class ListExercisesTest {
     @Test
     public void testReverse2() throws Exception {
         Node test = new Node(3, new Node(2, new Node(1, null)));
-        ListExercises.head = test;
-        ListExercises.reverse2(test);
-
-        Node res = ListExercises.head;
+        Node res = ListExercises.reverse2(test, null);
         Assert.assertEquals(1, res.item);
         Assert.assertEquals(2, res.next.item);
         Assert.assertEquals(3, res.next.next.item);
@@ -34,6 +31,6 @@ public class ListExercisesTest {
         Node list1 = new Node(1, new Node(3, new Node(5, new Node(6, null))));
         Node list2 = new Node(2, new Node(4, new Node(7, null)));
 
-        Node res = ListExercises.mergeLists(list1, list2);
+        //Node res = ListExercises.mergeLists(list1, list2);
     }
 }
