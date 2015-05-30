@@ -124,4 +124,47 @@ public class ListExercises {
         }
         return data;
     }
+
+    /**
+     * Remove duplicate node-values from sorted linked list.
+     * Input list is sorted in ascending order.
+     *
+     * 1->2->3->3->3->6->8->11->Null
+     */
+    static Node removeDuplicates(Node head) {
+        if (head == null) return null;
+        Node curr = head, prev = null;
+        while (curr != null) {
+            if (prev != null && curr.data == prev.data) {
+                // removing current node
+                prev.next = curr.next;
+                curr.data = 0;
+                curr.next = null;
+                curr = prev.next;
+            } else {
+                prev = curr;
+                curr = curr.next;
+            }
+        }
+        return head;
+    }
+
+    /**
+     * Detect cycle in a linked list
+     * @return true if the input list has cycle, false otherwise
+     *
+     * Floyd's Tortoise-Hare O(n) algorithm
+     */
+    static boolean hasCycle(Node head) {
+        if (head == null || head.next == null) return false;
+        if (head.next == head) return true;
+        Node tortoise = head, hare = head, temp;
+        while (tortoise != null
+                && (temp = hare.next) != null
+                && (hare = temp.next) != null) {
+            if (tortoise == temp || tortoise == hare) return true;
+            tortoise = tortoise.next;
+        }
+        return false;
+    }
 }

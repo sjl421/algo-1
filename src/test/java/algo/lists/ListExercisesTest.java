@@ -49,4 +49,46 @@ public class ListExercisesTest {
         Assert.assertEquals(4, ListExercises.getNode2(list, 2));
         Assert.assertEquals(1, ListExercises.getNode2(list, 5));
     }
+
+    @Test
+    public void testRemoveDuplicates() throws Exception {
+        Node list = new Node(1, new Node(2, new Node(3,
+                new Node(3, new Node(3, new Node(6, null))))));
+        Node res = ListExercises.removeDuplicates(list);
+        Assert.assertEquals(1, res.data);
+        Assert.assertEquals(2, res.next.data);
+        Assert.assertEquals(3, res.next.next.data);
+        Assert.assertEquals(6, res.next.next.next.data);
+    }
+
+    @Test
+    public void testHasCycle() throws Exception {
+        Assert.assertFalse("null list", ListExercises.hasCycle(null));
+        Assert.assertFalse("1 node", ListExercises.hasCycle(new Node(1, null)));
+
+        // Head node cycle
+        Node head = new Node(1, null);
+        head.next = head;
+        Assert.assertTrue("head cycle", ListExercises.hasCycle(head));
+
+        // 3-element list, no cycle
+        head = new Node(1, new Node(2, new Node(3, null)));
+        Assert.assertFalse("3-element list no cycle", ListExercises.hasCycle(head));
+
+        // 3-element list cycle
+        head = new Node(1, new Node(2, new Node(3, null)));
+        head.next.next.next = head.next;
+        Assert.assertTrue("3-element list cycle", ListExercises.hasCycle(head));
+
+        // 6-element list with cycle
+        head = new Node(1, new Node(2, new Node(3, null)));
+        Node p4 = new Node(4, null);
+        Node p5 = new Node(5, null);
+        Node p6 = new Node(6, null);
+        head.next = p4;
+        p4.next = p5;
+        p5.next = p6;
+        p6.next = p4; // cycle
+        Assert.assertTrue("6-element list with cycle", ListExercises.hasCycle(head));
+    }
 }
