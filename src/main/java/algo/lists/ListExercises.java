@@ -82,6 +82,7 @@ public class ListExercises {
      * get the value of the node at the given position.
      *
      * Implementation using stack
+     * Run time = O(n), memory = O(n)
      */
     static int getNode1(Node head, int n) {
         Stack<Integer> stack = new Stack<>();
@@ -103,6 +104,7 @@ public class ListExercises {
      * get the value of the node at the given position.
      *
      * Simple two-run implementation
+     * RunTime = O(n), Memory = O(1)
      */
     static int getNode2(Node head, int n) {
         Node curr = head;
