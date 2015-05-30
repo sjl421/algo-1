@@ -6,13 +6,13 @@ import java.util.NoSuchElementException;
 /**
  * Single linked list
  */
-public class SingleLinkedList<E> implements MyList<E> {
+public class SLinkedList<E> implements MyList<E> {
 
     protected Node<E> first;
 
     protected int size;
 
-    public SingleLinkedList(E...items) {
+    public SLinkedList(E... items) {
         for (E item: items) {
             add(item);
         }

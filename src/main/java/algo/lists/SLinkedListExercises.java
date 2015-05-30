@@ -3,9 +3,10 @@ package algo.lists;
 import java.util.Stack;
 
 /**
+ * Some exercises with singly-linked list
  * @author ahalikov
  */
-public class ListExercises {
+class SLinkedListExercises {
 
     static class Node {
         int data;

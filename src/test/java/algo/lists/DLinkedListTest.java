@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 /**
  * @author ahalikov
  */
-public class DoubleLinkedListTest {
+public class DLinkedListTest {
 
     @Test
     public void testAddFirst() throws Exception {

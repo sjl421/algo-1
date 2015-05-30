@@ -1,9 +1,9 @@
 package careercup.chapter2;
 
-import algo.lists.SingleLinkedList;
+import algo.lists.SLinkedList;
 
 /**
- * Challenges with SingleLinkedList
+ * Challenges with SLinkedList
  *
  * @author ahalikov
  */
@@ -27,7 +27,7 @@ public class SingleLinkedListChallenges {
     /**
      * Implement an algorithm to find the n-th to last element of a singly linked list.
      */
-    public <E> void removeNthLast(SingleLinkedList<E> list, int n) {
+    public <E> void removeNthLast(SLinkedList<E> list, int n) {
         /**
          * Assumption: size(list) >= n
          */

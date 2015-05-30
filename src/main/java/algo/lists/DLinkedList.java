@@ -1,18 +1,15 @@
 package algo.lists;
 
 /**
- * Double linked list
+ * Doubly-linked list
  */
-public class DoubleLinkedList<E> {
+public class DLinkedList<E> {
 
     private Node<E> first;
 
     private Node<E> last;
 
     private int size;
-
-    public DoubleLinkedList() {
-    }
 
     public void addFirst(E item) {
         Node<E> node = new Node<>(item, first, null);
