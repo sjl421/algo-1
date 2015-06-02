@@ -11,7 +11,7 @@ public class RemoveNode {
         Node next;
     }
     
-    static removeNode(Node p) {
+    static void removeNode(Node p) {
         Node q = p.next;
         p.data = q.data;
         p.next = q;
