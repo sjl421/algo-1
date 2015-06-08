@@ -25,6 +25,7 @@ class RemoveDupes {
 
     /**
      * Solution using hash-table to track duplicate elements
+     * Runtime: O(n), memory: O(n)
      */
     static Node removeDupes(Node head) {
         if (head == null || head.next == null)
@@ -44,6 +45,14 @@ class RemoveDupes {
             prev = curr;
             curr = curr.next;
         }
+        return head;
+    }
+
+    /**
+     * Solution without additional buffer
+     * Runtime - O(n^2), memory - O(1)
+     */
+    static Node removeDupes2(Node head) {
         return head;
     }
 }
