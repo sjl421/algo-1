@@ -19,9 +19,13 @@ public class RemoveNode {
         }
     }
     
-    static void removeNode(Node p) {
-        Node q = p.next;
-        p.data = q.data;
-        p.next = q;
+    static boolean removeNode(Node n) {
+        if (n == null || n.next == null) {
+            return false;
+        }
+        Node next = n.next;
+        n.data = next.data;
+        n.next = next.next;
+        return true;
     }
 }

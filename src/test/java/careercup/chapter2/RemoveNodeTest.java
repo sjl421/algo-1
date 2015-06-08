@@ -11,6 +11,11 @@ import static org.junit.Assert.*;
 public class RemoveNodeTest {
 
     @Test
+    public void testRemoveNodeEmptyList() throws Exception {
+        assertFalse(RemoveNode.removeNode(null));
+    }
+
+    @Test
     public void testRemoveNode1() throws Exception {
         Node p1 = new Node(1, null);
         Node p2 = new Node(2, null);
@@ -23,8 +28,7 @@ public class RemoveNodeTest {
         p4.next = p5;
 
         RemoveNode.removeNode(p3);
-        assertTrue(p2 == p1.next);
-        assertTrue(p4 == p2.next);
-        assertTrue(p5 == p4.next);
+        assertEquals(4, p3.data);
+        assertEquals(p5, p3.next);
     }
 }
