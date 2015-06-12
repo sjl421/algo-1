@@ -65,6 +65,12 @@ public class ArrayUtils {
         System.out.println("");
     }
 
+    public static void print(char[] array) {
+        for (int i = 0; i < array.length; i++)
+            System.out.print(array[i]);
+        System.out.println();
+    }
+
     public static void print(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {

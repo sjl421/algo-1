@@ -79,4 +79,18 @@ public class StringDupesRemover {
         }
         return sb.toString();
     }
+
+    /**
+     * O(n^2) inplace solution for character array
+     */
+    public static char[] removeDupes4(char[] s) {
+        if (s == null || s.length < 2) return s;
+        for (int i = 1; i < s.length; i++) {
+            int j;
+            for (j = 0; j < i; j++) {
+                if (s[i] == s[j]) s[i] = 0;
+            }
+        }
+        return s;
+    }
 }
