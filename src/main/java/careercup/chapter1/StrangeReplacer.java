@@ -5,7 +5,7 @@ package careercup.chapter1;
  *
  * Created by ahalikov on 24/04/15.
  */
-public class StrangeReplacer {
+class StrangeReplacer {
 
     /**
      * Solution using String.replace method (JDK method uses pattern-matching)

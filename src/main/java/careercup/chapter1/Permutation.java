@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @author: Artur Khalikov
  */
-public class Permutation {
+class Permutation {
 
     public static List<Integer> find() {
         return null;

@@ -4,9 +4,9 @@ package careercup.chapter1;
  * Implement an algorithm to determine if a string has all unique characters.
  * What if you can not use additional data structures?
  */
-public class UniqueChars {
+class UniqueChars {
 
-    public static boolean isUniqueChars(String str) {
+    static boolean isUniqueChars(String str) {
         boolean chars[] = new boolean[256];
         for (int i = 0; i < str.length(); i++) {
             int val = str.charAt(i);
@@ -18,7 +18,11 @@ public class UniqueChars {
         return true;
     }
 
-    public static boolean isUniqueChars2(String str) {
+    static boolean isUniqueChars2(String str) {
+        if (str == null || str.isEmpty())
+            throw new IllegalArgumentException("str is null or empty");
+        if (str.length() == 1)
+            return true;
         int checker = 0;
         for (int i = 0; i < str.length(); ++i) {
             int val = str.charAt(i) - 'a';
@@ -26,9 +30,5 @@ public class UniqueChars {
             checker |= (1 << val);
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(isUniqueChars2("aba"));
     }
 }

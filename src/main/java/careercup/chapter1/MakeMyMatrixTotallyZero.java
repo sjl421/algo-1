@@ -7,7 +7,7 @@ package careercup.chapter1;
  */
 class MakeMyMatrixTotallyZero {
 
-    public static int[][] process(int[][] matrix) {
+    static int[][] process(int[][] matrix) {
         int m = matrix.length,
             n = matrix[0].length;
 

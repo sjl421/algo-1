@@ -12,14 +12,14 @@ import java.util.Set;
  *
  * Created by ahalikov on 24/04/15.
  */
-public class StringDupesRemover {
+class StringDupesRemover {
 
     /**
      * Solution uses additional buffer to store unique characters
      * Should work for ASCII characters
      * Time complexity: O(N), where N = length(str)
      */
-    public static String removeDupes(String str) {
+    static String removeDupes(String str) {
         if (str == null)
             throw new IllegalArgumentException("str is null");
         if (str.length() < 2)
@@ -42,7 +42,7 @@ public class StringDupesRemover {
      * to keep track of duplicate characters
      * Time complexity: O(N), where N = length(str)
      */
-    public static String removeDupes2(String str) {
+    static String removeDupes2(String str) {
         if (str == null)
              throw new IllegalArgumentException("str is null");
         if (str.length() < 2)
@@ -64,7 +64,7 @@ public class StringDupesRemover {
      * Solution for Unicode strings using Set to keep track of duplicate characters
      * Time complexity: O(N), where N = length(str)
      */
-    public static String removeDupes3(String str) {
+    static String removeDupes3(String str) {
         if (str == null)
             throw new IllegalArgumentException("str is null");
         if (str.length() < 2)
@@ -83,7 +83,7 @@ public class StringDupesRemover {
     /**
      * O(n^2) inplace solution for character array
      */
-    public static char[] removeDupes4(char[] s) {
+    static char[] removeDupes4(char[] s) {
         if (s == null || s.length < 2) return s;
         for (int i = 1; i < s.length; i++) {
             int j;

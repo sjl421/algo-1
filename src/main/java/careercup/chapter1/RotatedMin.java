@@ -5,7 +5,7 @@ package careercup.chapter1;
  * order 3 4 5 6 7 1 2. 
  * How would you find the minimum element?
  */
-public class RotatedMin {
+class RotatedMin {
     
     public int find(int[] sorted) {
         int lo = 0, hi = sorted.length, mid = 0;

@@ -7,7 +7,7 @@ import java.util.List;
  * Design an algorithm to print all permutations of a string. For simplicity,
  * assume all characters are unique.
  */
-public class StringPermutation {
+class StringPermutation {
 
     private static List<String> perms = new ArrayList<String>();
 
@@ -24,9 +24,5 @@ public class StringPermutation {
             for (int i = 0; i < n; i++)
                 permute(prefix + s.charAt(i), s.substring(0, i) + s.substring(i+1, n));
         }
-    }
-
-    public static void main(String[] args) {
-        find("abc");
     }
 }

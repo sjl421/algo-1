@@ -8,12 +8,12 @@ import static org.junit.Assert.*;
  * Write a method to decide if two strings are anagrams or not.
  * Example: Mary => Army
  */
-public class Anagrams {
+class Anagrams {
     /**
      * Implementation using sorting
 	 * Complexity: Time O(n log n), Space O(n)
      */
-    public static boolean isAnagram(String s1, String s2) {
+	static boolean isAnagram(String s1, String s2) {
 		if (s1.length() != s2.length())
 			return false;
 		char[] chars1 = s1.toLowerCase().toCharArray();
@@ -27,7 +27,7 @@ public class Anagrams {
      * Implementation using ASCII arrays
 	 * Complexity: Time O(n), Space O(n)
      */
-    public static boolean isAnagram2(String s1, String s2) {
+	static boolean isAnagram2(String s1, String s2) {
 		if (s1.length() != s2.length())
 			return false;
         int[] chars1 = new int[256];
@@ -49,7 +49,7 @@ public class Anagrams {
 	 * Soluton using hash maps
 	 * Complexity: Time O(n), Space O(n)
 	 */
-	public static boolean isAnagram3(String s1, String s2) {
+	static boolean isAnagram3(String s1, String s2) {
 		if (s1.length() != s2.length())
 			return false;			
 		Map<Character, Integer> chars1 = new HashMap();	

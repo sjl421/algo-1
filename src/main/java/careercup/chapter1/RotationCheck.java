@@ -3,7 +3,7 @@ package careercup.chapter1;
 /**
  * CareerCup Challenge #1.8
  */
-public class RotationCheck {
+class RotationCheck {
 
     /**
      * Checks if s1 is a rotation of s2
