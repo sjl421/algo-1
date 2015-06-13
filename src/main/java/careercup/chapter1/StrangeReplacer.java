@@ -7,12 +7,40 @@ package careercup.chapter1;
  */
 public class StrangeReplacer {
 
-    public static String replace(String str) {
+    /**
+     * Solution using String.replace method (JDK method uses pattern-matching)
+     */
+    public static String replaceString(String str) {
         if (str == null)
             throw new IllegalArgumentException("str is null");
-        if (str.length() < 1)
+        if (str.length() == 0)
             return str;
+        return str.replace(" ", "%20");
+    }
 
-        return str;
+    /**
+     * Solution for char array
+     * Complexity: Time O(n), Space O(n)
+     */
+    public static char[] replaceChars(char[] str) {
+        if (str == null || str.length == 0)
+            return str;
+        int spacesNumber = 0;
+        for (char c: str) {
+            if (c == ' ') spacesNumber++;
+        }
+        int n = str.length + spacesNumber*2;
+        char[] chars = new char[n];
+        int j = 0;
+        for (char c: str) {
+            if (c == ' ') {
+                chars[j++] = '%';
+                chars[j++] = '2';
+                chars[j++] = '0';
+            } else {
+                chars[j++] = c;
+            }
+        }
+        return chars;
     }
 }
