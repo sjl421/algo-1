@@ -9,7 +9,7 @@ import java.util.Deque;
 public class TreeTraversal {
     /**
      * Breadh-first or level-order traversal of a tree
-     * @param root
+     * @param root Root node
      */
     static void breadthFirst(Node root) {
         if (root == null) return;
@@ -28,7 +28,7 @@ public class TreeTraversal {
 
     /**
      * Pre-order traversal: root, left, right
-     * @param root
+     * @param root Root node
      */
     static void preOrder(Node root) {
         if (root == null) return;
@@ -37,6 +37,12 @@ public class TreeTraversal {
         preOrder(root.right);
     }
 
+    /**
+     * In-order traversal: left, root, right
+     * Complexity: Time O(n), Space O(h), where h = height of a tree
+     * in most cases h = O(log n)
+     * @param root Root node
+     */
     static void inOrder(Node root) {
         if (root == null) return;
         inOrder(root.left);
@@ -44,6 +50,12 @@ public class TreeTraversal {
         inOrder(root.right);
     }
 
+    /**
+     * Post-order traversal: left, right, root
+     * Complexity: Time O(n), Space O(h), where h = height of a tree
+     * in most cases h = O(log n)
+     * @param root Root node
+     */
     static void postOrder(Node root) {
         if (root == null) return;
         postOrder(root.left);
