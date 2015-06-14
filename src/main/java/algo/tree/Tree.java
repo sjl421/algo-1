@@ -85,6 +85,10 @@ public class Tree<E> {
         Entry<E> right;
     }
 
+    public Entry<E> root() {
+        return root;
+    }
+
     public int getSize() {
         return size;
     }

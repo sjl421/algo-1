@@ -2,23 +2,21 @@ package algo.tree;
 
 import org.junit.Test;
 
-import static algo.tree.TreeTraversal.*;
-import static org.junit.Assert.*;
-
 /**
+ * A test for {@link TreeTraversal}
  * @author ahalikov
  */
 public class TreeTraversalTest {
 
-    static final Node TEST_TREE = new Node('F',
-            new Node('D',
-                    new Node('B',
-                            new Node('A'), new Node('C')),
-                    new Node('E')),
-            new Node('J',
-                    new Node('G', null,
-                            new Node('I', new Node('H'), null)),
-                    new Node('K')));
+    static final Node<Character> TEST_TREE = new Node<>('F',
+            new Node<>('D',
+                    new Node<>('B',
+                            new Node<>('A'), new Node<>('C')),
+                    new Node<>('E')),
+            new Node<>('J',
+                    new Node<>('G', null,
+                            new Node<>('I', new Node<>('H'), null)),
+                    new Node<>('K')));
 
     @Test
     public void testBreadthFirst() throws Exception {

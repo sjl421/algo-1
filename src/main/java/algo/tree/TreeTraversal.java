@@ -4,6 +4,8 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
+ * Tree traversal methods
+ *
  * @author ahalikov
  */
 public class TreeTraversal {
@@ -61,21 +63,5 @@ public class TreeTraversal {
         postOrder(root.left);
         postOrder(root.right);
         System.out.print(root.data + " ");
-    }
-
-    static class Node {
-        char data;
-        Node left;
-        Node right;
-
-        public Node(char data) {
-            this.data = data;
-        }
-
-        public Node(char data, Node left, Node right) {
-            this.data = data;
-            this.left = left;
-            this.right = right;
-        }
     }
 }
