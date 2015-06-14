@@ -30,6 +30,22 @@ public class Tree<E> {
         }
     }
 
+    /**
+     * Height of a tree
+     * Time complexity: O(n)
+     */
+    public int height() {
+        return findHeight(root);
+    }
+
+    private int findHeight(Entry<E> node) {
+        if (node == null)
+            return -1;
+        int leftHeight = findHeight(node.left);
+        int rightHeight = findHeight(node.right);
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+
     private Entry<E> recursiveSearch(Entry<E> node, E element) {
         if (node == null)
             return null;

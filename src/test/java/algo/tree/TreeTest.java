@@ -34,4 +34,16 @@ public class TreeTest {
         tree.insert(13);
         assertEquals(8, tree.getSize());
     }
+
+    @Test
+    public void testHeight() throws Exception {
+        Tree<Integer> tree = new Tree<>();
+        assertEquals(-1, tree.height());
+
+        tree.insert(12);
+        assertEquals(0, tree.height());
+
+        tree.insert(5, 9, 2, 17, 19, 18);
+        assertEquals(3, tree.height());
+    }
 }
