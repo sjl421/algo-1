@@ -22,13 +22,28 @@ public class TreeTraversalTest {
 
     @Test
     public void testBreadthFirst() throws Exception {
-        System.out.println("Level-Order traversal");
+        System.out.print("Level-Order: ");
         TreeTraversal.breadthFirst(TEST_TREE);
     }
 
     @Test
     public void testPreOrder() throws Exception {
-        System.out.println("Pre-Order traversal");
+        System.out.print("Pre-Order: ");
         TreeTraversal.preOrder(TEST_TREE);
+        System.out.println();
+    }
+
+    @Test
+    public void testInOrder() throws Exception {
+        System.out.print("In-Order: ");
+        TreeTraversal.inOrder(TEST_TREE);
+        System.out.println();
+    }
+
+    @Test
+    public void testPostOrder() throws Exception {
+        System.out.print("Post-Order: ");
+        TreeTraversal.postOrder(TEST_TREE);
+        System.out.println();
     }
 }
