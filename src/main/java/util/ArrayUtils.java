@@ -65,6 +65,12 @@ public class ArrayUtils {
         System.out.println("");
     }
 
+    public static void print(Object[] array) {
+        for (int i = 0; i < array.length; i++)
+            System.out.print(array[i] != null ? array[i].toString() + " " : "null ");
+        System.out.println("");
+    }
+
     public static void print(char[] array) {
         for (int i = 0; i < array.length; i++)
             System.out.print(array[i]);

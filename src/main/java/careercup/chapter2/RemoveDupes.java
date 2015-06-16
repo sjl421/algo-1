@@ -10,7 +10,7 @@ import java.util.HashSet;
  * @author ahalikov
  */
 class RemoveDupes {
-    public static class Node {
+    static class Node {
         int data;
         Node next;
 
