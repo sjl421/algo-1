@@ -7,6 +7,12 @@ import java.util.List;
  * How would you design a stack which, in addition to push and pop,
  * also has a function min which returns the minimum element?
  * Push, pop and min should all operate in O(1) time.
+ *
+ * The first idea was to store index pointed to minimum element.
+ * It did not work because after pop() method this index did not changed and still pointed
+ * to old min. To fix that pop() should set index to new min. element, which is O(n).
+ *
+ * Another solution is to create a min-heap, it keeps time complexity for all operations O(1).
  */
 public class MinStack<E> {
 
