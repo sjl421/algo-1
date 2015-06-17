@@ -8,15 +8,13 @@ import org.junit.Test;
  */
 public class TreeTraversalTest {
 
-    static final Node<Character> TEST_TREE = new Node<>('F',
-            new Node<>('D',
-                    new Node<>('B',
-                            new Node<>('A'), new Node<>('C')),
+    static final Node<Character> TEST_TREE = new Node<>('A',
+            new Node<>('B',
+                    new Node<>('D'),
                     new Node<>('E')),
-            new Node<>('J',
-                    new Node<>('G', null,
-                            new Node<>('I', new Node<>('H'), null)),
-                    new Node<>('K')));
+            new Node<>('C',
+                    new Node<>('F'),
+                    new Node<>('G')));
 
     @Test
     public void testBreadthFirst() throws Exception {

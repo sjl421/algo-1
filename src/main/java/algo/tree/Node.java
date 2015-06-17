@@ -6,6 +6,8 @@ public class Node<E> {
     Node left;
     Node right;
 
+    boolean isMarker;
+
     public Node(E data) {
         this.data = data;
     }

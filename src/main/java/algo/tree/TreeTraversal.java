@@ -10,20 +10,31 @@ import java.util.Deque;
  */
 public class TreeTraversal {
     /**
-     * Breadh-first or level-order traversal of a tree
+     * Breadth-first or level-order traversal of a tree
      * @param root Root node
      */
     static void breadthFirst(Node root) {
         if (root == null) return;
         Deque<Node> q = new ArrayDeque<>();
+
+        Node marker = new Node(0);
+        marker.isMarker = true;
+
         q.offer(root);
+        q.offer(marker);
+
         while (!q.isEmpty()) {
             Node curr = q.poll();
-            System.out.print(curr.data + " ");
-            if (curr.left != null)
-                q.offer(curr.left);
-            if (curr.right != null)
-                q.offer(curr.right);
+            if (curr.isMarker) {
+                System.out.println();
+                if (!q.isEmpty()) q.offer(marker);
+            } else {
+                System.out.print(curr.data + " ");
+                if (curr.left != null)
+                    q.offer(curr.left);
+                if (curr.right != null)
+                    q.offer(curr.right);
+            }
         }
         System.out.println();
     }
