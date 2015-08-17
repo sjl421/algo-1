@@ -51,7 +51,7 @@ public class QuickSortTest {
         assertEquals(expected, QuickSort.comparisons);
     }
 
-    @Test
+    //@Test
     public void testComparisons2() throws Exception {
         int[] a = new InputFile("/home/artur/work/study/algo/data/100.txt").getIntegerArray();
         int expected = 615;
@@ -59,7 +59,7 @@ public class QuickSortTest {
         assertEquals(expected, QuickSort.comparisons);
     }
 
-    @Test
+    //@Test
     public void testComparisons3() throws Exception {
         int[] a = new InputFile("/home/artur/work/study/algo/data/1000.txt").getIntegerArray();
         int expected = 10297;
