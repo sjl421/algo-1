@@ -11,13 +11,19 @@ public class BinaryCalculatorTest {
     }
 
     @Test
+    public void testNegative2() {
+        System.out.println(Integer.toBinaryString(43));
+        System.out.println(Integer.toBinaryString(-43));
+    }
+
+    @Test
     public void testSimplest() {
         assertEquals("0", BinaryCalculator.getBinary(0));
         assertEquals("1", BinaryCalculator.getBinary(1));
     }
 
     @Test
-    public void test() {
+    public void testPositive() {
         assertEquals("1000", BinaryCalculator.getBinary(8));
     }
 }
