@@ -1,9 +1,9 @@
-package algo;
+package algo.jdk;
 
 /**
  * Studying binary converter from JDK8
  */
-public class JdkBinaryConverter {
+public class BinaryConverter {
 
     static String toBinaryString(int i) {
         return toUnsignedString0(i, 1);
