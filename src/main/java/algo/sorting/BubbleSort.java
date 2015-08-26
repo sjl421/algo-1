@@ -11,11 +11,11 @@ package algo.sorting;
 public class BubbleSort {
 
     /**
-     * Basic O(n^2) implementation
+     * Basic O(n^2) implementation of bubble sort
      *
-     * @param a
+     * @param a Input array
      */
-    public static void sort1(int[] a) {
+    static void sort1(int[] a) {
         boolean swapped;
         do {
             swapped = false;
@@ -26,6 +26,45 @@ public class BubbleSort {
                 }
             }
         } while (swapped);
+    }
+
+    /**
+     * Optimized inner loop to avoid looking at last n-1 items
+     * 
+     * @param a
+     */
+    static void sort2(int[] a) {
+        boolean swapped;
+        int n = a.length;
+        do {
+            swapped = false;
+            for (int i = 1; i < n; i++) {
+                if (a[i-1] > a[i]) {
+                    swap(a, i-1, i);
+                    swapped = true;
+                }
+            }
+            n -= 1;
+        } while (swapped);
+    }
+
+    /**
+     * Further optimization of inner loop
+     *
+     * @param a
+     */
+    static void sort3(int[] a) {
+        int n = a.length;
+        do {
+            int newN = 0;
+            for (int i = 1; i < n; i++) {
+                if (a[i-1] > a[i]) {
+                    swap(a, i-1, i);
+                    newN = i;
+                }
+            }
+            n = newN;
+        } while (n > 0);
     }
 
     /**
