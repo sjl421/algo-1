@@ -16,16 +16,27 @@ public class BubbleSort {
      * @param a Input array
      */
     static void sort1(int[] a) {
+        int passes = 0;
+        int comparisons = 0;
+
         boolean swapped;
         do {
             swapped = false;
-            for (int i = 1; i < a.length; i++) {
+            int i;
+            for (i = 1; i < a.length; i++) {
                 if (a[i-1] > a[i]) {
                     swap(a, i-1, i);
                     swapped = true;
                 }
             }
+            passes++;
+            comparisons += i;
         } while (swapped);
+
+        System.out.println("Bubble sort1");
+        System.out.println("input N=" + a.length);
+        System.out.println("passes=" + passes);
+        System.out.println("comparisons=" + comparisons);
     }
 
     /**
@@ -34,18 +45,29 @@ public class BubbleSort {
      * @param a
      */
     static void sort2(int[] a) {
+        int passes = 0;
+        int comparisons = 0;
+
         boolean swapped;
         int n = a.length;
         do {
+            int i;
             swapped = false;
-            for (int i = 1; i < n; i++) {
+            for (i = 1; i < n; i++) {
                 if (a[i-1] > a[i]) {
                     swap(a, i-1, i);
                     swapped = true;
                 }
             }
             n -= 1;
+            passes++;
+            comparisons += i;
         } while (swapped);
+
+        System.out.println("Bubble sort2");
+        System.out.println("input N=" + a.length);
+        System.out.println("passes=" + passes);
+        System.out.println("comparisons=" + comparisons);
     }
 
     /**
