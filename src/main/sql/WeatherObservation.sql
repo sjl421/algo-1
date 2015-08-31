@@ -12,18 +12,14 @@
  +-------------+------------+
 */
 
-/* 1
- * Write a query to print the list of CITY in lexicographical order
- * for even ID only. Do not print duplicates.
- */
+-- 1 Write a query to print the list of CITY in lexicographical order
+-- for even ID only. Do not print duplicates.
 select distinct CITY from STATION
 where mod(ID, 2) = 0
 order by CITY;
 
-/* 2
- * Let NUM be no. of cities and NUM_unique be no. of unique cities,
- * then write a query to print the value of NUM - NUM_unique.
- */
+-- 2 Let NUM be no. of cities and NUM_unique be no. of unique cities,
+-- then write a query to print the value of NUM - NUM_unique.
 select count(CITY) - count(distinct CITY)
 from STATION;
 
@@ -47,10 +43,8 @@ select * from (
     order by CITY asc
 ) where rownum <= 1;
 
-/* 4
- * Write a query to print the list of CITY that start with vowels in lexicographical order.
- * Do not print duplicates.
- */
+-- 4 Write a query to print the list of CITY that start with vowels in lexicographical order.
+-- Do not print duplicates.
 select distinct CITY
 from STATION
 where regexp_like(CITY, '^[aeiou]', 'i')
@@ -63,10 +57,8 @@ from STATION
 where substr(lower(CITY), 0, 1) in ('a', 'e', 'i', 'o', 'u')
 order by CITY asc;
 
-/* 5
- * Write a query to print the list of CITY that ends at vowels in lexicographical order.
- * Do not print duplicates.
- */
+-- 5 Write a query to print the list of CITY that ends at vowels in lexicographical order.
+-- Do not print duplicates.
 select distinct CITY
 from STATION
 where regexp_like(CITY, '[aeiou]$', 'i')
@@ -79,12 +71,24 @@ from STATION
 where substr(lower(CITY), -1, 1) in ('a', 'e', 'i', 'o', 'u')
 order by CITY asc;
 
-/* 6
- * Write a query to print the list of CITY that starts with vowels and ends at vowels
- * in lexicographical order. Do not print duplicates.
- */
+-- 6 Write a query to print the list of CITY that starts with vowels and ends at vowels
+-- in lexicographical order. Do not print duplicates.
 select distinct CITY
 from STATION
 where substr(lower(CITY), 0, 1) in ('a', 'e', 'i', 'o', 'u')
   and substr(lower(CITY), -1, 1) in ('a', 'e', 'i', 'o', 'u')
 order by CITY asc;
+
+-- 7 Write a query to print the sum of LAT_N and the sum of
+-- LONG_W separated by space, up to 2 decimal places
+select round(sum(LAT_N), 2) || ' ' || round(sum(LONG_W), 2)
+from STATION;
+
+-- 8 Write a query to find the sum of the Northern Latitudes having values
+-- greater than 38.7880 and less than 137.2345 up to 4 decimal places.
+select round(sum(LAT_N), 4)
+from STATION
+where LAT_N > 38.7880 and LAT_N < 137.2345;
+
+-- 9. Write a query to find the greatest value of the Northern Latitudes
+-- less than 137.2345 up to 4 decimal places.
