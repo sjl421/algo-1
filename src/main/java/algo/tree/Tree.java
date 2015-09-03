@@ -3,7 +3,7 @@ package algo.tree;
 /**
  * Binary tree implementation
  */
-public class Tree<E> {
+public class Tree<E extends Comparable> {
 
     private Entry<E> root;
 
@@ -49,7 +49,7 @@ public class Tree<E> {
     private Entry<E> recursiveSearch(Entry<E> node, E element) {
         if (node == null)
             return null;
-        int cmp = ((Comparable) element).compareTo(node.element);
+        int cmp = element.compareTo(node.element);
         if (cmp == 0)
             return node;
         else
