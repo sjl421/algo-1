@@ -11,7 +11,7 @@ class Factorial {
      */
     public static long calculate(int n) {
         if (n > MAX_FACTORIAL)
-            throw new IllegalArgumentException("Can't calculate factorial > 20");
+            throw new IllegalArgumentException("Can't calc factorial > 20");
 
         if (n < 0)
             throw new IllegalArgumentException("Expected only positive numbers");
