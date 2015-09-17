@@ -10,6 +10,6 @@ package algo.sorting;
 public class InsertionSort {
 
     static void sort(int[] a) {
-
+        // TODO: implement
     }
 }
