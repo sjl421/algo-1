@@ -24,7 +24,7 @@ where balance is difference between Debit amount and Credit amount.
 
 select t.id, sum(t.amount) from (
 	select id, amount from debit
-	union all
+	union
 	select id, -amount from credit
 ) t
 group by t.id
