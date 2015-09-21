@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 /**
- * You are given a 2D N×N matrix. Each element of the matrix is a letter: from ‘a’ to ‘z’.
- * Your task is to rotate the matrix 90° clockwise:
+ * You are given a 2D N×N matrix. Each element of the matrix is a letter: from 'a' to 'z'.
+ * Your task is to rotate the matrix 90' clockwise:
  *
  *   a b c      g d a
  *   d e f  =>  h e b
