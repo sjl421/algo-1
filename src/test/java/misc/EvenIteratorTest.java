@@ -29,4 +29,21 @@ public class EvenIteratorTest {
         }
         Assert.assertEquals("Iterator size check", size / 2, count);
     }
+
+    @Test
+    public void testEvenIterator2() throws Exception {
+        List<Integer> numbers = new ArrayList<>();
+        final int size = 100;
+        for (int i = 0; i < size; i++) {
+            if (i % 2 > 0)
+                numbers.add(i);
+        }
+        EvenIterator itr = new EvenIterator(numbers.iterator());
+        int count = 0;
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+            count++;
+        }
+        Assert.assertEquals("Iterator size check", 0, count);
+    }
 }
