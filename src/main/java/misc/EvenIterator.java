@@ -1,6 +1,7 @@
 package misc;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Having iterator by numbers,
@@ -25,15 +26,19 @@ public class EvenIterator implements Iterator<Integer> {
 
     @Override
     public Integer next() {
-        Integer i = next;
-        setNext();
-        return i;
+        if (hasNext()) {
+            Integer i = next;
+            setNext();
+            return i;
+        } else {
+            throw new NoSuchElementException();
+        }
     }
 
-    private void setNext() {
+    protected void setNext() {
         while (numbers.hasNext()) {
             Integer n = numbers.next();
-            if (n % 2 == 0) {
+            if (n % 2 == 0 && n != 0) {
                 next = n;
                 return;
             }

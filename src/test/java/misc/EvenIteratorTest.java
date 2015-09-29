@@ -24,10 +24,10 @@ public class EvenIteratorTest {
         int count = 0;
         while (itr.hasNext()) {
             int n = itr.next();
-            Assert.assertTrue(n + " even check", n % 2 == 0);
+            Assert.assertTrue(n + " even check", n % 2 == 0 && n != 0);
             count++;
         }
-        Assert.assertEquals("Iterator size check", size / 2, count);
+        Assert.assertEquals("Iterator size check", size/2 - 1, count);
     }
 
     @Test
