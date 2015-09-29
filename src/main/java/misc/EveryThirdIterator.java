@@ -1,6 +1,7 @@
 package misc;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * @author ahalikov
@@ -22,9 +23,13 @@ public class EveryThirdIterator implements Iterator {
 
     @Override
     public Object next() {
-        Object o = next;
-        setNext();
-        return o;
+        if (hasNext()) {
+            Object o = next;
+            setNext();
+            return o;
+        } else {
+            throw new NoSuchElementException();
+        }
     }
 
     private void setNext() {
