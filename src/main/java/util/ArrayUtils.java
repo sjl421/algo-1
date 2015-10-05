@@ -104,4 +104,15 @@ public class ArrayUtils {
             Assert.assertArrayEquals(expected[i], actual[i]);
         }
     }
+
+    public static int[] intRange(int from, int to) {
+        int n  = to - from + 1;
+        int[] a = new int[n];
+        int next = from;
+        for (int i = 0; i < n; i++) {
+            a[i] = next++;
+        }
+        shuffle(a);
+        return a;
+    }
 }
