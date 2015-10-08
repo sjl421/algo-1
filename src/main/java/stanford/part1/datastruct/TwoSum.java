@@ -104,7 +104,7 @@ public class TwoSum {
 
     /**** TEST ****/
 
-    private static final String DATA_DIR = "D:/work/study/algo/data/";
+    private static final String DATA_DIR = "data/";
     private static final String[] TESTS = {"2sum1", "2sum2"};
     private static final int[] EXPECTED = {3, 5};
 

@@ -1,6 +1,6 @@
 package stanford.part1.graphs;
 
-import util.ArrayUtils;
+import com.ahalikov.toolkit.utils.ArrayUtils;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package misc;
 
 import org.junit.Test;
-import util.ArrayUtils;
+import com.ahalikov.toolkit.utils.ArrayUtils;
 
 import java.util.Random;
 

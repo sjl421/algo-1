@@ -1,7 +1,7 @@
 package stanford.part1.graphs.problems;
 
 import stanford.part1.graphs.UGraph;
-import util.ArrayUtils;
+import com.ahalikov.toolkit.utils.ArrayUtils;
 
 import java.util.Arrays;
 import java.util.Random;

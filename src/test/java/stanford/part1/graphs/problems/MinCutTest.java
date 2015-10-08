@@ -3,7 +3,7 @@ package stanford.part1.graphs.problems;
 import stanford.part1.graphs.UGraph;
 import com.google.common.collect.ImmutableMap;
 import org.junit.Test;
-import util.InputFile;
+import com.ahalikov.toolkit.utils.InputFile;
 
 import java.util.Map;
 
@@ -17,7 +17,7 @@ import static junit.framework.TestCase.assertNotNull;
  */
 public class MinCutTest {
 
-    private static final String DATA_DIR = "D:/work/study/algo/data/";
+    private static final String DATA_DIR = "./data/";
     private static final ImmutableMap<String, Integer> TESTS = ImmutableMap.of(
             "test0", 2,
             "test1", 2,

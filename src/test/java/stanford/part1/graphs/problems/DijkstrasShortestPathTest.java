@@ -10,7 +10,7 @@ import static junit.framework.Assert.assertEquals;
  * @author Artur Khalikov
  */
 public class DijkstrasShortestPathTest {
-    private static final String DATA_DIR = "D:/work/study/algo/data/";
+    private static final String DATA_DIR = "data/";
     private static final String[] TESTS = {"dijkstra0.txt", "dijkstra1.txt"};
     private static final int[][] EXPECTED = {
             {0, 3, 3, 5},

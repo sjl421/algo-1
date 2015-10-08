@@ -1,8 +1,7 @@
 package stanford.part1.sort;
 
 import org.junit.Test;
-import util.ArrayUtils;
-import util.InputFile;
+import com.ahalikov.toolkit.utils.*;
 
 import java.util.Arrays;
 

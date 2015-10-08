@@ -1,7 +1,7 @@
 package careercup.chapter1;
 
 import org.junit.Test;
-import util.ArrayUtils;
+import com.ahalikov.toolkit.utils.ArrayUtils;
 
 /**
  * Test for {@link MakeMyMatrixTotallyZero}

@@ -99,7 +99,7 @@ public class DepthFirstOrder {
 
     /**** TEST ****/
 
-    private static final String DATA_DIR = "D:/work/study/algo/data/";
+    private static final String DATA_DIR = "data/";
     private static final String[] TESTS = {"scc0", "scc1", "scc2", "scc3", "scc4"};
     private static final int[][] EXPECTED_POST = {
             {4, 3, 5, 2, 8, 6, 9, 7, 1},

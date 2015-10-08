@@ -1,6 +1,6 @@
 package stanford.part1.sort;
 
-import util.InputFile;
+import com.ahalikov.toolkit.utils.InputFile;
 
 /**
  * Quick sort algorithm implementation

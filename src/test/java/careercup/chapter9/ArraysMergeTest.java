@@ -1,7 +1,6 @@
 package careercup.chapter9;
 
 import org.junit.Test;
-import util.ArrayUtils;
 
 import static org.junit.Assert.*;
 

@@ -64,7 +64,7 @@ public class MedianMaintenance {
 
     /**** TEST ****/
 
-    private static final String DATA_DIR = "D:/work/study/algo/data/";
+    private static final String DATA_DIR = "./data/";
     private static final String[] TESTS = {"Median1", "Median2"};
     private static final long[] EXPECTED = {23, 54};
 
