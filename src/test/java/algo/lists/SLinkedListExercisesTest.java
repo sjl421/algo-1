@@ -62,22 +62,22 @@ public class SLinkedListExercisesTest {
 
     @Test
     public void testHasCycle() throws Exception {
-        Assert.assertFalse("null list", SLinkedListExercises.hasCycle(null));
-        Assert.assertFalse("1 node", SLinkedListExercises.hasCycle(new Node(1, null)));
+        Assert.assertFalse("null list", SLinkedListExercises.hasLoop(null));
+        Assert.assertFalse("1 node", SLinkedListExercises.hasLoop(new Node(1, null)));
 
         // Head node cycle
         Node head = new Node(1, null);
         head.next = head;
-        Assert.assertTrue("head cycle", SLinkedListExercises.hasCycle(head));
+        Assert.assertTrue("head cycle", SLinkedListExercises.hasLoop(head));
 
         // 3-element list, no cycle
         head = new Node(1, new Node(2, new Node(3, null)));
-        Assert.assertFalse("3-element list no cycle", SLinkedListExercises.hasCycle(head));
+        Assert.assertFalse("3-element list no cycle", SLinkedListExercises.hasLoop(head));
 
         // 3-element list cycle
         head = new Node(1, new Node(2, new Node(3, null)));
         head.next.next.next = head.next;
-        Assert.assertTrue("3-element list cycle", SLinkedListExercises.hasCycle(head));
+        Assert.assertTrue("3-element list cycle", SLinkedListExercises.hasLoop(head));
 
         // 6-element list with cycle
         head = new Node(1, new Node(2, new Node(3, null)));
@@ -88,6 +88,6 @@ public class SLinkedListExercisesTest {
         p4.next = p5;
         p5.next = p6;
         p6.next = p4; // cycle
-        Assert.assertTrue("6-element list with cycle", SLinkedListExercises.hasCycle(head));
+        Assert.assertTrue("6-element list with cycle", SLinkedListExercises.hasLoop(head));
     }
 }

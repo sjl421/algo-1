@@ -156,16 +156,39 @@ class SLinkedListExercises {
      *
      * Floyd's Tortoise-Hare O(n) algorithm
      */
-    static boolean hasCycle(Node head) {
+    static boolean hasLoop(Node head) {
         if (head == null || head.next == null) return false;
         if (head.next == head) return true;
-        Node tortoise = head, hare = head, temp;
+
+        Node tortoise = head, // slowest pointer
+                p,            // middle pointer
+                hare = head;  // hare - fastest pointer
         while (tortoise != null
-                && (temp = hare.next) != null
-                && (hare = temp.next) != null) {
-            if (tortoise == temp || tortoise == hare) return true;
+                && (p = hare.next) != null
+                && (hare = p.next) != null) {
+            if (tortoise == p || tortoise == hare) return true;
             tortoise = tortoise.next;
         }
         return false;
+    }
+
+    static Node findLoop(Node head) {
+        if (head == null || head.next == null) return null;
+        if (head.next == head) return head;
+
+        Node tortoise = head, hare = head, temp;
+        Node meetp;
+        while (tortoise != null
+                && (temp = hare.next) != null
+                && (hare = temp.next) != null) {
+            if (tortoise == temp || tortoise == hare) {
+                meetp = tortoise;
+            } else {
+                tortoise = tortoise.next;
+            }
+        }
+
+
+        return null;
     }
 }
