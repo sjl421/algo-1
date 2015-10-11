@@ -172,23 +172,34 @@ class SLinkedListExercises {
         return false;
     }
 
+    /**
+     * Returns node where loop starts
+     * @param head
+     * @return
+     */
     static Node findLoop(Node head) {
         if (head == null || head.next == null) return null;
         if (head.next == head) return head;
 
-        Node tortoise = head, hare = head, temp;
-        Node meetp;
-        while (tortoise != null
-                && (temp = hare.next) != null
-                && (hare = temp.next) != null) {
-            if (tortoise == temp || tortoise == hare) {
-                meetp = tortoise;
+        Node pSlow = head, pFast = head, temp;
+        Node meetNode = null;
+        while (pSlow != null
+                && (temp = pFast.next) != null
+                && (pFast = temp.next) != null) {
+            if (pSlow == temp || pSlow == pFast) {
+                meetNode = pSlow;
             } else {
-                tortoise = tortoise.next;
+                pSlow = pSlow.next;
             }
         }
-
-
+        if (meetNode != null) {
+            // we have a loop, let's find where it starts
+            pSlow = head;
+            temp = meetNode;
+            while (temp != pSlow) {
+                temp = temp.next;
+            }
+        }
         return null;
     }
 }
