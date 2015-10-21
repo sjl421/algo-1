@@ -11,9 +11,38 @@ package algo.sorting;
 public class BubbleSort {
 
     /**
+     * Optimized bubble sort
+     */
+    static void sort(int[] a) {
+        int n = a.length;
+        do {
+            int newN = 0;
+            for (int i = 1; i < n; i++) {
+                if (a[i-1] > a[i]) {
+                    swap(a, i-1, i);
+                    newN = i;
+                }
+            }
+            n = newN;
+        } while (n > 0);
+    }
+
+    static <T extends Comparable<? super T>> void sort(T[] a) {
+        int n = a.length;
+        do {
+            int newN = 0;
+            for (int i = 1; i < n; i++) {
+                if (a[i-1].compareTo(a[i]) > 0) {
+                    swap(a, i-1, i);
+                    newN = i;
+                }
+            }
+            n = newN;
+        } while (n > 0);
+    }
+
+    /**
      * Basic O(n^2) implementation of bubble sort
-     *
-     * @param a Input array
      */
     static void sort1(int[] a) {
         int passes = 0;
@@ -41,8 +70,6 @@ public class BubbleSort {
 
     /**
      * Optimized inner loop to avoid looking at last n-1 items
-     * 
-     * @param a
      */
     static void sort2(int[] a) {
         int passes = 0;
@@ -70,34 +97,23 @@ public class BubbleSort {
         System.out.println("comparisons=" + comparisons);
     }
 
+
     /**
-     * Further optimization of inner loop
-     *
-     * @param a
+     * Generic swap of a[i] with a[j]
      */
-    static void sort3(int[] a) {
-        int n = a.length;
-        do {
-            int newN = 0;
-            for (int i = 1; i < n; i++) {
-                if (a[i-1] > a[i]) {
-                    swap(a, i-1, i);
-                    newN = i;
-                }
-            }
-            n = newN;
-        } while (n > 0);
+    private static <T extends Comparable<? super T>>
+    void swap(T[] a, int i, int j) {
+        T buffer = a[i];
+        a[i] = a[j];
+        a[j] = buffer;
     }
 
     /**
-     * Swaps a[from] with a[to]
-     * @param a array
-     * @param from
-     * @param to
+     * Swaps of a[i] with a[j]
      */
-    private static void swap(int[] a, int from, int to) {
-        int buffer = a[from];
-        a[from] = a[to];
-        a[to] = buffer;
+    private static void swap(int[] a, int i, int j) {
+        int buffer = a[i];
+        a[i] = a[j];
+        a[j] = buffer;
     }
 }

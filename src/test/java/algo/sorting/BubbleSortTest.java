@@ -70,7 +70,7 @@ public class BubbleSortTest {
     public void testSort3() throws Exception {
         int[] actual = {2, 7, 4, 1, 5, 3};
         int[] expected = {1, 2, 3, 4, 5, 7};
-        BubbleSort.sort3(actual);
+        BubbleSort.sort(actual);
         ArrayUtils.print(actual);
         assertArrayEquals(expected, actual);
     }
