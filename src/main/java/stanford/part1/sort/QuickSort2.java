@@ -7,7 +7,7 @@ import com.ahalikov.toolkit.utils.InputFile;
  * Pivot - last element of input array
  * @author: Artur Khalikov
  */
-public class QuickSort2 {
+class QuickSort2 {
 
     public static int comparisons;
 

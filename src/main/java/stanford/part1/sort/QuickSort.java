@@ -6,7 +6,7 @@ import com.ahalikov.toolkit.utils.InputFile;
  * Quick sort algorithm implementation
  * @author: Artur Khalikov
  */
-public class QuickSort {
+class QuickSort {
 
     public static int comparisons;
 

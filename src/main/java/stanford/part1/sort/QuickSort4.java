@@ -4,7 +4,7 @@ package stanford.part1.sort;
  * Quick sort implementation with pivot in last element
  * @author ahalikov
  */
-public class QuickSort4 {
+class QuickSort4 {
 
     public static int[] sort(int[] a) {
         if (a == null)

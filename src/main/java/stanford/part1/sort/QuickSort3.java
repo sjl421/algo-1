@@ -7,7 +7,7 @@ import com.ahalikov.toolkit.utils.InputFile;
  * Pivot - median of first, middle and last elements of the input array
  * @author: Artur Khalikov
  */
-public class QuickSort3 {
+class QuickSort3 {
 
     public static int comparisons = 0;
 

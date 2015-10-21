@@ -1,10 +1,10 @@
 package stanford.part1.sort;
 
-public class MergeSort {
+class MergeSort {
 
     private static int[] aux;
 
-    public static void sort(int[] a) {
+    static void sort(int[] a) {
         aux = new int[a.length];
         sort(a, 0, a.length);
     }
