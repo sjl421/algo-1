@@ -40,4 +40,9 @@ class FixedSizeDequeue<E> implements Queue<E>, Stack<E> {
 	public Iterator<E> iterator() {
 		return null;
 	}
+
+	@Override
+	public Object[] toArray() {
+		return null;
+	}
 }

@@ -53,4 +53,9 @@ public class FixedSizeStack<E> implements Stack<E> {
     public Iterator<E> iterator() {
         return null;
     }
+
+    @Override
+    public Object[] toArray() {
+        return elements;
+    }
 }

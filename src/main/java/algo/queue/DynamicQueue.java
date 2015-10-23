@@ -51,4 +51,9 @@ public class DynamicQueue<E> implements Queue<E> {
     public Iterator<E> iterator() {
         return null;
     }
+
+    @Override
+    public Object[] toArray() {
+        return elements;
+    }
 }

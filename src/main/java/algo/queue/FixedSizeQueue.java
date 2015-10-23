@@ -49,4 +49,9 @@ public class FixedSizeQueue<E> implements Queue<E> {
     public Iterator<E> iterator() {
         return null;
     }
+
+    @Override
+    public Object[] toArray() {
+        return elements;
+    }
 }
