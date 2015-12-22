@@ -1,4 +1,4 @@
-package careercup.chapter1;
+package careercup.chapter1.strings;
 
 import java.util.*;
 import org.junit.Test;

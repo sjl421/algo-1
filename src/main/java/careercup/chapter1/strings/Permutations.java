@@ -1,13 +1,15 @@
-package careercup.chapter1;
+package careercup.chapter1.strings;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Design an algorithm to print all permutations of a string. For simplicity,
- * assume all characters are unique.
+ * Design an algorithm to print all permutations of a string.
+ * For simplicity, assume all characters are unique.
+ *
+ * @author akhalikov
  */
-class StringPermutation {
+class Permutations {
 
     private static List<String> perms = new ArrayList<String>();
 

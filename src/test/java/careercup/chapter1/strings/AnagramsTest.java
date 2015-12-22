@@ -1,9 +1,11 @@
-package careercup.chapter1;
+package careercup.chapter1.strings;
 
 import org.junit.Test;
 
+import static careercup.chapter1.strings.Anagrams.isAnagram;
+import static careercup.chapter1.strings.Anagrams.isAnagram2;
+import static careercup.chapter1.strings.Anagrams.isAnagram3;
 import static org.junit.Assert.assertEquals;
-import static careercup.chapter1.Anagrams.*;
 
 /**
  * @author ahalikov
