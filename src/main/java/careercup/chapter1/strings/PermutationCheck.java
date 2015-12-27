@@ -6,6 +6,7 @@ import java.util.Map;
 
 /**
  * Given two strings, write a method to decide if one is a permutation of the other.
+ * Permutation = Anagram
  *
  * Questions to interviewer:
  *
