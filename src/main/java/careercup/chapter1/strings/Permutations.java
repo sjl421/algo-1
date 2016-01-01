@@ -27,4 +27,8 @@ class Permutations {
                 permute(prefix + s.charAt(i), s.substring(0, i) + s.substring(i+1, n));
         }
     }
+
+    public static void main(String[] args) {
+        find("abc");
+    }
 }
