@@ -14,20 +14,9 @@ public class PalindromePermutationTest {
 
   @Test
   public void testIsPalindromePermutation() throws Exception {
-    assertTrue("Tact Coa", PalindromePermutation.isPalindromePermutation("baba"));
+    assertTrue("baba", PalindromePermutation.isPalindromePermutation("baba"));
+    assertTrue("babaY", PalindromePermutation.isPalindromePermutation("babaY"));
     assertTrue("Tact Coa", PalindromePermutation.isPalindromePermutation("Tact Coa"));
     assertFalse("empty string", PalindromePermutation.isPalindromePermutation(""));
-  }
-
-  @Test
-  public void testIsPalindrome() throws Exception {
-    assertFalse("empty string is not a palindrome",
-      PalindromePermutation.isPalindrome(""));
-
-    assertTrue("bab is palindrome",
-      PalindromePermutation.isPalindrome("bab"));
-
-    assertTrue("taco cat is palindrome",
-      PalindromePermutation.isPalindrome("Taco Cat"));
   }
 }

@@ -1,7 +1,5 @@
 package careercup.chapter1.strings;
 
-import scala.xml.Null;
-
 /**
  * Given a string, write a function to check if it is a permutation of a palindrome.
  * Palindrome is a word or phrase that is the same forwards and backwards.
@@ -13,71 +11,52 @@ import scala.xml.Null;
  *  - check should be case sensitive or not ?
  *  - spaces are ignored or not ?
  *  - ASCII or Unicode ?
- *
- * Algorithm:
- *  - find permutations until first palindrome
- *
- * @author akhalikov
  */
 public class PalindromePermutation {
 
-  private static String palindrome;
-
-  /**
-   * Let's assume that:
-   *  - check is case insensitive
-   *  - spaces are ignored
-   *  - ASCII charset
-   */
   static boolean isPalindromePermutation(String str) {
     if (str == null)
       throw new NullPointerException("str is null");
     if (str.length() == 0)
       return false;
-
-    permute("", str);
-    if (palindrome != null) {
-      System.out.println("palindrome permutation=" + palindrome);
-      return true;
-    }
-    return false;
+    int[] charFrequencyTable = countCharFrequency(str);
+    return checkMaxOneOdd(charFrequencyTable);
   }
 
-  private static void permute(String prefix, String s) {
-    int n = s.length();
-    if (n == 0) {
-      if (isPalindrome(prefix)) {
-        palindrome = prefix;
-        return;
+  static boolean checkMaxOneOdd(int[] table) {
+    boolean foundOdd = false;
+    for (int count: table) {
+      if (count % 2 > 0) {
+        if (foundOdd) {
+          return false;
+        }
+        foundOdd = true;
       }
-    } else {
-      for (int i = 0; i < n; i++) {
-        permute(
-          prefix + s.charAt(i),
-          s.substring(0, i) + s.substring(i + 1));
-      }
-    }
-  }
-
-  /**
-   * O(n) check (n/2 operations)
-   */
-  static boolean isPalindrome(String str) {
-    if (str == null)
-      throw new NullPointerException("str is null");
-    if (str.length() == 0)
-      return false;
-    if (str.length() < 2)
-      return true;
-    int i = 0, j = str.length() - 1;
-    while (j >= i) {
-      if (str.charAt(i) == ' ')
-        i++;
-      if (str.charAt(j) == ' ')
-        j--;
-      if (Character.toLowerCase(str.charAt(i++)) != Character.toLowerCase(str.charAt(j--)))
-        return false;
     }
     return true;
+  }
+
+  static int[] countCharFrequency(String str) {
+    int n = Character.getNumericValue('z') - Character.getNumericValue('a');
+    int[] arr = new int[n];
+    for (char c: str.toCharArray()) {
+      int val = getCharNumber(c);
+      if (val > 0) arr[val]++;
+    }
+    return arr;
+  }
+
+  static int getCharNumber(char c) {
+    int a = Character.getNumericValue('a');
+    int z = Character.getNumericValue('z');
+    int A = Character.getNumericValue('A');
+    int Z = Character.getNumericValue('Z');
+    int val = Character.getNumericValue(c);
+    if (a <= val && val >= z)
+      return val - a;
+    else if (A <= val && val >= Z)
+      return val - A;
+    else
+      return -1;
   }
 }
