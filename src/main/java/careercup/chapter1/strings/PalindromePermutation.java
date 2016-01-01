@@ -9,11 +9,21 @@ package careercup.chapter1.strings;
  *
  * Questions to interviewer:
  *  - check should be case sensitive or not ?
- *  - spaces are ignored or not ?
+ *  - spaces and non-alphabetic chars are ignored or not ?
  *  - ASCII or Unicode ?
+ *  - Can I use additional buffer ?
  */
 public class PalindromePermutation {
 
+  /**
+   * Assumptions:
+   *  - letter case does not matter
+   *  - only check alphabetic characters -> ASCII
+   *  - I can use buffer
+   *
+   * Time complexity O(n)
+   * Space complexity: O(n)
+   */
   static boolean isPalindromePermutation(String str) {
     if (str == null)
       throw new NullPointerException("str is null");
@@ -23,6 +33,9 @@ public class PalindromePermutation {
     return checkMaxOneOdd(charFrequencyTable);
   }
 
+  /**
+   * Time & space complexity: O(1)
+   */
   static boolean checkMaxOneOdd(int[] table) {
     boolean foundOdd = false;
     for (int count: table) {
@@ -36,8 +49,11 @@ public class PalindromePermutation {
     return true;
   }
 
+  /**
+   * Time & space complexity: O(n)
+   */
   static int[] countCharFrequency(String str) {
-    int n = Character.getNumericValue('z') - Character.getNumericValue('a');
+    int n = getSize('a', 'z');
     int[] arr = new int[n];
     for (char c: str.toCharArray()) {
       int val = getCharNumber(c);
@@ -46,6 +62,9 @@ public class PalindromePermutation {
     return arr;
   }
 
+  /**
+   * Time & space complexity: O(1)
+   */
   static int getCharNumber(char c) {
     int a = Character.getNumericValue('a');
     int z = Character.getNumericValue('z');
@@ -58,5 +77,9 @@ public class PalindromePermutation {
       return val - A;
     else
       return -1;
+  }
+
+  static int getSize(char cMin, char cMax) {
+    return Character.getNumericValue(cMax) - Character.getNumericValue(cMin);
   }
 }

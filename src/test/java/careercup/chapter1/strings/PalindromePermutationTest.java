@@ -19,4 +19,12 @@ public class PalindromePermutationTest {
     assertTrue("Tact Coa", PalindromePermutation.isPalindromePermutation("Tact Coa"));
     assertFalse("empty string", PalindromePermutation.isPalindromePermutation(""));
   }
+
+  @Test
+  public void testIsPalindromePermutation2() throws Exception {
+    assertTrue("baba", PalindromePermutation2.isPalindromePermutation("baba"));
+    assertTrue("babaY", PalindromePermutation2.isPalindromePermutation("babaY"));
+    assertTrue("Tact Coa", PalindromePermutation2.isPalindromePermutation("Tact Coa"));
+    assertFalse("empty string", PalindromePermutation2.isPalindromePermutation(""));
+  }
 }
