@@ -1,13 +1,33 @@
 package algo.stack;
 
-import algo.Collection;
-
 /**
  * Stack interface
  */
-public interface Stack<E> extends Collection<E> {
+public interface Stack<E> {
+  /**
+   * Add an item to the top of the stack
+   *
+   * @param item
+   * @return true if added successfully, false otherwise
+   */
+  boolean push(E item);
 
-    boolean push(E item);
+  /**
+   * Remove the top item from the stack
+   *
+   * @return item
+   */
+  E pop();
 
-    E pop();
+  /**
+   * Return the top item of the stack
+   *
+   * @return item
+   */
+  E peek();
+
+  /**
+   * Return true if and only if stack is empty
+   */
+  boolean isEmpty();
 }

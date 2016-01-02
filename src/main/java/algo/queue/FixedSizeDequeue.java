@@ -1,10 +1,15 @@
 package algo.queue;
 
+import algo.Collection;
 import algo.stack.Stack;
 
 import java.util.Iterator;
 
-class FixedSizeDequeue<E> implements Queue<E>, Stack<E> {
+/**
+ * Basic implementation of double-ended queue
+ * @param <E>
+ */
+class FixedSizeDequeue<E> implements Queue<E>, Stack<E>, Collection<E> {
 
 	@Override
 	public boolean enqueue(E item) {
@@ -23,6 +28,11 @@ class FixedSizeDequeue<E> implements Queue<E>, Stack<E> {
 
 	@Override
 	public E pop() {
+		return null;
+	}
+
+	@Override
+	public E peek() {
 		return null;
 	}
 

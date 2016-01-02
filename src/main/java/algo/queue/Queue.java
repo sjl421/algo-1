@@ -1,13 +1,10 @@
 package algo.queue;
 
-import algo.Collection;
-
 /**
- * Queue interface
+ * Basic queue interface
  */
-public interface Queue<E> extends Collection<E> {
-
-    E dequeue();
-
-    boolean enqueue(E item);
+public interface Queue<E> {
+  E dequeue();
+  boolean enqueue(E item);
+  boolean isEmpty();
 }

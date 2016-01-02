@@ -5,23 +5,20 @@ import org.scalatest.FunSuite
 /**
  * Test for {@link FixedSizeStack}
  *
- * Created by ahalikov on 28/04/15.
+ * @author akhalikov
  */
 class FixedSizeStackTest extends FunSuite {
   test("push and pop basic test") {
-    val stack = new FixedSizeStack[String](2)
+    val stack = new FixedSizeStack[String](3)
     stack.push("one")
     stack.push("two")
+    assert("two".equals(stack.peek()))
     assert(stack.isEmpty == false)
-    assert(stack.size() == 2)
-
-    assert(stack.push("three") == false)
-
+    assert(stack.push("three") == true)
+    assert("three".equals(stack.peek()))
+    assert("three".equals(stack.pop()))
     assert("two".equals(stack.pop()))
-    assert(stack.size() == 1)
-
     assert("one".equals(stack.pop()))
-    assert(stack.size() == 0)
     assert(stack.isEmpty)
   }
 }
