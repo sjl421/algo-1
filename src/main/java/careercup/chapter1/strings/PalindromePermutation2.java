@@ -34,21 +34,4 @@ public class PalindromePermutation2 {
     }
     return countOdd <= 1;
   }
-
-  /**
-   * Time & space complexity: O(1)
-   */
-  static int getCharNumber(char c) {
-    int a = Character.getNumericValue('a');
-    int z = Character.getNumericValue('z');
-    int A = Character.getNumericValue('A');
-    int Z = Character.getNumericValue('Z');
-    int val = Character.getNumericValue(c);
-    if (a <= val && val >= z)
-      return val - a;
-    else if (A <= val && val >= Z)
-      return val - A;
-    else
-      return -1;
-  }
 }
