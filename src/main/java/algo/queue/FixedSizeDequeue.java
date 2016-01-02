@@ -12,12 +12,12 @@ import java.util.Iterator;
 class FixedSizeDequeue<E> implements Queue<E>, Stack<E>, Collection<E> {
 
 	@Override
-	public boolean enqueue(E item) {
+	public boolean add(E item) {
 		return false;
 	}
 
 	@Override
-	public E dequeue() {
+	public E remove() {
 		return null;
 	}
 

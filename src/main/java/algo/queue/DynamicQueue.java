@@ -18,15 +18,7 @@ public class DynamicQueue<E> implements Queue<E>, Collection<E> {
   private int tail, head;
 
   @Override
-  public E dequeue() {
-    E item = (E) elements[head];
-    elements[head] = null;
-    head++;
-    return item;
-  }
-
-  @Override
-  public boolean enqueue(E item) {
+  public boolean add(E item) {
     int newTail = tail + 1;
     if (newTail > capacity) {
       capacity += capacity >> 1;
@@ -36,6 +28,19 @@ public class DynamicQueue<E> implements Queue<E>, Collection<E> {
     elements[newTail] = item;
     tail = newTail;
     return true;
+  }
+
+  @Override
+  public E remove() {
+    E item = (E) elements[head];
+    elements[head] = null;
+    head++;
+    return item;
+  }
+
+  @Override
+  public E peek() {
+    return (E) elements[head];
   }
 
   @Override

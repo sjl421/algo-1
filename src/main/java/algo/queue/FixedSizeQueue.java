@@ -21,7 +21,14 @@ public class FixedSizeQueue<E> implements Queue<E>, Collection<E> {
   }
 
   @Override
-  public E dequeue() {
+  public boolean add(E item) {
+    elements[tail] = item;
+    tail = (tail == elements.length) ? 0 : tail + 1;
+    return true;
+  }
+
+  @Override
+  public E remove() {
     E item = (E) elements[head];
     elements[head] = null;
     head = (head == elements.length) ? 0 : head + 1;
@@ -29,10 +36,8 @@ public class FixedSizeQueue<E> implements Queue<E>, Collection<E> {
   }
 
   @Override
-  public boolean enqueue(E item) {
-    elements[tail] = item;
-    tail = (tail == elements.length) ? 0 : tail + 1;
-    return true;
+  public E peek() {
+    return (E) elements[head];
   }
 
   @Override

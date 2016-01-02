@@ -14,5 +14,6 @@ package careercup.chapter3;
  *
  * Implement a function popAt(int index) which performs a pop operation on a specific sub-stack.
  */
-public class SetOfStacks {
+public class StackOfPlates {
+  // todo: implement
 }
