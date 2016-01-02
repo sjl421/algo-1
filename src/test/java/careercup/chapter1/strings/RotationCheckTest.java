@@ -1,10 +1,13 @@
-package careercup.chapter1;
+package careercup.chapter1.strings;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
+ * Test for {@link RotationCheck}
+ *
  * @author ahalikov
  */
 public class RotationCheckTest {
