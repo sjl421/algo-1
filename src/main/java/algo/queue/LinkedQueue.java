@@ -6,8 +6,8 @@ package algo.queue;
  * @author akhalikov
  */
 public class LinkedQueue<E> implements Queue<E> {
-  private QueueNode<E> first;
-  private QueueNode<E> last;
+  protected QueueNode<E> first;
+  protected QueueNode<E> last;
 
   @Override
   public boolean add(E item) {

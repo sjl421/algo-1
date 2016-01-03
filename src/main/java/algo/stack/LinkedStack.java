@@ -1,7 +1,5 @@
 package algo.stack;
 
-import java.util.EmptyStackException;
-
 /**
  * Basic implementation of a LIFO stack based on linked list.
  *
@@ -11,7 +9,7 @@ public class LinkedStack<E> implements Stack<E> {
   /**
    * Top element of a stack
    */
-  private StackNode top;
+  protected StackNode top;
 
   @Override
   public boolean push(E item) {

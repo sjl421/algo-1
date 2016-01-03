@@ -10,20 +10,24 @@ import java.util.Iterator;
  *
  * @author akhalikov
  */
-public class FixedSizeStack<E> implements Stack<E>, Collection<E> {
+public class ArrayStack<E> implements Stack<E>, Collection<E> {
 
   private Object[] elements;
   private int capacity;
+
+  /**
+   * Next free cell from the top element of a stack
+   */
   private int head;
 
-  public FixedSizeStack(int capacity) {
+  public ArrayStack(int capacity) {
     this.capacity = capacity;
     this.elements = new Object[capacity];
   }
 
   @Override
   public boolean push(E item) {
-    if (head + 1 <= capacity) {
+    if (capacity - head > 0) {
       elements[head++] = item;
       return true;
     }
@@ -32,9 +36,8 @@ public class FixedSizeStack<E> implements Stack<E>, Collection<E> {
 
   @Override
   public E pop() {
-    int top = this.head - 1;
-    E item = (E) elements[top];
-    elements[--this.head] = null;
+    E item = (E) elements[head - 1];
+    elements[--head] = null;
     return item;
   }
 

@@ -9,7 +9,7 @@ import org.scalatest.FunSuite
  */
 class FixedSizeStackTest extends FunSuite {
   test("push and pop basic test") {
-    val stack = new FixedSizeStack[String](3)
+    val stack = new ArrayStack[String](3)
     stack.push("one")
     stack.push("two")
     assert("two".equals(stack.peek()))
