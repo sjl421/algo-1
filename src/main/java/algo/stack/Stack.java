@@ -8,9 +8,8 @@ public interface Stack<E> {
    * Add an item to the top of the stack
    *
    * @param item
-   * @return true if added successfully, false otherwise
    */
-  boolean push(E item);
+  void push(E item);
 
   /**
    * Remove the top item from the stack

@@ -1,6 +1,7 @@
 package algo.stack;
 
 import algo.Collection;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Iterator;
 
@@ -10,8 +11,7 @@ import java.util.Iterator;
  *
  * @author akhalikov
  */
-public class ArrayStack<E> implements Stack<E>, Collection<E> {
-
+public class FixedArrayStack<E> implements Stack<E>, Collection<E> {
   private Object[] elements;
   private int capacity;
 
@@ -20,18 +20,16 @@ public class ArrayStack<E> implements Stack<E>, Collection<E> {
    */
   private int head;
 
-  public ArrayStack(int capacity) {
+  public FixedArrayStack(int capacity) {
     this.capacity = capacity;
     this.elements = new Object[capacity];
   }
 
   @Override
-  public boolean push(E item) {
-    if (capacity - head > 0) {
-      elements[head++] = item;
-      return true;
-    }
-    return false;
+  public void push(E item) {
+    if (capacity - head <= 0)
+      throw new RuntimeException("Stack is full");
+    elements[head++] = item;
   }
 
   @Override
@@ -58,7 +56,7 @@ public class ArrayStack<E> implements Stack<E>, Collection<E> {
 
   @Override
   public Iterator<E> iterator() {
-    return null;
+    throw new NotImplementedException();
   }
 
   @Override

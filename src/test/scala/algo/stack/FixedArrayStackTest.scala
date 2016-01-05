@@ -3,13 +3,13 @@ package algo.stack
 import org.scalatest.FunSuite
 
 /**
- * Test for {@link FixedSizeStack}
+ * Test for {@link FixedArrayStack}
  *
  * @author akhalikov
  */
-class FixedSizeStackTest extends FunSuite {
+class FixedArrayStackTest extends FunSuite {
   test("push and pop basic test") {
-    val stack = new ArrayStack[String](3)
+    val stack = new FixedArrayStack[String](3)
     stack.push("one")
     stack.push("two")
     assert("two".equals(stack.peek()))

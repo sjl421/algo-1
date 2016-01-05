@@ -22,8 +22,7 @@ class FixedSizeDequeue<E> implements Queue<E>, Stack<E>, Collection<E> {
 	}
 
 	@Override
-	public boolean push(E item) {
-		return false;
+	public void push(E item) {
 	}
 
 	@Override

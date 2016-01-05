@@ -12,11 +12,10 @@ public class LinkedStack<E> implements Stack<E> {
   protected StackNode top;
 
   @Override
-  public boolean push(E item) {
+  public void push(E item) {
     StackNode node = new StackNode(item);
     node.next = top;
     top = node;
-    return true;
   }
 
   @Override
