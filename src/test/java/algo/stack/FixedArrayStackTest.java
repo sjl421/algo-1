@@ -7,15 +7,15 @@ import static org.junit.Assert.*;
 /**
  * @author akhalikov
  */
-public class ArrayStackTest {
+public class FixedArrayStackTest {
 
   @Test
-  public void testMain() throws Exception {
-    ArrayStack<Integer> stack = new ArrayStack(3);
+  public void test1() throws Exception {
+    FixedArrayStack<Integer> stack = new FixedArrayStack(3);
     assertTrue(stack.isEmpty());
-    assertTrue(stack.push(1));
-    assertTrue(stack.push(2));
-    assertTrue(stack.push(3));
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
     assertFalse(stack.isEmpty());
     assertEquals(3, (int) stack.pop());
     assertEquals(2, (int) stack.pop());
