@@ -10,39 +10,38 @@ import java.util.NoSuchElementException;
  * @author ahalikov
  */
 public class EvenIterator implements Iterator<Integer> {
+  private Iterator<Integer> numbers;
+  private Integer next;
 
-    private Iterator<Integer> numbers;
-    private Integer next;
+  public EvenIterator(Iterator<Integer> numbers) {
+    this.numbers = numbers;
+    setNext();
+  }
 
-    public EvenIterator(Iterator<Integer> numbers) {
-        this.numbers = numbers;
-        setNext();
+  @Override
+  public boolean hasNext() {
+    return next != null;
+  }
+
+  @Override
+  public Integer next() {
+    if (hasNext()) {
+      Integer i = next;
+      setNext();
+      return i;
+    } else {
+      throw new NoSuchElementException();
     }
+  }
 
-    @Override
-    public boolean hasNext() {
-        return next != null;
+  protected void setNext() {
+    while (numbers.hasNext()) {
+      Integer n = numbers.next();
+      if (n % 2 == 0 && n != 0) {
+        next = n;
+        return;
+      }
     }
-
-    @Override
-    public Integer next() {
-        if (hasNext()) {
-            Integer i = next;
-            setNext();
-            return i;
-        } else {
-            throw new NoSuchElementException();
-        }
-    }
-
-    protected void setNext() {
-        while (numbers.hasNext()) {
-            Integer n = numbers.next();
-            if (n % 2 == 0 && n != 0) {
-                next = n;
-                return;
-            }
-        }
-        next = null;
-    }
+    next = null;
+  }
 }

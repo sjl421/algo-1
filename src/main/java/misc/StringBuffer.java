@@ -27,9 +27,17 @@ public class StringBuffer {
     return null;
   }
 
-  public StringBuffer insert(int offset, char[] str) { return null; }
-  public StringBuffer insert(int offset, String str) { return null; }
-  public StringBuffer replace(int start, int end, String str) { return null; }
+  public StringBuffer insert(int offset, char[] str) {
+    return null;
+  }
+
+  public StringBuffer insert(int offset, String str) {
+    return null;
+  }
+
+  public StringBuffer replace(int start, int end, String str) {
+    return null;
+  }
 
   public int length() {
     return 0;
