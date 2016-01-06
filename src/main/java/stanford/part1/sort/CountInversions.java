@@ -16,6 +16,7 @@ public class CountInversions {
     public static long count(int[] a) {
         if (a.length < 2)
             return 0;
+        inversions = 0;
         aux = new int[a.length];
         count(a, 0, a.length);
         return inversions;

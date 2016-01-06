@@ -1,8 +1,6 @@
 package algo.stack;
 
 import algo.Collection;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Iterator;
 
 /**
@@ -56,7 +54,7 @@ public class FixedArrayStack<E> implements Stack<E>, Collection<E> {
 
   @Override
   public Iterator<E> iterator() {
-    throw new NotImplementedException();
+    return null;
   }
 
   @Override
