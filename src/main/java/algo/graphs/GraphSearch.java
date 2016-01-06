@@ -1,5 +1,6 @@
 package algo.graphs;
 
+import algo.graphs.Graph.Node.State;
 import algo.queue.LinkedQueue;
 import algo.queue.Queue;
 
@@ -15,14 +16,15 @@ public class GraphSearch {
    */
   static void breadthFirstSearch(Graph.Node node) {
     Queue<Graph.Node> queue = new LinkedQueue();
-    node.setMarked(true);
+    node.setState(State.Visited);
     queue.add(node);
     while (!queue.isEmpty()) {
       Graph.Node p = queue.remove();
+      p.setState(State.Visited);
       visitNode(p);
       p.getAdjacentNodes().forEach(adjacent -> {
-        if (!adjacent.isMarked()) {
-          adjacent.setMarked(true);
+        if (State.Unvisited == adjacent.getState()) {
+          adjacent.setState(State.Visiting);
           queue.add(adjacent);
         }
       });
@@ -36,10 +38,10 @@ public class GraphSearch {
   static void depthFirstSearch(Graph.Node node) {
     if (node == null)
       return;
-    node.setMarked(true);
+    node.setState(State.Visited);
     visitNode(node);
     node.getAdjacentNodes().forEach(adjacent -> {
-      if (!adjacent.isMarked())
+      if (State.Unvisited == adjacent.getState())
         depthFirstSearch(adjacent);
     });
   }

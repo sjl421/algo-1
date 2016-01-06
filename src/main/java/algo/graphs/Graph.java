@@ -31,9 +31,15 @@ public class Graph {
    * Graph node
    */
   public static class Node {
+    public enum State {
+      Unvisited,
+      Visiting,
+      Visited
+    }
+
     private String name;
     private List<Node> adjacentNodes = new ArrayList();
-    private boolean marked;
+    private State state = State.Unvisited;
 
     public Node(String name) {
       this.name = name;
@@ -57,12 +63,12 @@ public class Graph {
       return adjacentNodes;
     }
 
-    public boolean isMarked() {
-      return marked;
+    public State getState() {
+      return state;
     }
 
-    public void setMarked(boolean marked) {
-      this.marked = marked;
+    public void setState(State state) {
+      this.state = state;
     }
   }
 }
