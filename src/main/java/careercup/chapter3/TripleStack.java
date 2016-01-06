@@ -2,6 +2,8 @@ package careercup.chapter3;
 
 /**
  * Implement three stacks using a single array
+ *
+ * @author akhalikov
  */
 public class TripleStack<E> {
   private static final int INITIAL_CAPACITY = 30;

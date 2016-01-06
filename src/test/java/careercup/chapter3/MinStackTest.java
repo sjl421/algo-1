@@ -20,7 +20,7 @@ public class MinStackTest {
     assertEquals(Integer.valueOf(154), stack.pop());
     assertEquals(Integer.valueOf(3), stack.pop());
     assertEquals(Integer.valueOf(2), stack.pop());
-    assertEquals(0, stack.size());
+    assertTrue(stack.isEmpty());
   }
 
   @Test
@@ -29,7 +29,6 @@ public class MinStackTest {
     stack.push(3);
     stack.push(2);
     stack.push(154);
-    assertEquals(3, stack.size());
     assertEquals(Integer.valueOf(2), stack.min());
     stack.push(-6);
     assertEquals(Integer.valueOf(-6), stack.min());
@@ -43,7 +42,6 @@ public class MinStackTest {
     stack.push(154);
     stack.push(-10);
 
-    assertEquals(4, stack.size());
     assertEquals(Integer.valueOf(-10), stack.min());
 
     stack.pop();
