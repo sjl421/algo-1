@@ -10,20 +10,20 @@ import java.util.Comparator;
  */
 class AnagramSort {
 
-    static String[] sort(String[] a) {
-        Comparator<String> comp = new Comparator<String>() {
-            String sortChars(String s) {
-                char[] chars = s.toLowerCase().toCharArray();
-                Arrays.sort(chars);
-                return String.valueOf(chars);
-            }
+  static String[] sort(String[] a) {
+    Comparator<String> comp = new Comparator<String>() {
+      String sortChars(String s) {
+        char[] chars = s.toLowerCase().toCharArray();
+        Arrays.sort(chars);
+        return String.valueOf(chars);
+      }
 
-            @Override
-            public int compare(String o1, String o2) {
-                return sortChars(o1).compareTo(sortChars(o2));
-            }
-        };
-        Arrays.sort(a, comp);
-        return a;
-    }
+      @Override
+      public int compare(String o1, String o2) {
+        return sortChars(o1).compareTo(sortChars(o2));
+      }
+    };
+    Arrays.sort(a, comp);
+    return a;
+  }
 }
