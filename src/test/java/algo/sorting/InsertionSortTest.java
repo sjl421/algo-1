@@ -9,27 +9,25 @@ import org.junit.Test;
  * @author ahalikov
  */
 public class InsertionSortTest {
+  @Test
+  public void testSort1() throws Exception {
+    int[] actual = {12, 11, 13, 5, 6};
+    int[] expected = {5, 6, 11, 12, 13};
+    InsertionSort.sort(actual);
+    Assert.assertArrayEquals(expected, actual);
+  }
 
-    @Test
-    public void testSort1() throws Exception {
-        int[] actual = {12, 11, 13, 5, 6};
-        int[] expected = {5, 6, 11, 12, 13};
+  @Test
+  public void testSort2() throws Exception {
+    int[] actual = {};
+    int[] expected = {};
+    InsertionSort.sort(actual);
+    Assert.assertArrayEquals("empty array", expected, actual);
+  }
 
-        InsertionSort.sort(actual);
-        Assert.assertArrayEquals(expected, actual);
-    }
-
-    @Test
-    public void testSort2() throws Exception {
-        int[] actual = {};
-        int[] expected = {};
-
-        InsertionSort.sort(actual);
-        Assert.assertArrayEquals("Test of empty array", expected, actual);
-
-        actual = null;
-        expected = null;
-
-        Assert.assertArrayEquals("Test of null array", expected, actual);
-    }
+  @Test(expected = NullPointerException.class)
+  public void testSort3() throws Exception {
+    int[] arr = null;
+    InsertionSort.sort(arr);
+  }
 }
