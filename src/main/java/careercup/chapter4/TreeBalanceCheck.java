@@ -1,7 +1,5 @@
 package careercup.chapter4;
 
-import algo.tree.Node;
-
 /**
  * Implement a function to check if a tree is balanced.
 
@@ -13,22 +11,23 @@ import algo.tree.Node;
  * The idea: max(depth) - min(depth) <= 1
  */
 class TreeBalanceCheck {
-
-  static boolean isBalanced(Node root) {
+/*
+  static boolean isBalanced(TreeNode root) {
     return maxDepth(root) - minDepth(root) <= 1;
   }
 
-  static int maxDepth(Node node) {
+  static int maxDepth(TreeNode node) {
     if (node == null) {
       return 0;
     }
     return Math.max(maxDepth(node.getLeft()), maxDepth(node.getRight())) + 1;
   }
 
-  static int minDepth(Node node) {
+  static int minDepth(TreeNode node) {
     if (node == null) {
       return 0;
     }
     return Math.min(minDepth(node.getLeft()), minDepth(node.getRight())) + 1;
   }
+*/
 }

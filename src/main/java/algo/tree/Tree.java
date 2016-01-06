@@ -3,93 +3,115 @@ package algo.tree;
 /**
  * Binary tree implementation
  */
-public class Tree<E extends Comparable> {
+public class Tree<E> {
+  private Node<E> root;
+  private int size;
 
-    private Entry<E> root;
+  public Tree() {
+  }
 
-    private int size;
+  public Tree(E... items) {
+    insert(items);
+  }
 
-    public Tree() {
+  public void insert(E data) {
+    recursiveInsert(root, data, root);
+  }
+
+  public void insert(E... items) {
+    for (E data: items) {
+      recursiveInsert(root, data, root);
+    }
+  }
+
+  private Node<E> recursiveInsert(Node<E> node, E data, Node<E> parent) {
+    if (node == null) {
+      Node<E> newNode = new Node(data, parent);
+      if (root == null) {
+        root = newNode;
+      }
+      size++;
+      return newNode;
+    } else {
+      int cmp = ((Comparable) data).compareTo(node.data);
+      if (cmp < 0)
+        node.left = recursiveInsert(node.left, data, node);
+      else
+        node.right = recursiveInsert(node.right, data, node);
+      return node;
+    }
+  }
+
+  public Node<E> getRoot() {
+    return root;
+  }
+
+  public int getSize() {
+    return size;
+  }
+
+  /**
+   * Tree node
+   * @param <E>
+   */
+  public static class Node<E> {
+    private E data;
+    private Node<E> parent;
+    private Node<E> left;
+    private Node<E> right;
+
+    public Node(E data) {
+      this.data = data;
     }
 
-    public Tree(E ...elements) {
-        insert(elements);
+    public Node(E data, Node<E> parent) {
+      this.data = data;
+      this.parent = parent;
     }
 
-    public Entry<E> search(E element) {
-        return recursiveSearch(root, element);
+    public Node(E data, Node<E> left, Node<E> right) {
+      this.data = data;
+      this.left = left;
+      this.right = right;
     }
 
-    public void insert(E element) {
-        recursiveInsert(root, element, root);
+    public Node(E data, Node<E> parent, Node<E> left, Node<E> right) {
+      this.data = data;
+      this.parent = parent;
+      this.left = left;
+      this.right = right;
     }
 
-    public void insert(E... elements) {
-        for (E element: elements) {
-            recursiveInsert(root, element, root);
-        }
+    public E getData() {
+      return data;
     }
 
-    /**
-     * Height of a tree
-     * Time complexity: O(n)
-     */
-    public int height() {
-        return findHeight(root);
+    public void setData(E data) {
+      this.data = data;
     }
 
-    private int findHeight(Entry<E> node) {
-        if (node == null)
-            return -1;
-        int leftHeight = findHeight(node.left);
-        int rightHeight = findHeight(node.right);
-        return Math.max(leftHeight, rightHeight) + 1;
+    public Node<E> getParent() {
+      return parent;
     }
 
-    private Entry<E> recursiveSearch(Entry<E> node, E element) {
-        if (node == null)
-            return null;
-        int cmp = element.compareTo(node.element);
-        if (cmp == 0)
-            return node;
-        else
-            return (cmp < 0)
-                    ? recursiveSearch(node.left, element)
-                    : recursiveSearch(node.right, element);
-    }
-    
-    private Entry<E> recursiveInsert(Entry<E> node, E element, Entry<E> parent) {
-        if (node == null) {
-            Entry<E> newEntry = new Entry();
-            newEntry.element = element;
-            newEntry.parent = parent;
-            if (root == null) {
-                root = newEntry;
-            }
-            size++;
-            return newEntry;
-        } else {
-            int cmp = ((Comparable) element).compareTo(node.element);
-            if (cmp < 0)
-                node.left = recursiveInsert(node.left, element, node);
-            else
-                node.right = recursiveInsert(node.right, element, node);
-            return node;
-        }
+    public void setParent(Node<E> parent) {
+      this.parent = parent;
     }
 
-    static final class Entry<E> {
-        E element;
-        Entry<E> parent;
-        Entry<E> left;
-        Entry<E> right;
+    public Node<E> getLeft() {
+      return left;
     }
 
-    public Entry<E> root() {
-        return root;
+    public void setLeft(Node<E> left) {
+      this.left = left;
     }
 
-    public int getSize() {
-        return size;
+    public Node<E> getRight() {
+      return right;
     }
+
+    public void setRight(Node<E> right) {
+      this.right = right;
+    }
+  }
 }
