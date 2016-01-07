@@ -15,29 +15,25 @@ import algo.Stopwatch;
  * @author Artur Khalikov
  */
 public class FirstNPrimes {
+  private static long primes[];
+  private static int count;
 
-    private static long primes[];
-    private static int count;
+  public static void main(String[] args) {
+    int n = Integer.parseInt(args[0]);
+    Stopwatch.start();
+    findPrimes(n);
+    Stopwatch.stop(n);
+  }
 
-    public static void main(String[] args) {
-        int n = Integer.parseInt(args[0]);
-
-        Stopwatch.start();
-        findPrimes(n);
-
-        Stopwatch.stop(n);
+  public static void findPrimes(int n) {
+    primes = new long[n];
+    primes[0] = 2;
+    if (n == 1)
+      return;
+    count = 1;
+    for (int i = 3; count < n; i += 2) {
+      if (PrimeTest.isPrime1(i))
+        primes[count++] = i;
     }
-
-    public static void findPrimes(int n) {
-        primes = new long[n];
-        primes[0] = 2;
-        if (n == 1)
-            return;
-
-        count = 1;
-        for (int i = 3; count < n; i+=2) {
-            if (PrimeTest.isPrime1(i))
-                primes[count++] = i;
-        }
-    }
+  }
 }

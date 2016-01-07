@@ -15,7 +15,7 @@ public class GraphSearch {
    * @param node
    */
   static void breadthFirstSearch(Graph.Node node) {
-    Queue<Graph.Node> queue = new LinkedQueue();
+    final Queue<Graph.Node> queue = new LinkedQueue();
     node.setState(State.Visited);
     queue.add(node);
     while (!queue.isEmpty()) {
