@@ -12,7 +12,7 @@ public class TreeProperties {
    */
   public static int findHeight(Tree.Node node) {
     if (node == null)
-      return -1;
+      return 0;
     int leftHeight = findHeight(node.getLeft());
     int rightHeight = findHeight(node.getRight());
     return Math.max(leftHeight, rightHeight) + 1;
