@@ -70,25 +70,5 @@ class DLinkedListExercises {
         return head;
     }
 
-    /**
-     * Reverse a doubly-linked list
-     *
-     * In:  NULL <-- 2 <--> 4 <--> 6 --> NULL
-     * Out: NULL <-- 6 <--> 4 <--> 2 --> NULL
-     */
-    static Node reverse(Node head) {
-        if (head == null) return null;
-        if (head.next == null) return head;
-        Node curr = head, res = head;
-        while (curr != null) {
-            Node savedPrev = curr.prev,
-                    savedNext = curr.next;
-            curr.prev = curr.next;
-            curr.next = savedPrev;
 
-            if (savedNext == null) res = curr;
-            curr = savedNext;
-        }
-        return res;
-    }
 }
