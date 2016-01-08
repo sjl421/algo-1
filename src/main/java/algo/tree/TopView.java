@@ -3,9 +3,7 @@ package algo.tree;
 import algo.queue.LinkedQueue;
 import algo.queue.Queue;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -22,32 +20,25 @@ import java.util.TreeMap;
 public class TopView {
   /**
    * Solution based on vertical-order traversal
-   * Vertical nodes are sorted by tree height
+   * Compared to {@link VerticalTraversal}, only node with minimal height is stored.
    */
   static void printTopView1(Tree tree) {
-    Map<Integer, List<MapItem>> map = new TreeMap();
+    Map<Integer, MapItem> map = new TreeMap();
     fillVerticalOrderMap(tree.getRoot(), 0, 0, map);
-    map.keySet().forEach(key -> {
-        List<MapItem> items = map.get(key);
-        items.sort((MapItem o1, MapItem o2) -> o1.height - o2.height);
-        System.out.print(items.get(0).data + " ");
-      }
+    map.keySet().forEach(key ->
+        System.out.print(map.get(key).data + " ")
     );
   }
 
   static void fillVerticalOrderMap(Tree.Node node, int hd, int height,
-                                   Map<Integer, List<MapItem>> map) {
+                                   Map<Integer, MapItem> map) {
     if (node == null)
       return;
 
-    if (map.containsKey(hd)) {
-      map
-        .get(hd)
-        .add(new MapItem(node.getData(), height));
-    } else {
-      List<MapItem> items = new ArrayList();
-      items.add(new MapItem(node.getData(), height));
-      map.put(hd, items);
+    MapItem item = map.get(hd);
+    if (item == null
+      || (item != null && height < item.height)) {
+      map.put(hd, new MapItem(node.getData(), height));
     }
     fillVerticalOrderMap(node.getLeft(), hd-1, height+1, map);
     fillVerticalOrderMap(node.getRight(), hd+1, height+1, map);
