@@ -1,11 +1,11 @@
-package g4g.lists;
+package g4g;
 
+import g4g.RearrangeList.Node;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-import static g4g.lists.RearrangeList.Node;
-
 /**
+ * Test for {@link RearrangeList}
+ *
  * Created by akhalikov on 28.09.2015.
  */
 public class RearrangeListTest {

@@ -4,11 +4,11 @@ import algo.queue.LinkedQueue;
 import algo.queue.Queue;
 
 /**
- * Tree traversal methods
+ * Basic methods of traversing a binary tree
  *
  * @author ahalikov
  */
-public class TreeTraversal {
+public class BasicTraversal {
   /**
    * Breadth-first or level-order traversal of a tree
    *

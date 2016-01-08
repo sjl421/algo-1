@@ -1,4 +1,4 @@
-package g4g.lists;
+package g4g;
 
 /**
  * Rearrange linked list in-place
