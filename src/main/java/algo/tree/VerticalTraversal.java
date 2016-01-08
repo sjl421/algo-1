@@ -7,7 +7,9 @@ import java.util.TreeMap;
 
 /**
  * VerticalTraversal is an algorithm of traversing a binary tree
- * based on the notion of horizontal distance (hd).
+ * based on the notion of horizontal distance.
+ * Horizontal distance (hd) of left child of a node x is equal to horizontal distance of x minus 1,
+ * and that of right child is horizontal distance of x plus 1.
  *
  * hd(root) = 0
  * hd(root.left) = -1
@@ -25,12 +27,11 @@ public class VerticalTraversal {
 
   /**
    * Map based solution with time-complexity: O(n)
-   * @param root
+   * @param tree
    */
-  static void printVerticalOrder(Tree.Node root) {
+  static void printVerticalOrder(Tree tree) {
     verticalOrderMap = new TreeMap();
-    int hd = 0;
-    fillVerticalOrderMap(root, hd);
+    fillVerticalOrderMap(tree.getRoot(), 0);
     verticalOrderMap.keySet().forEach(key ->
         System.out.println(verticalOrderMap.get(key))
     );
@@ -39,14 +40,15 @@ public class VerticalTraversal {
   private static void fillVerticalOrderMap(Tree.Node root, int hd) {
     if (root == null)
       return;
-    if (verticalOrderMap.get(hd) != null) {
-      verticalOrderMap
+    final Map<Integer, List<Object>> map = verticalOrderMap;
+    if (map.containsKey(hd)) {
+      map
         .get(hd)
         .add(root.getData());
     } else {
       List nodes = new ArrayList();
       nodes.add(root.getData());
-      verticalOrderMap.put(hd, nodes);
+      map.put(hd, nodes);
     }
     fillVerticalOrderMap(root.getLeft(), hd - 1);
     fillVerticalOrderMap(root.getRight(), hd + 1);

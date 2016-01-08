@@ -10,6 +10,11 @@ public class Tree<E> {
   public Tree() {
   }
 
+  public Tree(Node<E> root) {
+    this.root = root;
+    this.size = TreeProperties.findHeight(root);
+  }
+
   public Tree(E... items) {
     insert(items);
   }
