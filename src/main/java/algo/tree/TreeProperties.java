@@ -1,34 +1,43 @@
 package algo.tree;
 
 /**
- * Tree height
+ * Tree height, depth and other properties
+ * {@see https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html}
  *
  * @author akhalikov
  */
 public class TreeProperties {
   /**
-   * Height of a tree
+   * Height of a tree: number of edges from the root to the deepest leaf.
    * Time complexity: O(n)
    */
   public static int findHeight(Tree.Node node) {
     if (node == null)
-      return 0;
+      return -1;
     int leftHeight = findHeight(node.getLeft());
     int rightHeight = findHeight(node.getRight());
     return Math.max(leftHeight, rightHeight) + 1;
   }
 
   /**
-   * Check if a tree is a binary search tree
-   * @param tree
-   * @return
+   * The depth of a node is the number of edges from the root to the node.
+   *
+   * @param node
+   * @return depth of a node
    */
-  public static boolean isBinarySearchTree(Tree<Integer> tree) {
-    return checkBst(tree.getRoot(), Integer.MIN_VALUE, Integer.MAX_VALUE);
+  public static int findDepth(Tree.Node node) {
+    return 0;
   }
 
   /**
-   * Check if a tree is a binary search tree
+   * Check if a tree is a binary search tree (BST)
+   *
+   * A BST is a binary tree where nodes are ordered in the following way:
+   *  - each node contains one key (also known as data)
+   *  - the keys in the left subtree are less then the key in its parent node, in short L < P;
+   *  - the keys in the right subtree are greater the key in its parent node, in short P < R;
+   *  - duplicate keys are not allowed.
+   *
    * @param root
    * @return
    */
