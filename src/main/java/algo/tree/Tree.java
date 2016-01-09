@@ -12,7 +12,7 @@ public class Tree<E> {
 
   public Tree(Node<E> root) {
     this.root = root;
-    this.size = TreeProperties.findHeight(root);
+    this.size = TreeProperties.height(root);
   }
 
   public Tree(E... items) {
@@ -31,7 +31,7 @@ public class Tree<E> {
 
   private Node<E> recursiveInsert(Node<E> node, E data, Node<E> parent) {
     if (node == null) {
-      Node<E> newNode = new Node(data, parent);
+      Node<E> newNode = new Node(data, parent, null, null);
       if (root == null) {
         root = newNode;
       }
@@ -67,11 +67,6 @@ public class Tree<E> {
 
     public Node(E data) {
       this.data = data;
-    }
-
-    public Node(E data, Node<E> parent) {
-      this.data = data;
-      this.parent = parent;
     }
 
     public Node(E data, Node<E> left, Node<E> right) {

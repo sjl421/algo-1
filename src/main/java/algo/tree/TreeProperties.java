@@ -11,11 +11,11 @@ public class TreeProperties {
    * Height of a tree: number of edges from the root to the deepest leaf.
    * Time complexity: O(n)
    */
-  public static int findHeight(Tree.Node node) {
+  public static int height(Tree.Node node) {
     if (node == null)
       return -1;
-    int leftHeight = findHeight(node.getLeft());
-    int rightHeight = findHeight(node.getRight());
+    int leftHeight = height(node.getLeft());
+    int rightHeight = height(node.getRight());
     return Math.max(leftHeight, rightHeight) + 1;
   }
 
@@ -25,7 +25,7 @@ public class TreeProperties {
    * @param node
    * @return depth of a node
    */
-  public static int findDepth(Tree.Node node) {
+  public static int depth(Tree.Node node) {
     return 0;
   }
 
@@ -39,7 +39,7 @@ public class TreeProperties {
    *  - duplicate keys are not allowed.
    *
    * @param root
-   * @return
+   * @return true for BST, false otherwise
    */
   public static boolean isBinarySearchTree(Tree.Node<Integer> root) {
     return checkBst(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
@@ -54,5 +54,22 @@ public class TreeProperties {
       return true;
     else
       return false;
+  }
+
+  /**
+   * In a balanced tree the heights of the two subtrees of any node
+   * never differ by more than one.
+   * Time complexity: O(n log n)
+   * @param root Tree.Node
+   * @return true if the tree is balanced, false otherwise
+   */
+  public static boolean isBalanced(Tree.Node root) {
+    if (root == null)
+      return true;
+    int heightDiff = height(root.getLeft()) - height(root.getRight());
+    if (Math.abs(heightDiff) > 1)
+      return false;
+    else
+      return isBalanced(root.getLeft()) && isBalanced(root.getRight());
   }
 }
