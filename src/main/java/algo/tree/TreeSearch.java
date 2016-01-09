@@ -7,6 +7,16 @@ package algo.tree;
  */
 public class TreeSearch {
   /**
+   * Check if a tree contains the key
+   * @param tree
+   * @param key
+   * @return
+   */
+  public static boolean contains(Tree tree, Object key) {
+    return find(tree, key) != null;
+  }
+
+  /**
    * Searching item in a tree starting from some node
    * @param tree Tree
    * @param item Object
@@ -15,6 +25,10 @@ public class TreeSearch {
   public static Tree.Node find(Tree tree, Object item) {
     Tree.Node root = tree.getRoot();
     return findRecursively(root, item);
+  }
+
+  public static Tree.Node find(Tree.Node node, Object item) {
+    return findRecursively(node, item);
   }
 
   /**

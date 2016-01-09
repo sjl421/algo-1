@@ -10,11 +10,11 @@ import algo.queue.Queue;
  */
 public class BasicTraversal {
   /**
-   * Breadth-first or level-order traversal of a tree
+   * Level-order (breadth-first) traversal of a tree
    *
    * @param root Root node
    */
-  static void breadthFirst(Tree.Node root) {
+  static void levelOrder(Tree.Node root) {
     if (root == null) return;
     Queue<Tree.Node> queue = new LinkedQueue();
     queue.add(root);

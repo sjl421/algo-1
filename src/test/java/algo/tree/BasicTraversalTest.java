@@ -21,7 +21,7 @@ public class BasicTraversalTest {
   @Test
   public void testBreadthFirst() throws Exception {
     System.out.print("Level-Order: ");
-    BasicTraversal.breadthFirst(TEST_TREE);
+    BasicTraversal.levelOrder(TEST_TREE);
   }
 
   @Test
