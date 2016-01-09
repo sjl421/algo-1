@@ -1,5 +1,7 @@
 package algo.tree;
 
+import java.util.Iterator;
+
 /**
  * Binary search tree data structure
  */
@@ -178,6 +180,23 @@ public class Tree<E> {
 
     public void setRight(Node<E> right) {
       this.right = right;
+    }
+  }
+
+  /**
+   * In-order iterator implementation
+   * todo: implement
+   * @param <E>
+   */
+  private class InOrderIteratorImpl<E> implements Iterator<E> {
+    @Override
+    public boolean hasNext() {
+      return false;
+    }
+
+    @Override
+    public E next() {
+      return null;
     }
   }
 }
