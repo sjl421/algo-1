@@ -10,7 +10,7 @@ import java.util.Queue;
  */
 public class LevelView {
 
-  static void printLevelOrder(Tree tree) {
+  public static void printLevelOrder(Tree tree) {
     printLevelOrder(tree.getRoot());
   }
 
