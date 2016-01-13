@@ -13,26 +13,40 @@ import static org.junit.Assert.*;
 public class CheckPalindromeTest {
   @Test
   public void testIsPalindrome() throws Exception {
-    Node head = new Node(4, new Node(3, new Node(2, new Node(1,
+    // odd number of items
+    Node list1 = new Node(4, new Node(3, new Node(2, new Node(1,
       new Node(2, new Node(3, new Node(4, null)))))));
+    assertTrue(CheckPalindrome.isPalindrome(list1));
+
+    // even number of items
+    Node list2 = new Node(4, new Node(3, new Node(2,
+      new Node(2, new Node(3, new Node(4, null))))));
+    assertTrue(CheckPalindrome.isPalindrome(list2));
+
+    // one item
+    Node head = new Node(33, null);
     assertTrue(CheckPalindrome.isPalindrome(head));
   }
 
   @Test
   public void testIsPalindrome2() throws Exception {
-    Node head = new Node(4, new Node(3, new Node(2,
-      new Node(2, new Node(3, new Node(4, null))))));
-    assertTrue(CheckPalindrome.isPalindrome(head));
-  }
+    // odd number of items
+    Node list1 = new Node(4, new Node(3, new Node(2, new Node(1,
+      new Node(2, new Node(3, new Node(4, null)))))));
+    assertTrue(CheckPalindrome.isPalindrome2(list1));
 
-  @Test
-  public void testIsPalindrome3() throws Exception {
+    // even number of items
+    Node list2 = new Node(4, new Node(3, new Node(2,
+      new Node(2, new Node(3, new Node(4, null))))));
+    assertTrue(CheckPalindrome.isPalindrome2(list2));
+
+    // one item
     Node head = new Node(33, null);
-    assertTrue(CheckPalindrome.isPalindrome(head));
+    assertTrue(CheckPalindrome.isPalindrome2(head));
   }
 
   @Test(expected = NullPointerException.class)
-  public void testIsPalindrome4() throws Exception {
+  public void testIsPalindromeNullList() throws Exception {
     assertTrue(CheckPalindrome.isPalindrome(null));
   }
 }

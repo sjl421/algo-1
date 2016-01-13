@@ -12,16 +12,6 @@ import algo.stack.Stack;
  * @author akhalikov
  */
 public class CheckPalindrome {
-  static class Node {
-    int data;
-    Node next;
-
-    public Node(int data, Node next) {
-      this.data = data;
-      this.next = next;
-    }
-  }
-
   /**
    * Algorithm:
    *  - push first half into stack
@@ -35,7 +25,7 @@ public class CheckPalindrome {
    */
   static boolean isPalindrome(Node head) {
     if (head == null)
-      throw new NullPointerException("List's head is null");
+      throw new NullPointerException("List is null");
     Stack<Integer> stack = new LinkedStack<>();
     Node n = head;
     int len = getLength(head),
@@ -56,6 +46,36 @@ public class CheckPalindrome {
   }
 
   /**
+   * Small enhancement to the approach above:
+   *  one list traversal via getLength() is removed
+   * @param head Node
+   * @return true if LL is palindrome
+   */
+  static boolean isPalindrome2(Node head) {
+    if (head == null)
+      throw new NullPointerException("List is null");
+
+    Stack<Integer> stack = new LinkedStack<>();
+    Node fast = head, slow = head;
+    while (fast != null && fast.next != null) {
+      stack.push(slow.data);
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    // skip middle item if list has odd number of items
+    if (fast != null)
+      slow = slow.next;
+
+    // compare the second half with values from stack
+    while (slow != null) {
+      if (stack.pop() != slow.data)
+        return false;
+      slow = slow.next;
+    }
+    return true;
+  }
+
+  /**
    * Time/space complexity: O(n)
    * @param head List's head
    * @return Length of the list
@@ -67,5 +87,15 @@ public class CheckPalindrome {
       len++;
     }
     return len;
+  }
+
+  static class Node {
+    int data;
+    Node next;
+
+    public Node(int data, Node next) {
+      this.data = data;
+      this.next = next;
+    }
   }
 }
