@@ -44,8 +44,7 @@ public class LevelView {
   }
 
   public static void main(String[] args) {
-    Tree<Integer> tree = new Tree<>();
-    tree.insert(12, 5, 9, 2, 17, 19, 18);
+    Tree<Integer> tree = new BinarySearchTree<>(12, 5, 9, 2, 17, 19, 18);
     printLevelOrder(tree);
   }
 }

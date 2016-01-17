@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class TreePropertiesTest {
   @Test
   public void testHeight1() throws Exception {
-    Tree<Integer> tree = new Tree();
+    BinarySearchTree<Integer> tree = new BinarySearchTree<>();
     assertEquals("Empty tree", -1, TreeProperties.height(tree.getRoot()));
     tree.insert(12);
     assertEquals("Only root", 0, TreeProperties.height(tree.getRoot()));

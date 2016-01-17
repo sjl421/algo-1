@@ -21,7 +21,7 @@ public class TreeExamples {
     Tree.Node n2 = new Tree.Node(5, n4, new Tree.Node(4));
     Tree.Node n3 = new Tree.Node(2, new Tree.Node(6), n7);
     Tree.Node root = new Tree.Node(3, n2, n3);
-    return new Tree(root);
+    return new BinarySearchTree<>(root);
   }
 
   /**
@@ -40,6 +40,6 @@ public class TreeExamples {
       new Tree.Node(4, null, new Tree.Node(5, null,
         new Tree.Node(6))));
     Tree.Node root = new Tree.Node(1, n2, new Tree.Node(3));
-    return new Tree(root);
+    return new BinarySearchTree<>(root);
   }
 }

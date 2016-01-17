@@ -12,8 +12,8 @@ import static org.junit.Assert.*;
 public class TreeSearchTest {
   @Test
   public void testSearch() throws Exception {
-    Tree<Integer> tree = new Tree(12, 5, 9, 2, 17, 19, 18);
-    assertEquals(7, tree.getSize());
+    Tree<Integer> tree = new BinarySearchTree<>(12, 5, 9, 2, 17, 19, 18);
+    assertEquals(7, tree.size());
     tree.insert(13);
 
     Tree.Node item = TreeSearch.find(tree, 13);

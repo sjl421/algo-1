@@ -5,25 +5,24 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Test for {@link Tree}
+ * Test for {@link BinarySearchTree}
  *
  * @author ahalikov
  */
-public class TreeTest {
+public class BinarySearchTreeTest {
   @Test
   public void testInsert() throws Exception {
-    Tree<Integer> tree = new Tree<>();
+    BinarySearchTree<Integer> tree = new BinarySearchTree<>();
     tree.insert(12, 5, 9, 2, 17, 19, 18);
-    assertEquals(7, tree.getSize());
+    assertEquals(7, tree.size());
     tree.insert(13);
-    assertEquals(8, tree.getSize());
+    assertEquals(8, tree.size());
   }
 
   @Test
   public void testRemove() throws Exception {
     System.out.println("testRemove start");
-    Tree<Integer> tree = new Tree<>();
-    tree.insert(12, 5, 9, 2, 17, 19, 18);
+    Tree<Integer> tree = new BinarySearchTree<>(12, 5, 9, 2, 17, 19, 18);
     LevelView.printLevelOrder(tree);
     tree.remove(18);
 

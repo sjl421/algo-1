@@ -1,5 +1,6 @@
 package careercup.chapter4;
 
+import algo.tree.BinarySearchTree;
 import algo.tree.LevelView;
 import algo.tree.Tree;
 import algo.tree.Tree.Node;
@@ -15,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 public class SuccessorTest {
   @Test
   public void testGetNextNode() throws Exception {
-    Tree tree = new Tree(7, 4, 9, 1, 5, 6);
+    Tree tree = new BinarySearchTree<>(7, 4, 9, 1, 5, 6);
     LevelView.printLevelOrder(tree);
 
     Node root = tree.getRoot();
