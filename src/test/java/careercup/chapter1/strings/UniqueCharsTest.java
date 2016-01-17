@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static careercup.chapter1.strings.UniqueChars.isUniqueASCIIChars;
 import static careercup.chapter1.strings.UniqueChars.isUniqueAlphaChars;
+import static careercup.chapter1.strings.UniqueChars.isUniqueAlphaLowercasedChars;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -14,10 +15,10 @@ import static org.junit.Assert.assertTrue;
  */
 public class UniqueCharsTest {
     @Test
-    public void testIsUniqueAlphaChars() throws Exception {
-        assertTrue(isUniqueAlphaChars("a"));
-        assertFalse(isUniqueAlphaChars("aba"));
-        assertFalse(isUniqueAlphaChars("abacd abab ec 45"));
+    public void testIsUniqueAlphaLowercasedChars() throws Exception {
+        assertTrue(isUniqueAlphaLowercasedChars("a"));
+        assertFalse(isUniqueAlphaLowercasedChars("aba"));
+        assertFalse(isUniqueAlphaLowercasedChars("abacd abab ec 45"));
     }
 
     @Test
@@ -25,5 +26,14 @@ public class UniqueCharsTest {
         assertTrue(isUniqueASCIIChars("a"));
         assertFalse(isUniqueASCIIChars("aba"));
         assertFalse(isUniqueASCIIChars("abacd abab ec 45"));
+    }
+
+    @Test
+    public void testIsUniqueAlphaChars() throws Exception {
+        assertTrue(isUniqueAlphaChars("a"));
+        assertFalse(isUniqueAlphaChars("aba"));
+        assertFalse(isUniqueAlphaChars("abacd abab ec 45"));
+        assertTrue(isUniqueAlphaChars("abA"));
+        assertFalse(isUniqueAlphaChars("AbAc"));
     }
 }

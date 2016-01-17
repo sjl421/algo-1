@@ -44,7 +44,7 @@ class UniqueChars {
   /**
    * Alphabetic lower-cased string w/o additional buffer - using bit vector
    */
-  static boolean isUniqueAlphaChars(String str) {
+  static boolean isUniqueAlphaLowercasedChars(String str) {
     if (str == null || str.isEmpty())
       throw new IllegalArgumentException("str is null or empty");
 
@@ -63,5 +63,42 @@ class UniqueChars {
       checker |= (1 << val);
     }
     return true;
+  }
+
+  /**
+   * Alphabetic string w/o additional buffer - using bit vector,
+   * case insensitive
+   */
+  static boolean isUniqueAlphaChars(String str) {
+    if (str == null || str.isEmpty())
+      throw new IllegalArgumentException("str is null or empty");
+
+    // Ony char is unique
+    if (str.length() == 1)
+      return true;
+
+    // 26 in lower case + 26 in upper case
+    if (str.length() > 26*2)
+      return false;
+
+    long checker = 0;
+    long one = 1;
+    for (int i = 0; i < str.length(); ++i) {
+      int val = numValue(str.charAt(i));
+      if ((checker & (one << val)) > 0) return false;
+      checker |= (one << val);
+    }
+    return true;
+  }
+
+  private static int numValue(char c) {
+    int a = 'a', z = 'z', A = 'A', Z = 'Z';
+    int val = c;
+    if (a <= val && val <= z)
+      return val - 'a';
+    else if (A <= val && val <= Z)
+      return val - 'A' + 32;
+    else
+      throw new IllegalArgumentException("Invalid char: " + c);
   }
 }
