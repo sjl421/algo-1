@@ -1,6 +1,6 @@
-package g4g;
+package careercup.other.lists;
 
-import g4g.RearrangeList.Node;
+import careercup.other.lists.RearrangeList.Node;
 import org.junit.Test;
 
 /**

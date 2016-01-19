@@ -1,4 +1,4 @@
-package g4g;
+package careercup.other.lists;
 
 /**
  * Rearrange linked list in-place
