@@ -1,4 +1,4 @@
-package careercup.chapter3;
+package careercup.chapter03;
 
 /**
  * Implement three stacks using a single array
