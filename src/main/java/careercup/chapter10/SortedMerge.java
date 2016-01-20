@@ -1,4 +1,4 @@
-package careercup.chapter9;
+package careercup.chapter10;
 
 /**
  * You are given two sorted arrays, A and B, and A has a large enough buffer at the end to hold B.
@@ -6,20 +6,10 @@ package careercup.chapter9;
  *
  * @author ahalikov
  */
-class ArraysMerge {
-  /**
-   * Merging
-   *
-   * @param a sorted array 1
-   * @param b sorted array 2
-   * @param n number of items in a
-   * @param m number of items in b
-   * @return
-   */
+class SortedMerge {
   static int[] merge(int[] a, int[] b, int n, int m) {
     if (a == null && b == null)
       return null;
-
     int i = n - 1, // index of the last item in a
       j = m - 1; // index of the last item in b
 

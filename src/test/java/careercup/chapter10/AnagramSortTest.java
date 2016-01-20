@@ -1,4 +1,4 @@
-package careercup.chapter9;
+package careercup.chapter10;
 
 import org.junit.Test;
 import com.ahalikov.toolkit.utils.ArrayUtils;
