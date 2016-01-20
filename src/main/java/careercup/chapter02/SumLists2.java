@@ -1,6 +1,6 @@
-package careercup.chapter2;
+package careercup.chapter02;
 
-import careercup.chapter2.SumLists.Node;
+import careercup.chapter02.SumLists.Node;
 
 /**
  * More optimal approach to {@link SumLists} to the first case of reversed lists

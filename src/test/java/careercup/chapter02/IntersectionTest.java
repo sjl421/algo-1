@@ -1,6 +1,6 @@
-package careercup.chapter2;
+package careercup.chapter02;
 
-import careercup.chapter2.Intersection.Node;
+import careercup.chapter02.Intersection.Node;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

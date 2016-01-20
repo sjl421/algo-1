@@ -1,9 +1,7 @@
-package careercup.chapter2;
+package careercup.chapter02;
 
-import careercup.chapter2.ListPartition.Node;
+import careercup.chapter02.ListPartition.Node;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author akhalikov

@@ -1,6 +1,6 @@
-package careercup.chapter2;
+package careercup.chapter02;
 
-import careercup.chapter2.RemoveMiddleNode.Node;
+import careercup.chapter02.RemoveMiddleNode.Node;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

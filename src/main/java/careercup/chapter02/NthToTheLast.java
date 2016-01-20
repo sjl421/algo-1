@@ -1,4 +1,4 @@
-package careercup.chapter2;
+package careercup.chapter02;
 
 /**
  * Implement an algorithm to find the n-th to last element of a singly linked list.

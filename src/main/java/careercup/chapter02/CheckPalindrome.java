@@ -1,4 +1,4 @@
-package careercup.chapter2;
+package careercup.chapter02;
 
 import algo.stack.LinkedStack;
 import algo.stack.Stack;

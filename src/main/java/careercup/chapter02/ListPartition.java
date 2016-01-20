@@ -1,4 +1,4 @@
-package careercup.chapter2;
+package careercup.chapter02;
 
 /**
  * Write code to partition LL around a value x,

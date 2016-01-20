@@ -1,8 +1,8 @@
-package careercup.chapter2;
+package careercup.chapter02;
 
 import org.junit.Test;
 
-import static careercup.chapter2.NthToTheLast.Node;
+import static careercup.chapter02.NthToTheLast.Node;
 import static org.junit.Assert.assertEquals;
 
 /**

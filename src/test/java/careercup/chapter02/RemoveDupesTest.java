@@ -1,6 +1,6 @@
-package careercup.chapter2;
+package careercup.chapter02;
 
-import careercup.chapter2.RemoveDupes.Node;
+import careercup.chapter02.RemoveDupes.Node;
 
 import static junit.framework.Assert.*;
 

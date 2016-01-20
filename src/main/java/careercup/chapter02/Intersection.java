@@ -1,4 +1,4 @@
-package careercup.chapter2;
+package careercup.chapter02;
 
 /**
  * Given two singly linked lists, determine if two lists intersect.

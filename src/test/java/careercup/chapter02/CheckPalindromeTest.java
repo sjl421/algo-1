@@ -1,6 +1,6 @@
-package careercup.chapter2;
+package careercup.chapter02;
 
-import careercup.chapter2.CheckPalindrome.Node;
+import careercup.chapter02.CheckPalindrome.Node;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
