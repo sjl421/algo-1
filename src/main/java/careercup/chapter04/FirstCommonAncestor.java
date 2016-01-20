@@ -1,4 +1,4 @@
-package careercup.chapter4;
+package careercup.chapter04;
 
 import algo.tree.Tree.Node;
 

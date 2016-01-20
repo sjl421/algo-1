@@ -1,7 +1,6 @@
-package careercup.chapter4;
+package careercup.chapter04;
 
 import algo.tree.Tree;
-import algo.tree.TreeProperties;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

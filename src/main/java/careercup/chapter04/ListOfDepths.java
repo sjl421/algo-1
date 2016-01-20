@@ -1,4 +1,4 @@
-package careercup.chapter4;
+package careercup.chapter04;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

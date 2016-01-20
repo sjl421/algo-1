@@ -1,4 +1,4 @@
-package careercup.chapter4;
+package careercup.chapter04;
 
 import algo.graphs.Graph;
 import algo.graphs.Graph.Node.State;

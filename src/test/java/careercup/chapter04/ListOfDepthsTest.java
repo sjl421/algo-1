@@ -1,6 +1,6 @@
-package careercup.chapter4;
+package careercup.chapter04;
 
-import careercup.chapter4.ListOfDepths.TreeNode;
+import careercup.chapter04.ListOfDepths.TreeNode;
 import org.junit.Test;
 
 import java.util.LinkedList;

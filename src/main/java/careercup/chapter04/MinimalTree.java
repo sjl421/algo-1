@@ -1,4 +1,4 @@
-package careercup.chapter4;
+package careercup.chapter04;
 
 /**
  * Given a sorted (increasing order) array with unique integer elements,

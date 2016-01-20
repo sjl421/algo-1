@@ -1,4 +1,4 @@
-package careercup.chapter4;
+package careercup.chapter04;
 
 /**
  * Implement a function to check if a tree is balanced.
