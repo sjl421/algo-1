@@ -16,28 +16,27 @@ class GroupAnagrams {
   /**
    * Time complexity: O(n log n)
    * @param arr Array of strings
-   * @return Array of strings with anagrams
    */
-  static String[] sort(String[] arr) {
+  static void sort(String[] arr) {
     Arrays.sort(arr,
       (String s1, String s2) -> sortChars(s1).compareTo(sortChars(s2)));
-    return arr;
   }
 
   /**
    * Time complexity: O(n+k), where k is amount of anagrams
    * Space complexity: O(n)
    * @param arr
-   * @return
    */
-  static String[] sort2(final String[] arr) {
+  static void sort2(final String[] arr) {
     final HashMap<String, List<String>> anagrams = new HashMap<>();
     for (String s: arr) {
       String sorted = sortChars(s);
       if (anagrams.get(sorted) != null) {
         anagrams.get(sorted).add(s);
       } else {
-        anagrams.put(sorted, new ArrayList<>());
+        List bucket = new ArrayList();
+        bucket.add(s);
+        anagrams.put(sorted, bucket);
       }
     }
     int index = 0;
@@ -46,7 +45,6 @@ class GroupAnagrams {
       for (String s: list)
         arr[index++] = s;
     }
-    return arr;
   }
 
   private static String sortChars(String s) {
