@@ -44,7 +44,7 @@ public class BucketSort {
     // sort each bucket
     for (int i = 0; i < n; i++) {
       if (buckets[i] != null)
-        Collections.sort(buckets[i]);
+        Collections.sort(buckets[i]); // better to use Insertion sort here
     }
     // concatenate al buckets into array
     int index = 0;
