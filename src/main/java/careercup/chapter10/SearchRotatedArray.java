@@ -33,18 +33,18 @@ public class SearchRotatedArray {
     if (a[lo] < a[mid]) {
       // search left part
       if (x >= a[lo] && x < a[mid])
-        return search(a, lo, mid, x);
+        return search(a, lo, mid - 1, x);
       else
-        return search(a, mid, hi, x);
+        return search(a, mid + 1, hi, x);
     } else if (a[mid] < a[lo]) {
       // search right part
       if (a[mid] < x && x <= a[hi])
-        return search(a, mid, hi, x);
+        return search(a, mid + 1, hi, x);
       else
-        return search(a, lo, mid, x);
+        return search(a, lo, mid - 1, x);
     } else if (a[lo] == a[mid]) {
       if (a[mid] != a[hi])
-        return search(a, mid, hi, x);
+        return search(a, mid + 1, hi, x);
       else {
         // search both left and right parts
         int index = search(a, lo, mid - 1, x);

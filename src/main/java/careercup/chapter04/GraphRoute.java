@@ -20,12 +20,12 @@ public class GraphRoute {
     ensureUnvisited(g);
     final Queue<Graph.Node> queue = new LinkedQueue();
     queue.add(fromNode);
+    fromNode.setState(State.Visiting);
 
     Graph.Node node;
     while (!queue.isEmpty()) {
       node = queue.remove();
       if (node != null) {
-        node.setState(State.Visited);
         for (Graph.Node adjacent: node.getAdjacentNodes()) {
           if (State.Unvisited == adjacent.getState()) {
             if (adjacent == toNode)
@@ -34,6 +34,7 @@ public class GraphRoute {
             queue.add(adjacent);
           }
         }
+        node.setState(State.Visited);
       }
     }
     return false;
