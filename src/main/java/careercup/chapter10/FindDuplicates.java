@@ -1,5 +1,7 @@
 package careercup.chapter10;
 
+import algo.BitSet;
+
 /**
  * You have an array with all the numbers from 1..N, where N <= 32.000.
  * The array have duplicate entries and you do not know what N is.
@@ -8,4 +10,17 @@ package careercup.chapter10;
  * Created by artur on 20.01.16.
  */
 public class FindDuplicates {
+  static final int N = 32000;
+
+  static void printDuplicates(int[] arr) {
+    BitSet bs = new BitSet(N);
+    for (int i = 0; i < arr.length; i++) {
+      int val = arr[i];
+      int val0 = val - 1;
+      if (bs.get(val0))
+        System.out.println(val);
+      else
+        bs.set(val0);
+    }
+  }
 }
