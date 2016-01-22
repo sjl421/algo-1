@@ -23,11 +23,12 @@ public class SearchRotatedArray {
   }
 
   static int search(int[] a, int lo, int hi, int x) {
+    if (hi < lo)
+      return -1;
+
     int mid = (lo + hi) / 2;
     if (x == a[mid])
       return mid;
-    if (hi < lo)
-      return -1;
 
     if (a[lo] < a[mid]) {
       // search left part
