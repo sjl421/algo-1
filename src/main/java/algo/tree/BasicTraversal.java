@@ -16,7 +16,7 @@ public class BasicTraversal {
    */
   static void levelOrder(Tree.Node root) {
     if (root == null) return;
-    Queue<Tree.Node> queue = new LinkedQueue();
+    Queue<Tree.Node> queue = new LinkedQueue<>();
     queue.add(root);
     while (!queue.isEmpty()) {
       Tree.Node curr = queue.remove();

@@ -7,7 +7,6 @@ package careercup.chapter03;
  */
 public class TripleStack<E> {
   private static final int INITIAL_CAPACITY = 30;
-  private final int NUM_RESERVED = 10;
 
   private Object[] elements;
 
@@ -60,8 +59,9 @@ public class TripleStack<E> {
 
   // todo: this methods can be moved to class StackInfo
   private void initNextStackIfEmpty(int stackId) {
+    final int countReserved = 10;
     if (headIndex[stackId] == 0) {
-      headIndex[stackId] = headIndex[stackId - 1] + NUM_RESERVED;
+      headIndex[stackId] = headIndex[stackId - 1] + countReserved;
       bottomIndex[stackId] = headIndex[stackId];
     }
   }

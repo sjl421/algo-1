@@ -1,4 +1,4 @@
-package jdk.jdk;
+package jdk;
 
 /**
  * Studying binary converter from JDK8
