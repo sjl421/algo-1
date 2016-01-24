@@ -12,6 +12,7 @@ public class BitSet {
   private int[] bitSet;
 
   public BitSet(int size) {
+    // size / 32
     bitSet = new int[(size >> WORD_SIZE) + 1];
   }
 
