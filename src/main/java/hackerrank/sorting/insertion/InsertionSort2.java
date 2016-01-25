@@ -1,6 +1,6 @@
 package hackerrank.sorting.insertion;
 
-import com.ahalikov.toolkit.utils.ArrayUtils;
+import toolkit.utils.ArrayUtils;
 
 /**
  * https://www.hackerrank.com/challenges/insertionsort2

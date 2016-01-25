@@ -1,6 +1,6 @@
 package stanford.part1.sort;
 
-import com.ahalikov.toolkit.utils.InputFile;
+import toolkit.utils.InputFile;
 
 /**
  * Algorithms: Design and Analysis, Part I

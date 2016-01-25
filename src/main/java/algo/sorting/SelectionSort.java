@@ -1,6 +1,6 @@
 package algo.sorting;
 
-import com.ahalikov.toolkit.utils.ArrayUtils;
+import toolkit.utils.ArrayUtils;
 
 /**
  * Selection sort
