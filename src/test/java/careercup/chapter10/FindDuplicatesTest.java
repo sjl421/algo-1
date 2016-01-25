@@ -12,7 +12,15 @@ import static org.junit.Assert.*;
 public class FindDuplicatesTest {
   @Test
   public void testPrintDuplicates() throws Exception {
+    System.out.println("testPrintDuplicates");
     int[] arr = {1, 1, 23, 1, 5, 31999, 34, 10, 10, 11, 1, 54, 2, 6, 88, 7};
     FindDuplicates.printDuplicates(arr);
+  }
+
+  @Test
+  public void testPrintDuplicates2() throws Exception {
+    System.out.println("testPrintDuplicates2");
+    int[] arr = {1, 1, 23, 1, 5, 31999, 34, 10, 10, 11, 1, 54, 2, 6, 88, 7};
+    FindDuplicates.printDuplicates2(arr);
   }
 }

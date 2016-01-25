@@ -1,6 +1,6 @@
 package careercup.chapter10;
 
-import algo.BitSet;
+import java.util.BitSet;
 
 /**
  * You have an array with all the numbers from 1..N, where N <= 32.000.
@@ -19,14 +19,32 @@ public class FindDuplicates {
   static final int N = 32000;
 
   static void printDuplicates(int[] arr) {
-    BitSet bs = new BitSet(N);
+    algo.BitSet bs = new algo.BitSet(N);
     for (int i = 0; i < arr.length; i++) {
       int val = arr[i];
       int val0 = val - 1; // numbers start from 1, bitset starts from 0
       if (bs.get(val0))
-        System.out.println(val);
+        System.out.print(val + " ");
       else
         bs.set(val0);
     }
+    System.out.println();
+  }
+
+  /**
+   * Using java.util.BitSet
+   * @param arr
+   */
+  static void printDuplicates2(int[] arr) {
+    BitSet bs = new BitSet();
+    for (int i = 0; i < arr.length; i++) {
+      int val = arr[i];
+      int val0 = val - 1; // numbers start from 1, bitset starts from 0
+      if (bs.get(val0))
+        System.out.print(val + " ");
+      else
+        bs.set(val0);
+    }
+    System.out.println();
   }
 }
