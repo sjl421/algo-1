@@ -23,7 +23,7 @@ public class HeapSort {
 
   static void sort(int[] arr) {
     final MaxHeap heap = new MaxHeap(arr, arr.length);
-    while (heap.size > 1) {
+    while (heap.size > 0) {
       ArrayUtils.swap(heap.arr, 0, heap.size - 1);
       heap.size--;
       heap.maxHeapify(0);
@@ -34,8 +34,8 @@ public class HeapSort {
    * Max heap data structure
    */
   public static class MaxHeap {
-    private int[] arr;
-    private int size;
+    int[] arr;
+    int size;
 
     public MaxHeap(int[] arr, int size) {
       this.arr = arr;
@@ -49,14 +49,9 @@ public class HeapSort {
      * @param index
      */
     public void maxHeapify(int index) {
-      if (arr == null)
-        throw new NullPointerException("arr is null");
-      if (arr.length == 0)
-        return;
-
       int max = index;
-      int left = index * 2 + 1;
-      int right = index * 2 + 2;
+      int left = left(index);
+      int right = right(index);
 
       if (left < size && arr[left] > arr[index])
         index = left;
@@ -69,9 +64,21 @@ public class HeapSort {
       }
     }
 
+    private int left(int index) {
+      return index * 2 + 1;
+    }
+
+    private int right(int index) {
+      return index * 2 + 2;
+    }
+
     private void buildMaxHeap() {
-      for (int i = (size - 2) / 2; i >= 0; i--)
+      for (int i = size/2 - 1; i >= 0; i--)
         maxHeapify(i);
+    }
+
+    public int getSize() {
+      return size;
     }
   }
 }
