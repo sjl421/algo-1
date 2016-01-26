@@ -36,8 +36,8 @@ Just pick one or two and solve with pen and paper.
 
 #### Binary Tree
 
-1. In-order, Pre-order, Post-order traversals.
-2. Level-order traversal. *Follow up: print nodes level by level, like reverted tree.*
+1. In-order, pre-order, post-order traversals.
+2. Level-order traversal. *Follow up: print nodes level by level, like a reverted tree.*
 3. Check if a tree is BST.
 4. Check if a tree is balanced.
 5. Find the next node (in-order successor) of a given node in a BST. Each node has link to its parent.
