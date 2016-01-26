@@ -1,14 +1,14 @@
 Questions for daily check
 ---
 
-Below are some quite simple yet fundamental questions that can be solved in 15-20 minutes.
+Below are quite simple yet fundamental questions that can be solved in 15-20 minutes.
 
 Just pick one or two and solve with pen and paper.
 
 #### Arrays
 
-1. "Array pair sum": find two numbers in an array, that sum up to a given value k.
-2. A and B are sorted arrays and A has large enough buffer at the end to hold B. Merge B into A.
+1. Array pair sum: find two numbers in an array, that sum up to a given value k.
+2. A and B are sorted arrays and A has large enough buffer at the end to hold B. Merge B into A keeping the data sorted.
 
 #### String
 
