@@ -1,11 +1,66 @@
 package algo.lists;
 
 /**
- * Finding loop in a linked list
- *
- * @author akhalikov
+ * Finding a loop in a linked list
  */
 public class Loops {
+  /**
+   * Detect cycle in a linked list
+   * Classic approach: Floyd's Tortoise-Hare O(n) algorithm
+   *
+   * @return true if the input list has cycle, false otherwise
+   */
+  static boolean hasLoop(Node head) {
+    if (head == null || head.next == null)
+      return false;
+    if (head.next == head)
+      return true;
+
+    Node slow = head;    // slowest pointer
+    Node fast;           // middle pointer
+    Node fastest = head; // fastest pointer
+
+    while (slow != null
+      && (fast = fastest.next) != null
+      && (fastest = fast.next) != null) {
+
+      if (slow == fast || slow == fastest) return true;
+      slow = slow.next;
+    }
+    return false;
+  }
+
+  /**
+   * Returns node where loop starts
+   */
+  static Node findLoop(Node head) {
+    if (head == null || head.next == null)
+      return null;
+    if (head.next == head)
+      return head;
+
+    Node slow = head, fast = head, temp;
+    Node meetNode = null;
+    while (slow != null
+      && (temp = fast.next) != null
+      && (fast = temp.next) != null) {
+      if (slow == temp || slow == fast) {
+        meetNode = slow;
+      } else {
+        slow = slow.next;
+      }
+    }
+    if (meetNode != null) {
+      // we have a loop, let's find where it starts
+      slow = head;
+      temp = meetNode;
+      while (temp != slow) {
+        temp = temp.next;
+      }
+    }
+    return null;
+  }
+
   static class Node {
     int data;
     Node next;
@@ -14,65 +69,5 @@ public class Loops {
       this.data = data;
       this.next = next;
     }
-  }
-
-  /**
-   * Detect cycle in a linked list
-   *
-   * @return true if the input list has cycle, false otherwise
-   * <p>
-   * Floyd's Tortoise-Hare O(n) algorithm
-   */
-  static boolean hasLoop(Node head) {
-    if (head == null || head.next == null)
-      return false;
-    if (head.next == head)
-      return true;
-
-    Node tortoise = head, // slowest pointer
-      p,            // middle pointer
-      hare = head;  // hare - fastest pointer
-
-    while (tortoise != null
-      && (p = hare.next) != null
-      && (hare = p.next) != null) {
-      if (tortoise == p || tortoise == hare) return true;
-      tortoise = tortoise.next;
-    }
-    return false;
-  }
-
-  /**
-   * Returns node where loop starts
-   *
-   * @param head
-   * @return
-   */
-  static Node findLoop(Node head) {
-    if (head == null || head.next == null)
-      return null;
-    if (head.next == head)
-      return head;
-
-    Node pSlow = head, pFast = head, temp;
-    Node meetNode = null;
-    while (pSlow != null
-      && (temp = pFast.next) != null
-      && (pFast = temp.next) != null) {
-      if (pSlow == temp || pSlow == pFast) {
-        meetNode = pSlow;
-      } else {
-        pSlow = pSlow.next;
-      }
-    }
-    if (meetNode != null) {
-      // we have a loop, let's find where it starts
-      pSlow = head;
-      temp = meetNode;
-      while (temp != pSlow) {
-        temp = temp.next;
-      }
-    }
-    return null;
   }
 }
