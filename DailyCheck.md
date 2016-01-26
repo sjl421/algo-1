@@ -1,7 +1,7 @@
 Questions for daily check
 ---
 
-Below are quite simple yet fundamental questions that can be solved in 15-20 minutes.
+A list of quite simple yet fundamental questions that can be solved in 15-20 minutes.
 
 Just pick one or two and solve with pen and paper.
 
