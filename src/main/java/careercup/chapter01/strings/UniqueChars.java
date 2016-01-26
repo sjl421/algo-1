@@ -3,7 +3,7 @@ package careercup.chapter01.strings;
 /**
  * Implement an algorithm to determine if a string has all unique characters.
  * What if you can not use additional data structures?
- * <p>
+ *
  * Questions to interviewer:
  * - is there any information about string: is it alphabetic, ASCII or Unicode string ?
  * - for alphabetic string: are letters in one case (lower/upper), or not ?
