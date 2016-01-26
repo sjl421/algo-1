@@ -1,33 +1,36 @@
 package careercup.chapter04;
 
+import algo.tree.Tree.Node;
+
 /**
- * Implement a function to check if a tree is balanced.
+ * Implement a function to check if a tree is balanced in O(n)
 
  * Def: tree is said to be balanced if
  * (1) it is empty, or
  * (2) its left and right children are height-balanced and the height of the
  * left tree is within 1 of the height of the right tree.
-
- * The idea: max(depth) - min(depth) <= 1
  */
 class TreeBalanceCheck {
-/*
-  static boolean isBalanced(TreeNode root) {
-    return maxDepth(root) - minDepth(root) <= 1;
+  static boolean isBalanced(Node root) {
+    return findAndCheckHeight(root) != Integer.MIN_VALUE;
   }
 
-  static int maxDepth(TreeNode node) {
-    if (node == null) {
-      return 0;
-    }
-    return Math.max(maxDepth(node.getLeft()), maxDepth(node.getRight())) + 1;
-  }
+  static int findAndCheckHeight(Node root) {
+    if (root == null)
+      return -1; // terminate if tree is empty and return -1
 
-  static int minDepth(TreeNode node) {
-    if (node == null) {
-      return 0;
-    }
-    return Math.min(minDepth(node.getLeft()), minDepth(node.getRight())) + 1;
+    int leftHeight = findAndCheckHeight(root.getLeft());
+    if (leftHeight == Integer.MIN_VALUE)
+      return Integer.MIN_VALUE;
+
+    int rightHeight = findAndCheckHeight(root.getRight());
+    if (rightHeight == Integer.MIN_VALUE)
+      return Integer.MIN_VALUE;
+
+    int heightDiff = Math.abs(leftHeight - rightHeight);
+    if (heightDiff > 1)
+        return Integer.MIN_VALUE;
+
+    return Math.max(leftHeight, rightHeight) + 1;
   }
-*/
 }
