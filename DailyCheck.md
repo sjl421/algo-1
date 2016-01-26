@@ -1,6 +1,8 @@
 Questions for daily check
 ---
 
+Just pick one or two and solve with pen and paper.
+
 #### String
 
 1. Print all duplicates in a string
