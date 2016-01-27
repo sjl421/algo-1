@@ -12,15 +12,15 @@ Just pick one or two and solve with pen and paper.
 
 #### String
 
-1. Convert string to number. Think carefully about what may come in input data.
+1. Convert given string to number. Think carefully about what may come in the input.
 2. Print all duplicates in a string.
 2. Check if 2 strings are anagrams, for example: `(abba, baab)`.
-3. Generate all permutations of a string.
-4. Assuming you have method `isSubstring()` and two strings `s1` and `s2`, check if `s1` is rotation of string `s2`.
+3. Generate all permutations of a given string.
+4. Assuming you have method `isSubstring()` and two strings `s1` and `s2`, check if `s1` is rotation of `s2`.
   Example: `waterbottle -> erbottlewat`
 5. Check if a string has all unique characters. *Follow up: no additional buffers allowed.*
 6. Implement basic string compression like `aabccccaaa -> a2b1c4a3`.
-7. Reverse words in a string: `Hello, world! -> world! Hello!`
+7. Reverse words in a string: `Hello, world! -> world! Hello,`
 8. Find minimum distance between words in an array. 
   For example: `{"a", "c", "d", "a", "b"}`. 
   `dist("a", "b")=1, dist("b", "d")=2`.
@@ -29,10 +29,8 @@ Just pick one or two and solve with pen and paper.
 
 1. Binary search
 2. Sort an array of strings, so that all the anagrams are next to each other.
-3. There are 2 sorted arrays A and B. A has large enough buffer at the end to hold B. 
-  Write a method to merge B into A in sorted order.
-4. Bubble sort
-5. Insertion sort
+3. Bubble sort
+4. Insertion sort
 
 #### Binary Tree
 
