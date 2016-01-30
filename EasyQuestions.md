@@ -47,4 +47,4 @@ Just pick one or two and solve with pen and paper.
 2. Remove duplicates from an unsorted singly-linked list. *Follow up: using no additional buffers*.
 3. Check if a linked list is circular.
 4. Find the n-th to last element of a singly linked list.
-5. Check if a singly-linked list is a palindrome.
+5. Check if a singly-linked list is a palindrome, for example: `4->3->2->1->2->3->4`.
