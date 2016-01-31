@@ -17,7 +17,13 @@ public class MatrixRotationTest {
     ArrayUtils.print(matrix);
 
     System.out.println("Rotated:");
-    MatrixRotation.rotate(matrix, 4);
+    MatrixRotation.rotate(matrix);
     ArrayUtils.print(matrix);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testRotateEmptyMatrix() throws Exception {
+    int[][] matrix = {};
+    MatrixRotation.rotate(matrix);
   }
 }

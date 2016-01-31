@@ -11,9 +11,18 @@ class MatrixRotation {
    * Time complexity: O(n^2)
    * Space complexity: O(n)
    * @param matrix
-   * @param n
    */
-  static void rotate(int[][] matrix, int n) {
+  static void rotate(int[][] matrix) {
+    if (matrix == null)
+      throw new NullPointerException("matrix is null");
+
+    int n = matrix.length;
+    if (n == 0)
+      throw new IllegalArgumentException("matrix is empty");
+
+    if (n != matrix[0].length)
+      throw new IllegalArgumentException("matrix is not squared");
+
     for (int layer = 0; layer < n/2; ++layer) {
       int first = layer;
       int last = n - 1 - layer;
