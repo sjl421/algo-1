@@ -1,5 +1,6 @@
 package careercup.chapter01
 
+import careercup.other.strings.StringDupesRemover
 import junit.framework.Assert.assertEquals
 import org.scalatest.FunSuite
 
