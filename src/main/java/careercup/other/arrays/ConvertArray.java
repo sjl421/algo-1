@@ -12,7 +12,19 @@ package careercup.other.arrays;
  * Created by akhalikov on 24/01/16
  */
 public class ConvertArray {
-  static String[] convert(String[] arr) {
-    return null;
+  /**
+   * Brute-force solution that takes O(n) space
+   * and does not change input array.
+   */
+  static String[] convert(String[] a, int n) {
+    int len = a.length, k;
+    String[] c = new String[len];
+    for (int i = 0; i < n; i++) {
+      k = 3*i;
+      c[k] = a[i];
+      c[k+1] = a[n+i];
+      c[k+2] = a[2*n+i];
+    }
+    return c;
   }
 }

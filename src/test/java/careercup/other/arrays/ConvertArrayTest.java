@@ -12,10 +12,13 @@ import static org.junit.Assert.assertEquals;
 public class ConvertArrayTest {
   @Test
   public void testConvert() throws Exception {
-    String[] a = {"a1", "a2", "a3", "b1", "b2", "b3", "c2", "c2", "c3"};
-    String[] expected = {"a1", "b1", "c1", "a2", "b2", "c2", "a3", "b3", "c3"};
+    String[] a =
+      {"a1", "a2", "a3", "a4", "b1", "b2", "b3", "b4", "c1", "c2", "c3", "c4"};
 
-    String[] converted = ConvertArray.convert(a);
+    String[] expected =
+      {"a1", "b1", "c1", "a2", "b2", "c2", "a3", "b3", "c3", "a4", "b4", "c4"};
+
+    String[] converted = ConvertArray.convert(a, 4);
     for (int i = 0; i < converted.length; i++) {
       assertEquals(expected[i] + "!=" + converted[i], expected[i], converted[i]);
     }
