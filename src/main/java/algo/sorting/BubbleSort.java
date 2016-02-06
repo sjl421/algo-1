@@ -1,5 +1,7 @@
 package algo.sorting;
 
+import utils.ArrayUtils;
+
 /**
  * Bubble sort review
  * https://en.wikipedia.org/wiki/Bubble_sort
@@ -19,7 +21,7 @@ public class BubbleSort {
       int newN = 0;
       for (int i = 1; i < n; i++) {
         if (a[i - 1] > a[i]) {
-          swap(a, i - 1, i);
+          ArrayUtils.swap(a, i - 1, i);
           newN = i;
         }
       }
@@ -35,7 +37,7 @@ public class BubbleSort {
       int newN = 0;
       for (int i = 1; i < n; i++) {
         if (a[i - 1].compareTo(a[i]) > 0) {
-          swap(a, i - 1, i);
+          ArrayUtils.swap(a, i - 1, i);
           newN = i;
         }
       }
@@ -59,7 +61,7 @@ public class BubbleSort {
       int i;
       for (i = 1; i < a.length; i++) {
         if (a[i - 1] > a[i]) {
-          swap(a, i - 1, i);
+          ArrayUtils.swap(a, i - 1, i);
           swapped = true;
         }
       }
@@ -90,7 +92,7 @@ public class BubbleSort {
       swapped = false;
       for (i = 1; i < n; i++) {
         if (a[i - 1] > a[i]) {
-          swap(a, i - 1, i);
+          ArrayUtils.swap(a, i - 1, i);
           swapped = true;
         }
       }
@@ -103,24 +105,5 @@ public class BubbleSort {
     System.out.println("input N=" + a.length);
     System.out.println("passes=" + passes);
     System.out.println("comparisons=" + comparisons);
-  }
-
-  /**
-   * Generic swap of a[i] with a[j]
-   */
-  private static <T extends Comparable<? super T>>
-  void swap(T[] a, int i, int j) {
-    T buffer = a[i];
-    a[i] = a[j];
-    a[j] = buffer;
-  }
-
-  /**
-   * Swaps of a[i] with a[j]
-   */
-  private static void swap(int[] a, int i, int j) {
-    int buffer = a[i];
-    a[i] = a[j];
-    a[j] = buffer;
   }
 }
