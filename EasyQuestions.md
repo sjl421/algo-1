@@ -1,4 +1,4 @@
-Questions for daily check
+Simple questions
 ---
 
 A list of quite simple yet fundamental questions that can be solved in 15-20 minutes.
