@@ -11,12 +11,10 @@ public class ArrayPartition {
    *
    * @return partition index
    */
-  public static int partition(int[] a, int pivotIndex) {
-    validateInput(a, pivotIndex);
-    if (a.length < 2)
-      return 0; // nothing to partition
-
-    return partition(a, 0, a.length-1, pivotIndex);
+  public static int partition(int[] a, int left, int right, int pivotIndex) {
+    validateInput(a, left, right, pivotIndex);
+    ArrayUtils.swap(a, left, pivotIndex);
+    return partitionFirst(a, left, right);
   }
 
   /**
@@ -26,15 +24,13 @@ public class ArrayPartition {
    */
   public static int partitionFirst(int[] a, int left, int right) {
     int pivot = a[left];
-    int i = left + 1;
+    int swapIndex = left + 1;
     for (int j = left + 1; j < right; j++) {
-      if (a[j] < pivot) {
-        ArrayUtils.swap(a, j, i);
-        i++;
-      }
+      if (a[j] < pivot)
+        ArrayUtils.swap(a, j, swapIndex++);
     }
-    ArrayUtils.swap(a, left, i-1);
-    return i;
+    ArrayUtils.swap(a, left, swapIndex-1);
+    return swapIndex;
   }
 
   /**
@@ -43,32 +39,16 @@ public class ArrayPartition {
    * @return partition index
    */
   public static int partitionLast(int[] a, int left, int right) {
-    return partition(a, left, right, right);
-  }
-
-  /**
-   * Partitioning around selected element pivotIndex
-   *
-   * @return partition index
-   */
-  public static int partition(int[] a, int left, int right, int pivotIndex) {
-    validateInput(a, left, right, pivotIndex);
-    int i = left;
-    int pivot = a[pivotIndex];
-    for (int j = left + 1; j <= right; j++) {
-      if (a[j] < pivot)
-        ArrayUtils.swap(a, j, i++);
+    int pivot = a[right-1];
+    int swapIndex = left;
+    for (int i = left; i < right; i++) {
+      if (a[i] < pivot) {
+        ArrayUtils.swap(a, i, swapIndex);
+        swapIndex++;
+      }
     }
-    ArrayUtils.swap(a, 0, i-1);
-    return i;
-  }
-
-  private static void validateInput(int[] a, int pivotIndex) {
-    if (a == null)
-      throw new IllegalArgumentException("array is null");
-
-    if (pivotIndex < 0 || (a.length > 0 && pivotIndex >= a.length))
-      throw new IllegalArgumentException("pivotIndex is out of bounds");
+    ArrayUtils.swap(a, right, swapIndex-1);
+    return swapIndex;
   }
 
   private static void validateInput(int[] a, int left, int right, int pivotIndex) {

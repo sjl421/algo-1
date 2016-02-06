@@ -12,9 +12,11 @@ package careercup.other.arrays;
  * Created by akhalikov on 24/01/16
  */
 public class ConvertArray {
+
   /**
-   * Brute-force solution that takes O(n) space
-   * and does not change input array.
+   * Brute-force solution that takes O(n) space,
+   * but does not change the input array.
+   *
    * Time complexity: O(n)
    */
   static String[] convert(String[] a) {
@@ -34,12 +36,14 @@ public class ConvertArray {
 
   /**
    * In-place solution
+   *
    * Space complexity: O(1)
    * Time complexity: O(n^1.3)
    */
   static void convertInPlace(String[] a) {
     if (a == null)
       return;
+
     int n = a.length / 3;
 
     for (int i = 0; i < a.length; i++) {
