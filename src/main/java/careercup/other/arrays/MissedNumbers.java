@@ -1,10 +1,10 @@
-package misc;
+package careercup.other.arrays;
 
 /**
  * Problem 1:
  * Input: array of length = n-1, filled with numbers from 1 to n.
  * One number is missed. Find this number.
- * <p>
+ *
  * Problem 2:
  * Input: array of length = n-2, filled with numbers from 1 to n.
  * Two numbers are missed. Find these numbers.

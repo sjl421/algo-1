@@ -1,4 +1,4 @@
-package misc;
+package iterators;
 
 import org.junit.Assert;
 import org.junit.Test;
