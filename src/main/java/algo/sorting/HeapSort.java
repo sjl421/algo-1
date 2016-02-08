@@ -1,6 +1,6 @@
 package algo.sorting;
 
-import toolkit.utils.ArrayUtils;
+import utils.ArrayUtils;
 
 /**
  * HeapSort implementation
@@ -32,6 +32,7 @@ public class HeapSort {
 
   /**
    * Max heap data structure
+   * Overall time complexity: O(n log n)
    */
   public static class MaxHeap {
     int[] arr;
@@ -46,6 +47,8 @@ public class HeapSort {
     /**
      * The function to create a MaxHeap.
      * The function assumes that everything under given root is already heapified.
+     * Time complexity: O (log n)
+     *
      * @param index
      */
     public void maxHeapify(int index) {
@@ -72,6 +75,9 @@ public class HeapSort {
       return index * 2 + 2;
     }
 
+    /**
+     * Time complexity: O(n)
+     */
     private void buildMaxHeap() {
       for (int i = size/2 - 1; i >= 0; i--)
         maxHeapify(i);

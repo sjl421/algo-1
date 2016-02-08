@@ -13,6 +13,8 @@ public class ArrayPartition {
    */
   public static int partition(int[] a, int left, int right, int pivotIndex) {
     validateInput(a, left, right, pivotIndex);
+    if (a.length == 0)
+      return -1;
     ArrayUtils.swap(a, left, pivotIndex);
     return partitionFirst(a, left, right);
   }
@@ -23,6 +25,9 @@ public class ArrayPartition {
    * @return partition index
    */
   public static int partitionFirst(int[] a, int left, int right) {
+    validateInput(a, left, right, left);
+    if (a.length == 0)
+      return -1;
     int pivot = a[left];
     int swapIndex = left + 1;
     for (int j = left + 1; j < right; j++) {
@@ -52,6 +57,9 @@ public class ArrayPartition {
   }
 
   private static void validateInput(int[] a, int left, int right, int pivotIndex) {
+    if (a == null)
+      throw new IllegalArgumentException("a is null");
+
     if (left < 0 || left > a.length)
       throw new IllegalArgumentException("left index is out of bounds");
 
