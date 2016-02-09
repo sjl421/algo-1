@@ -1,5 +1,6 @@
 package algo;
 
+import algo.dynamic.FibonacciNumbers;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

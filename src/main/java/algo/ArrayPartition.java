@@ -1,6 +1,6 @@
 package algo;
 
-import utils.ArrayUtils;
+import utils.Util;
 
 /**
  * Partitioning of an array around some pivot element
@@ -15,7 +15,7 @@ public class ArrayPartition {
     validateInput(a, left, right, pivotIndex);
     if (a.length == 0)
       return -1;
-    ArrayUtils.swap(a, left, pivotIndex);
+    Util.swap(a, left, pivotIndex);
     return partitionFirst(a, left, right);
   }
 
@@ -32,9 +32,9 @@ public class ArrayPartition {
     int swapIndex = left + 1;
     for (int j = left + 1; j < right; j++) {
       if (a[j] < pivot)
-        ArrayUtils.swap(a, j, swapIndex++);
+        Util.swap(a, j, swapIndex++);
     }
-    ArrayUtils.swap(a, left, swapIndex-1);
+    Util.swap(a, left, swapIndex - 1);
     return swapIndex;
   }
 
@@ -48,11 +48,11 @@ public class ArrayPartition {
     int swapIndex = left;
     for (int i = left; i < right; i++) {
       if (a[i] < pivot) {
-        ArrayUtils.swap(a, i, swapIndex);
+        Util.swap(a, i, swapIndex);
         swapIndex++;
       }
     }
-    ArrayUtils.swap(a, right, swapIndex-1);
+    Util.swap(a, right, swapIndex - 1);
     return swapIndex;
   }
 

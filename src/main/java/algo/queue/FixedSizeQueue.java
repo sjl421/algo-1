@@ -1,6 +1,6 @@
 package algo.queue;
 
-import algo.Collection;
+import algo.structures.Collection;
 
 import java.util.Iterator;
 

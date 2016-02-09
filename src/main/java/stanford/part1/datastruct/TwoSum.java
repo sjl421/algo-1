@@ -1,6 +1,6 @@
 package stanford.part1.datastruct;
 
-import algo.Stopwatch;
+import utils.Stopwatch;
 import org.junit.Test;
 
 import java.io.BufferedReader;

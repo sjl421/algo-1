@@ -19,7 +19,7 @@ public class FindDuplicates {
   static final int N = 32000;
 
   static void printDuplicates(int[] arr) {
-    algo.BitSet bs = new algo.BitSet(N);
+    algo.structures.BitSet bs = new algo.structures.BitSet(N);
     for (int i = 0; i < arr.length; i++) {
       int val = arr[i];
       int val0 = val - 1; // numbers start from 1, bitset starts from 0
