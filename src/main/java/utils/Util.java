@@ -40,14 +40,22 @@ public class Util {
   }
 
   public static int[] randomInts(int n) {
-    int[] arr = new int[n];
-    for (int i = 0; i < n; i++)
-      arr[i] = RANDOM.nextInt();
-    return arr;
+    return randomInts(Integer.MAX_VALUE);
   }
 
   public static int[] randomInts(int n, int max) {
     int[] arr = new int[n];
+    for (int i = 0; i < n; i++)
+      arr[i] = RANDOM.nextInt(max);
+    return arr;
+  }
+
+  public static Integer[] randomIntegers(int n) {
+    return randomIntegers(Integer.MAX_VALUE);
+  }
+
+  public static Integer[] randomIntegers(int n, int max) {
+    Integer[] arr = new Integer[n];
     for (int i = 0; i < n; i++)
       arr[i] = RANDOM.nextInt(max);
     return arr;
