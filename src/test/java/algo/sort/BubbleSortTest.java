@@ -1,9 +1,9 @@
 package algo.sort;
 
-import org.junit.Test;
 import com.ahalikov.toolkit.utils.ArrayUtils;
+import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * Test for {@link BubbleSort}
