@@ -1,4 +1,4 @@
-package algo.combinatorics.prime;
+package algo.numbers.prime;
 
 /**
  * Prime number test

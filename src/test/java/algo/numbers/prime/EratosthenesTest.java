@@ -1,11 +1,11 @@
-package algo.combinatorics.prime;
+package algo.numbers.prime;
 
 import utils.Stopwatch;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Test {@link algo.combinatorics.prime.Eratosthenes}
+ * Test {@link algo.numbers.prime.Eratosthenes}
  *
  * @author Artur Khalikov
  */

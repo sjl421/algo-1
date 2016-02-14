@@ -1,4 +1,4 @@
-package algo.combinatorics.prime;
+package algo.numbers.prime;
 
 import org.junit.Test;
 
@@ -6,7 +6,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Test {@link algo.combinatorics.prime.PrimeTest}
+ * Test {@link algo.numbers.prime.PrimeTest}
  *
  * @author Artur Khalikov
  */
