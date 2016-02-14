@@ -1,6 +1,6 @@
 package algo.numbers;
 
-class Arithmetics {
+class IntegerMath {
   /**
    * Product of a and b
    * Runtime: O(b)
