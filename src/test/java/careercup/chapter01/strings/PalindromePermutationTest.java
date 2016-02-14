@@ -2,6 +2,7 @@ package careercup.chapter01.strings;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -11,7 +12,6 @@ import static org.junit.Assert.assertTrue;
  * @author akhalikov
  */
 public class PalindromePermutationTest {
-
   @Test
   public void testIsPalindromePermutation() throws Exception {
     assertTrue("baba", PalindromePermutation.isPalindromePermutation("baba"));
@@ -26,5 +26,13 @@ public class PalindromePermutationTest {
     assertTrue("babaY", PalindromePermutation2.isPalindromePermutation("babaY"));
     assertTrue("Tact Coa", PalindromePermutation2.isPalindromePermutation("Tact Coa"));
     assertFalse("empty string", PalindromePermutation2.isPalindromePermutation(""));
+  }
+
+  @Test
+  public void testGetCharNumber() throws Exception {
+    //assertEquals(Character.getNumericValue('a'), (int)'a');
+    //assertEquals(Character.getNumericValue('z'), (int)'z');
+    //assertEquals(Character.getNumericValue('A'), (int)'A');
+    //assertEquals(Character.getNumericValue('A'), (int)'Z');
   }
 }
