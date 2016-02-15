@@ -82,4 +82,16 @@ class IntegerMath {
     else // too big
       return sqrtRec(n, min, guess - 1);
   }
+
+  /**
+   * Integer square root
+   * Runtime: O(sqrt(n))
+   */
+  static int sqrt2(int n) {
+    for (int guess = 1; guess*guess <= n; guess++)
+      if (guess*guess == n)
+        return guess;
+    // no integer square root
+    return -1;
+  }
 }

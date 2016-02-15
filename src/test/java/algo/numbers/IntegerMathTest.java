@@ -33,7 +33,14 @@ public class IntegerMathTest {
   @Test
   public void testSqrt() {
     assertEquals(4, IntegerMath.sqrt(16));
-    assertEquals(12, IntegerMath.sqrt(256));
+    assertEquals(12, IntegerMath.sqrt(144));
+    assertEquals(-1, IntegerMath.sqrt(33));
+  }
+
+  @Test
+  public void testSqrt2() {
+    assertEquals(4, IntegerMath.sqrt(16));
+    assertEquals(12, IntegerMath.sqrt(144));
     assertEquals(-1, IntegerMath.sqrt(33));
   }
 }
