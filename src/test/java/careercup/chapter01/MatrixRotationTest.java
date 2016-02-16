@@ -2,8 +2,7 @@ package careercup.chapter01;
 
 import com.ahalikov.toolkit.utils.ArrayUtils;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import utils.Util;
 
 /**
  * Test for {@link MatrixRotation}
@@ -18,7 +17,7 @@ public class MatrixRotationTest {
 
     System.out.println("Rotated:");
     MatrixRotation.rotate(matrix);
-    ArrayUtils.print(matrix);
+    Util.print(matrix);
   }
 
   @Test(expected = IllegalArgumentException.class)

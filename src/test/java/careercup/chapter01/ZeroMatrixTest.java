@@ -1,7 +1,7 @@
 package careercup.chapter01;
 
 import org.junit.Test;
-import com.ahalikov.toolkit.utils.ArrayUtils;
+import utils.Assertions;
 
 /**
  * Test for {@link ZeroMatrix}
@@ -14,7 +14,7 @@ public class ZeroMatrixTest {
     int[][] m = {{1, 2, 3}, {5, 0, 4}, {1, 2, 3}};
     ZeroMatrix.makeZeros(m);
     int[][] expect = {{1, 0, 3}, {0, 0, 0}, {1, 0, 3}};
-    ArrayUtils.assertMatrixEquals(expect, m);
+    Assertions.assertMatrixEquals(expect, m);
   }
 
   @Test
@@ -22,7 +22,7 @@ public class ZeroMatrixTest {
     int[][] m = {{1, 2, 3}, {5, 0, 4}, {1, 2, 0}};
     ZeroMatrix.makeZeros(m);
     int[][] expect = {{1, 0, 0}, {0, 0, 0}, {0, 0, 0}};
-    ArrayUtils.assertMatrixEquals(expect, m);
+    Assertions.assertMatrixEquals(expect, m);
   }
 
   @Test
@@ -30,6 +30,6 @@ public class ZeroMatrixTest {
     int[][] m = {{0, 2}, {4, 0}};
     ZeroMatrix.makeZeros(m);
     int[][] expect = {{0, 0}, {0, 0}};
-    ArrayUtils.assertMatrixEquals(expect, m);
+    Assertions.assertMatrixEquals(expect, m);
   }
 }

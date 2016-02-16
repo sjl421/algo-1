@@ -1,9 +1,11 @@
 package algo;
 
 import org.junit.Test;
-import com.ahalikov.toolkit.utils.ArrayUtils;
 
-import static org.junit.Assert.*;
+import java.util.Arrays;
+
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Test for {@link ArrayPartition}
@@ -35,7 +37,7 @@ public class ArrayPartitionTest {
     int[] a = {3, 8, 2, 5, 1, 4, 7, 6};
     int[] expected = {1, 2, 3, 5, 8, 4, 7, 6};
     ArrayPartition.partition(a, 0, a.length, 0);
-    ArrayUtils.print(a);
+    Arrays.asList(a).forEach(x -> System.out.print(x + " "));
     assertArrayEquals(expected, a);
   }
 }

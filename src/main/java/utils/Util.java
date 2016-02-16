@@ -145,4 +145,27 @@ public class Util {
     if (arr.length == 0)
       throw new NullPointerException("arr is empty");
   }
+
+  public static void print(int[][] matrix) {
+    for(int i = 0; i < matrix.length; ++i) {
+      for(int j = 0; j < matrix[i].length; ++j) {
+        System.out.print(matrix[i][j] + " ");
+      }
+      System.out.println();
+    }
+  }
+
+  public static void print(int[] array) {
+    for (int item : array) {
+      System.out.print(item + " ");
+    }
+    System.out.println();
+  }
+
+  public static void print(Object[] array) {
+    for (Object o : array) {
+      System.out.print(o != null ? o.toString() + " " : "null ");
+    }
+    System.out.println();
+  }
 }

@@ -1,9 +1,9 @@
 package careercup.chapter10;
 
 import org.junit.Test;
-import com.ahalikov.toolkit.utils.ArrayUtils;
+import utils.Util;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * Test for {@link GroupAnagrams}
@@ -16,7 +16,7 @@ public class GroupAnagramsTest {
     System.out.println("testSort");
     String[] actual = new String[]{"abab", "Google", "Amazon", "Moo", "abba", "baba"};
     GroupAnagrams.sort(actual);
-    ArrayUtils.print(actual);
+    Util.print(actual);
     assertArrayEquals(
       new String[]{"abab", "abba", "baba", "Amazon", "Google", "Moo"},
       actual
@@ -28,7 +28,7 @@ public class GroupAnagramsTest {
     System.out.println("testSort2");
     String[] actual = new String[]{"abab", "Google", "Amazon", "Microsoft", "abba", "baba"};
     GroupAnagrams.sort2(actual);
-    ArrayUtils.print(actual);
+    Util.print(actual);
     //assertArrayEquals(
     //  new String[]{"abab", "abba", "baba", "Amazon", "Google", "Moo"},
     //  actual

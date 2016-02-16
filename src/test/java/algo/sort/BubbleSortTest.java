@@ -1,6 +1,5 @@
 package algo.sort;
 
-import com.ahalikov.toolkit.utils.ArrayUtils;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -17,7 +16,6 @@ public class BubbleSortTest {
     int[] actual = {19, 11, 2, 7, 4, 1, 5, 3};
     int[] expected = {1, 2, 3, 4, 5, 7, 11, 19};
     BubbleSort.sort1(actual);
-    ArrayUtils.print(actual);
     assertArrayEquals(expected, actual);
   }
 
@@ -26,7 +24,6 @@ public class BubbleSortTest {
     int[] actual = {1, 1, 0, 1, 0, -1};
     int[] expected = {-1, 0, 0, 1, 1, 1};
     BubbleSort.sort1(actual);
-    ArrayUtils.print(actual);
     assertArrayEquals(expected, actual);
   }
 
@@ -36,7 +33,6 @@ public class BubbleSortTest {
     int[] actual = {};
     int[] expected = {};
     BubbleSort.sort1(actual);
-    ArrayUtils.print(actual);
     assertArrayEquals(expected, actual);
   }
 
@@ -45,7 +41,6 @@ public class BubbleSortTest {
     int[] actual = {19, 11, 2, 7, 4, 1, 5, 3};
     int[] expected = {1, 2, 3, 4, 5, 7, 11, 19};
     BubbleSort.sort2(actual);
-    ArrayUtils.print(actual);
     assertArrayEquals(expected, actual);
   }
 
@@ -54,7 +49,6 @@ public class BubbleSortTest {
     int[] actual = {1, 1, 0, 1, 0, -1};
     int[] expected = {-1, 0, 0, 1, 1, 1};
     BubbleSort.sort2(actual);
-    ArrayUtils.print(actual);
     assertArrayEquals(expected, actual);
   }
 
@@ -64,7 +58,6 @@ public class BubbleSortTest {
     int[] actual = {};
     int[] expected = {};
     BubbleSort.sort1(actual);
-    ArrayUtils.print(actual);
     assertArrayEquals(expected, actual);
   }
 
@@ -73,7 +66,6 @@ public class BubbleSortTest {
     int[] actual = {2, 7, 4, 1, 5, 3};
     int[] expected = {1, 2, 3, 4, 5, 7};
     BubbleSort.sort(actual);
-    ArrayUtils.print(actual);
     assertArrayEquals(expected, actual);
   }
 }

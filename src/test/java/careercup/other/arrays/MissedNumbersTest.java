@@ -1,7 +1,7 @@
 package careercup.other.arrays;
 
-import com.ahalikov.toolkit.utils.ArrayUtils;
 import org.junit.Test;
+import utils.Util;
 
 import java.util.Random;
 
@@ -20,12 +20,12 @@ public class MissedNumbersTest {
   @Test
   public void testFind1() throws Exception {
     System.out.println("testFind1");
-    int[] a = ArrayUtils.intRange(1, N1);
+    int[] a = Util.range(1, N1);
     int k = random.nextInt(N1);
     int x = a[k];
     a[k] = 0;
 
-    ArrayUtils.print(a);
+    Util.print(a);
     System.out.println("missed number is: " + x);
     assertEquals(x, MissedNumbers.find1(a, N1));
   }
@@ -33,7 +33,7 @@ public class MissedNumbersTest {
   @Test
   public void testFind2() throws Exception {
     System.out.println("testFind2");
-    int[] a = ArrayUtils.intRange(1, N2);
+    int[] a = Util.range(1, N2);
 
     int k1 = random.nextInt(N2);
     int x = a[k1];
@@ -43,7 +43,7 @@ public class MissedNumbersTest {
     int y = a[k2];
     a[k2] = 0;
 
-    ArrayUtils.print(a);
+    Util.print(a);
     System.out.println("missed numbers: " + x + ", " + y);
 
     int[] res = MissedNumbers.find2(a, N2);

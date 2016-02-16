@@ -1,7 +1,6 @@
 package algo.sort;
 
 import org.junit.Test;
-import toolkit.utils.ArrayUtils;
 
 /**
  * Test for {@link QuickSort}
@@ -13,6 +12,7 @@ public class QuickSortTest {
   public void testSort() throws Exception {
     int[] a = {3, 2, 5, 1, 8, 0};
     QuickSort.sort(a);
-    ArrayUtils.print(a);
+    for (int i : a)
+      System.out.print(i + " ");
   }
 }
