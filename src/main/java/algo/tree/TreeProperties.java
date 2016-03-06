@@ -72,4 +72,32 @@ public class TreeProperties {
     else
       return isBalanced(root.getLeft()) && isBalanced(root.getRight());
   }
+
+  /**
+   * The diameter of a tree (sometimes called the width) is the number of nodes
+   * on the longest path between two leaves in the tree.
+   * http://www.geeksforgeeks.org/diameter-of-a-binary-tree
+   *
+   * The diameter of a tree T is the largest of the following quantities:
+   *
+   * - the diameter of T’s left subtree
+   * - the diameter of T’s right subtree
+   * - the longest path between leaves that goes through the root of T
+   *   (this can be computed from the heights of the subtrees of T)
+   *
+   * @param root
+   * @return diameter of a tree
+   */
+  public int diameter(Tree.Node root) {
+    if (root == null)
+      return 0;
+
+    int hleft = height(root.left);
+    int hright = height(root.right);
+
+    int dleft = diameter(root.left);
+    int dright = diameter(root.right);
+
+    return Math.max(hleft + hright + 1, Math.max(dleft, dright));
+  }
 }
