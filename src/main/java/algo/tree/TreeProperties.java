@@ -1,5 +1,7 @@
 package algo.tree;
 
+import utils.Util;
+
 /**
  * Tree height, depth and other properties
  * {@see https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html}
@@ -85,6 +87,8 @@ public class TreeProperties {
    * - the longest path between leaves that goes through the root of T
    *   (this can be computed from the heights of the subtrees of T)
    *
+   * Time complexity: O(n^2)
+   *
    * @param root
    * @return diameter of a tree
    */
@@ -98,6 +102,6 @@ public class TreeProperties {
     int dleft = diameter(root.left);
     int dright = diameter(root.right);
 
-    return Math.max(hleft + hright + 1, Math.max(dleft, dright));
+    return Util.max(hleft + hright + 1, dleft, dright);
   }
 }
