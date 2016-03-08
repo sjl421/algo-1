@@ -7,7 +7,7 @@ public interface PriorityQueue<E> {
   boolean isEmpty();
   E max();
   E extractMax();
-  void add(E element);
+  void insert(E key);
   int getSize();
   Comparator<E> getComparator();
 }
