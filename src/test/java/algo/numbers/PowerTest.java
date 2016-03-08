@@ -20,7 +20,7 @@ public class PowerTest {
   public void testPow2() {
     assertEquals(1, Power.pow2(1000, 0));
     assertEquals(1, Power.pow2(1, 1));
-    assertEquals(8, Power.pow2(2, 3));
+    assertEquals(729, Power.pow2(3, 6));
     assertEquals(16807, Power.pow2(7, 5));
   }
 
@@ -28,7 +28,8 @@ public class PowerTest {
   public void testPow3() {
     assertEquals(1, Power.pow3(1000, 0));
     assertEquals(1, Power.pow3(1, 1));
-    assertEquals(8, Power.pow3(2, 3));
+    assertEquals(6561, Power.pow3(3, 8));
+    assertEquals(2187, Power.pow3(3, 7));
     assertEquals(16807, Power.pow3(7, 5));
   }
 }

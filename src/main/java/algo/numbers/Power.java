@@ -26,7 +26,7 @@ public class Power {
   static int pow2(int x, int n) {
     if (n == 0)
       return 1;
-    int temp = pow(x, n/2);
+    int temp = pow2(x, n/2);
     if (n % 2 == 0)
       return temp * temp;
     else
@@ -40,7 +40,8 @@ public class Power {
         res = res * x;
 
       n = n >> 1; // n = n/2
-      x = x*x;
+      if (n > 0)
+        x = x*x;
     }
     return res;
   }
