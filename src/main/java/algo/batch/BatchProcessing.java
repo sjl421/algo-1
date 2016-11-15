@@ -1,7 +1,6 @@
 package algo.batch;
 
 import com.ahalikov.toolkit.utils.ArrayUtils;
-import com.google.common.collect.Iterables;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,35 +12,31 @@ public class BatchProcessing {
 
   public static void main(String[] args) {
     ArrayUtils.print(numbers);
-    System.out.println("");
+    System.out.println();
 
     List<Integer> buffer = new ArrayList<>();
     final int batchSize = 5;
-    Integer lastProcessedId = null;
+    Integer lastProcessedId;
 
-    for (int i = 0; i < ids.length; i++) {
-      int minId = ids[i][0], maxId = ids[i][1];
-      System.out.print("Selected: [" + minId + ", " + maxId + ") = ");
-
+    for (int[] id : ids) {
+      int minId = id[0], maxId = id[1];
       List<Integer> numbersFromRange = selectNumbersFromRange(minId, maxId);
+
+      System.out.print(String.format("Selected(%d): [%d, %d) = ", numbersFromRange.size(), minId, maxId));
       numbersFromRange.forEach(n -> System.out.print(n + " "));
-      System.out.println();
 
-      if (!buffer.isEmpty()) {
-        numbersFromRange.addAll(buffer);
-        buffer = new ArrayList<>();
-      }
+      buffer.addAll(0, numbersFromRange);
 
-      buffer.addAll(numbersFromRange);
-      System.out.print("Buffer(" + buffer.size() + "): ");
+      System.out.print("\nBuffer(" + buffer.size() + "): ");
       buffer.forEach(n -> System.out.print(n + " "));
       System.out.println();
 
       while (buffer.size() >= batchSize) {
-        List<Integer> batch = getBatch(buffer, batchSize);
+        List<Integer> batch = buffer.subList(buffer.size() - batchSize, buffer.size());
         processBatch(batch);
-        lastProcessedId = Iterables.getLast(batch);
-        System.out.println("lastProcessedId=" + lastProcessedId);
+        lastProcessedId = batch.get(0);
+        System.out.println(String.format("lastProcessedId=%d \n", lastProcessedId));
+        batch.clear();
       }
     }
 
@@ -61,18 +56,8 @@ public class BatchProcessing {
     return numbersFromRange;
   }
 
-  static List<Integer> getBatch(List<Integer> buffer, int batchSize) {
-    List<Integer> batch = new ArrayList<>();
-    while (batch.size() < batchSize && !buffer.isEmpty()) {
-      int lastIndex = buffer.size() - 1;
-      batch.add(buffer.get(lastIndex));
-      buffer.remove(lastIndex);
-    }
-    return batch;
-  }
-
   static void processBatch(List<Integer> batch) {
-    System.out.print("Processing: ");
+    System.out.print(String.format("Processing(%d): ", batch.size()));
     batch.forEach(i -> System.out.print(i + " "));
     System.out.println("");
   }
