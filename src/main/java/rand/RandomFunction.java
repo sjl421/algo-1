@@ -6,7 +6,7 @@ import java.util.Random;
  * Function that works as a coin returning random result at each call.
  */
 class RandomFunction {
-  static final Random RANDOM = new Random();
+  private static final Random RANDOM = new Random();
 
   static int frand4() {
     int x = frand();

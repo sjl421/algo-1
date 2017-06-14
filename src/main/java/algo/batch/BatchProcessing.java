@@ -1,6 +1,6 @@
 package algo.batch;
 
-import com.ahalikov.toolkit.utils.ArrayUtils;
+import toolkit.utils.ArrayUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
