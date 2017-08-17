@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
-/**
- * Test for {@link BubbleSort}
- *
- * @author ahalikov
- */
 public class BubbleSortTest {
 
   @Test

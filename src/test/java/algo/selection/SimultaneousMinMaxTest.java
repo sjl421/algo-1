@@ -5,11 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Test for {@link SimultaneousMinMax}
- *
- * Created by akhalikov on 09/02/16
- */
 public class SimultaneousMinMaxTest {
   @Test
   public void testFindMinMax() throws Exception {

@@ -6,8 +6,6 @@ import java.util.Random;
 
 /**
  * Shuffling
- *
- * Created by akhalikov on 10/02/16
  */
 public class Shuffle {
   private static final Random RANDOM = new Random();

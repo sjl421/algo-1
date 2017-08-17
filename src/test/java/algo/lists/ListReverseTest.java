@@ -6,11 +6,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link ListReverse}
- *
- * @author akhalikov
- */
 public class ListReverseTest {
 
   @Test

@@ -19,7 +19,7 @@ import utils.Util;
  *
  * @link http://geeksquiz.com/heap-sort
  */
-public class HeapSort {
+class HeapSort {
 
   static void sort(int[] arr) {
     final MaxHeap heap = new MaxHeap(arr, arr.length);
@@ -38,7 +38,7 @@ public class HeapSort {
     int[] arr;
     int size;
 
-    public MaxHeap(int[] arr, int size) {
+    MaxHeap(int[] arr, int size) {
       this.arr = arr;
       this.size = size;
       buildMaxHeap();
@@ -51,7 +51,7 @@ public class HeapSort {
      *
      * @param index
      */
-    public void maxHeapify(int index) {
+    void maxHeapify(int index) {
       int max = index;
       int left = left(index);
       int right = right(index);

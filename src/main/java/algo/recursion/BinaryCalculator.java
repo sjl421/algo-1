@@ -7,7 +7,7 @@ class BinaryCalculator {
    * O(log n) - the time and space requirements are estimated
    * by the number of recursive calls.
    */
-  public static String getBinary(long decimalNum) {
+  static String getBinary(long decimalNum) {
     if (decimalNum < 0)
       throw new IllegalArgumentException("Expected only positive numbers");
 

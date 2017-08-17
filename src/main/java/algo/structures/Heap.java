@@ -4,9 +4,6 @@ import utils.Util;
 
 import java.util.Comparator;
 
-/**
- * Created by akhalikov on 10/02/16
- */
 public class Heap<E> implements PriorityQueue<E> {
 
   private E[] items;

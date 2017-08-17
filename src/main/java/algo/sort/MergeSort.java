@@ -1,5 +1,7 @@
 package algo.sort;
 
+import static java.lang.System.arraycopy;
+
 /**
  * In-place merge sort
  *
@@ -49,7 +51,6 @@ public class MergeSort {
   }
 
   private static void save(int[] a, int lo, int hi) {
-    for (int i = lo; i < hi; i++)
-      aux[i] = a[i];
+    arraycopy(a, lo, aux, lo, hi - lo);
   }
 }

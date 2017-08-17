@@ -6,11 +6,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link ListDuplicates}
- * 
- * @author akhalikov
- */
 public class ListDuplicatesTest {
   @Test
   public void testRemoveDuplicates() throws Exception {

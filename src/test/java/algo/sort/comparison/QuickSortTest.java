@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by akhalikov on 12/02/16
- */
 public class QuickSortTest {
   static final QuickSort<Integer> QUICK = new QuickSort<>();
 

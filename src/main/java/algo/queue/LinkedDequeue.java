@@ -4,7 +4,6 @@ import java.util.NoSuchElementException;
 
 /**
  * Linked double-ended queue
- * @param <E>
  */
 class LinkedDequeue<E> implements Dequeue<E> {
   private QueueNode<E> first;

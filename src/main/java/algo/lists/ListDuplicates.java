@@ -2,10 +2,8 @@ package algo.lists;
 
 /**
  * Identifying duplicates in a linked list
- *
- * @author akhalikov
  */
-public class ListDuplicates {
+class ListDuplicates {
   static class Node {
     int data;
     Node next;

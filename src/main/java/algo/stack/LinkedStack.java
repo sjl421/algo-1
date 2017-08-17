@@ -2,14 +2,12 @@ package algo.stack;
 
 /**
  * Basic implementation of a LIFO stack based on linked list.
- *
- * @author akhalikov
  */
 public class LinkedStack<E> implements Stack<E> {
   /**
    * Top element of a stack
    */
-  protected StackNode top;
+  private StackNode top;
 
   @Override
   public void push(E item) {
@@ -47,7 +45,7 @@ public class LinkedStack<E> implements Stack<E> {
     private Object data;
     private StackNode<E> next;
 
-    public StackNode(E data) {
+    StackNode(E data) {
       this.data = data;
     }
   }

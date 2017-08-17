@@ -5,8 +5,6 @@ import java.util.List;
 
 /**
  * HashTable interface
- *
- * Created by akhalikov on 01/03/16
  */
 public class HashTable<K, V> {
   private List<Node<K, V>> data;

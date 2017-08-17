@@ -7,8 +7,6 @@ import java.util.Iterator;
 /**
  * Implementation of queue based on array of fixed size.
  * Queue is FIFO (first in - first out) dynamic set.
- *
- * @author akhalikov
  */
 public class FixedSizeQueue<E> implements Queue<E>, Collection<E> {
   private Object[] elements;

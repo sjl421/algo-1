@@ -6,11 +6,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Test for {@link EvenIterator}
- *
- * @author ahalikov
- */
 public class EvenIteratorTest {
   @Test
   public void testEvenIterator() throws Exception {

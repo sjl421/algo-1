@@ -10,15 +10,12 @@ import java.util.Arrays;
  *
  * @author Artur Khalikov
  */
-public class Eratosthenes {
+class Eratosthenes {
   /**
    * Brut-force implementation
    * Performance is O(log (log N))
-   *
-   * @param n
-   * @return
    */
-  public static boolean[] sieve(int n) {
+  static boolean[] sieve(int n) {
     boolean[] sieve = new boolean[n];
     Arrays.fill(sieve, true);
     sieve[0] = false;

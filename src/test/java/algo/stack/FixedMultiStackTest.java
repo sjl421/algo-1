@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link FixedMultiStack}
- *
- * @author akhalikov
- */
 public class FixedMultiStackTest {
 
   @Test

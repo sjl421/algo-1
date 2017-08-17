@@ -7,22 +7,22 @@ import java.util.Comparator;
 
 public abstract class ComparisonSort<T> extends Sorter<T> {
   private Comparator<T> comp = Comparators.naturalOrder();
-  protected int comparisons;
+  int comparisons;
 
   protected int compare(T left, T right) {
     return comp.compare(left, right);
   }
 
-  protected boolean less(T left, T right) {
+  boolean less(T left, T right) {
     return comp.compare(left, right) < 0;
   }
 
-  protected boolean lessOrEqual(T left, T right) {
+  boolean lessOrEqual(T left, T right) {
     int c = comp.compare(left, right);
     return c < 0 || c == 0;
   }
 
-  protected boolean greater(T left, T right) {
+  boolean greater(T left, T right) {
     return comp.compare(left, right) > 0;
   }
 
@@ -36,7 +36,7 @@ public abstract class ComparisonSort<T> extends Sorter<T> {
     this.comp = comparator;
   }
 
-  public int getComparisonsAndReset() {
+  int getComparisonsAndReset() {
     int oldComparisons = comparisons;
     comparisons = 0;
     return oldComparisons;

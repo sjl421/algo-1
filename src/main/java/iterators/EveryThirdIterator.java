@@ -6,14 +6,12 @@ import java.util.NoSuchElementException;
 /**
  * Iterator that takes java.util.Iterator,
  * and uses it to iterate by every third element.
- *
- * @author ahalikov
  */
 public class EveryThirdIterator implements Iterator {
   private final Iterator itr;
   private Object next;
 
-  public EveryThirdIterator(Iterator itr) {
+  EveryThirdIterator(Iterator itr) {
     this.itr = itr;
     setNext();
   }

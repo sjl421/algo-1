@@ -2,10 +2,8 @@ package algo.selection;
 
 /**
  * Find min and max for the given number array
- *
- * Created by akhalikov on 09/02/16
  */
-public class SimultaneousMinMax {
+class SimultaneousMinMax {
   /**
    * Simple implementation
    * Number of comparisons: n*2
@@ -57,7 +55,7 @@ public class SimultaneousMinMax {
 
     int comparisonsNum;
 
-    public MinMax(int min, int max) {
+    MinMax(int min, int max) {
       this.min = min;
       this.max = max;
     }

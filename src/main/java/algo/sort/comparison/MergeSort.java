@@ -1,5 +1,7 @@
 package algo.sort.comparison;
 
+import static java.lang.System.arraycopy;
+
 /**
  * Created by akhalikov on 13/02/16
  */
@@ -28,7 +30,7 @@ public class MergeSort extends ComparisonSort<Integer> {
   }
 
   private void merge(Integer[] array, int lo, int mid, int hi) {
-    System.arraycopy(array, lo, helper, lo, hi - lo + 1);
+    arraycopy(array, lo, helper, lo, hi - lo + 1);
     int leftIndex = lo, rightIndex = mid + 1, k = lo;
 
     while (leftIndex <= mid && rightIndex <= hi) {
@@ -41,7 +43,6 @@ public class MergeSort extends ComparisonSort<Integer> {
     }
 
     int remaining = mid - leftIndex;
-    for (int i = 0; i <= remaining; i++)
-      array[k + i] = helper[leftIndex + i];
+    arraycopy(helper, leftIndex + 0, array, k + 0, remaining + 1);
   }
 }

@@ -16,7 +16,7 @@ public class LinkedList<E> implements Iterable<E> {
    * Time/space complexity: O(1)
    * @param item
    */
-  public void addFirst(E item) {
+  private void addFirst(E item) {
     final Node<E> oldFirst = first;
     final Node<E> newNode = new Node(null, item, first);
     first = newNode;
@@ -38,7 +38,7 @@ public class LinkedList<E> implements Iterable<E> {
       addFirst(item);
     } else {
       Node<E> oldLast = last;
-      Node<E> newNode = new Node(last, item, null);
+      Node<E> newNode = new Node<>(last, item, null);
       last = newNode;
       if (oldLast != null) {
         oldLast.next = newNode;
@@ -98,7 +98,6 @@ public class LinkedList<E> implements Iterable<E> {
   /**
    * Remove the first occurence of the item from the list
    * Time complexity: O(n) - we need to traverse the list to find the item
-   * @param item
    * @return true if element returned, false otherwise
    */
   public boolean remove(E item) {
@@ -189,11 +188,11 @@ public class LinkedList<E> implements Iterable<E> {
       this.next = next;
     }
 
-    public Node<E> getPrev() {
+    Node<E> getPrev() {
       return prev;
     }
 
-    public void setPrev(Node<E> prev) {
+    void setPrev(Node<E> prev) {
       this.prev = prev;
     }
   }
@@ -205,7 +204,7 @@ public class LinkedList<E> implements Iterable<E> {
     private Node<E> next;
     private Node<E> lastReturned;
 
-    public IteratorImpl(Node<E> next) {
+    IteratorImpl(Node<E> next) {
       this.next = next;
     }
 

@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link TreeSearch}
- *
- * @author akhalikov
- */
 public class TreeSearchTest {
   @Test
   public void testSearch() throws Exception {

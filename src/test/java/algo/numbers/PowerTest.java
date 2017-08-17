@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test PowerTest
- */
 public class PowerTest {
   @Test
   public void testPow() {

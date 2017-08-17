@@ -5,9 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test DiameterTest
- */
 public class DiameterTest {
   @Test
   public void testDiameter() {

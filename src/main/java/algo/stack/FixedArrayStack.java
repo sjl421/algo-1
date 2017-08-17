@@ -6,8 +6,6 @@ import java.util.Iterator;
 /**
  * Basic implementation of a stack based on array of fixed size.
  * Stack is LIFO (last in - first out) dynamic set.
- *
- * @author akhalikov
  */
 public class FixedArrayStack<E> implements Stack<E>, Collection<E> {
   private Object[] elements;
@@ -18,7 +16,7 @@ public class FixedArrayStack<E> implements Stack<E>, Collection<E> {
    */
   private int head;
 
-  public FixedArrayStack(int capacity) {
+  FixedArrayStack(int capacity) {
     this.capacity = capacity;
     this.elements = new Object[capacity];
   }

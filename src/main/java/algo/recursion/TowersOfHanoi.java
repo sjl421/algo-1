@@ -11,7 +11,7 @@ public class TowersOfHanoi {
     System.out.println(moveDisks(-1, "T1", "T2", "T3"));
   }
 
-  public static String moveDisks(int n, String orig, String dest, String temp) {
+  private static String moveDisks(int n, String orig, String dest, String temp) {
     if (n <= 0)
       throw new IllegalArgumentException("n <= 0");
     return move(n, orig, dest, temp);

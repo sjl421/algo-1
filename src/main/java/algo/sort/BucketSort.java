@@ -2,6 +2,7 @@ package algo.sort;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Bucket sort is mainly useful when input is uniformly distributed over a range.
@@ -22,12 +23,11 @@ import java.util.Collections;
  *
  * @link http://www.geeksforgeeks.org/bucket-sort-2
  */
-public class BucketSort {
+class BucketSort {
   /**
    * Bucket sort
    * Time complexity: O(n)
    * Space complexity: O(n)
-   * @param arr
    */
   static void sort(float[] arr) {
     if (arr == null)

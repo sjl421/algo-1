@@ -2,10 +2,8 @@ package algo.lists;
 
 /**
  * Merging linked lists
- *
- * @author akhalikov
  */
-public class ListMerge {
+class ListMerge {
   static class Node {
     int data;
     Node next;

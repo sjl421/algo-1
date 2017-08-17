@@ -26,9 +26,6 @@ public class BinaryConverter {
 
   /**
    * {@see Integer.numberOfLeadingZeros}
-   *
-   * @param i
-   * @return
    */
   private static int numberOfLeadingZeros(int i) {
     // HD, Figure 5-6
@@ -55,7 +52,7 @@ public class BinaryConverter {
     return n;
   }
 
-  private static int formatUnsignedInt(int val, int shift, char[] buf, int offset, int len) {
+  private static void formatUnsignedInt(int val, int shift, char[] buf, int offset, int len) {
     int charPos = len;
     int radix = 1 << shift;
     int mask = radix - 1;
@@ -63,8 +60,6 @@ public class BinaryConverter {
       buf[offset + --charPos] = digits[val & mask];
       val >>>= shift;
     } while (val != 0 && charPos > 0);
-
-    return charPos;
   }
 
   private final static char[] digits = {

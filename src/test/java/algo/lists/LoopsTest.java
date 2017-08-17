@@ -6,11 +6,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link Loops}
- *
- * @author akhalikov
- */
 public class LoopsTest {
 
   @Test

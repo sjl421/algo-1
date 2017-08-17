@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link GraphSearch}
- *
- * @author akhalikov
- */
 public class GraphSearchTest {
 
   @Test

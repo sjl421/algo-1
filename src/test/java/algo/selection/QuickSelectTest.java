@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link QuickSelect}
- *
- * Created by akhalikov on 10/02/16
- */
 public class QuickSelectTest {
   @Test
   public void testSelect() throws Exception {

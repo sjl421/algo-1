@@ -6,8 +6,6 @@ import static utils.Util.swap;
  * Bubble sort review
  * https://en.wikipedia.org/wiki/Bubble_sort
  * https://www.youtube.com/watch?v=Jdtq5uKz-w4
- *
- * @author ahalikov
  */
 public class BubbleSort<E> extends ComparisonSort<E> {
   @Override

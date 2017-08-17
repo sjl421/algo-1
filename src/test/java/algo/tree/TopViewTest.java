@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link TopView}
- *
- * @author akhalikov
- */
 public class TopViewTest {
   /**
    * Expected: 1 5 3 4 7

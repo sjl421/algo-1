@@ -4,11 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by akhalikov on 13/02/16
- */
 public class MergeSortTest {
-
   private static final MergeSort MERGE = new MergeSort();
 
   @Test

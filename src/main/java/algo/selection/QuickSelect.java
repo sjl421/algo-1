@@ -10,16 +10,14 @@ import utils.Util;
  * Worst-case performance: O(n^2)
  *
  * @link https://en.wikipedia.org/wiki/Quickselect
- *
- * Created by akhalikov on 10/02/16
  */
-public class QuickSelect {
+class QuickSelect {
 
-  public static int select(int[] arr, int k) {
+  static int select(int[] arr, int k) {
     return select(arr, 0, arr.length-1, k);
   }
 
-  public static int select(int[] arr, int left, int right, int k) {
+  private static int select(int[] arr, int left, int right, int k) {
     if (left == right)
       return arr[left];
     int pivotIndex = randomPivot(left, right);
@@ -36,7 +34,7 @@ public class QuickSelect {
     return left + (int) Math.floor(Math.random() * (right - left + 1));
   }
 
-  static int partition(int[] arr, int left, int right, int pivotIndex) {
+  private static int partition(int[] arr, int left, int right, int pivotIndex) {
     int pivotValue = arr[pivotIndex];
     Util.swap(arr, right, pivotIndex); // move pivot to the end
     int swapIndex = left;

@@ -5,11 +5,11 @@ package algo;
  */
 public class BinarySearch {
 
-  public static int search(int[] arr, int key) {
+  static int search(int[] arr, int key) {
     return search(arr, key, 0, arr.length);
   }
 
-  public static int search(int[] arr, int key, int fromIndex, int toIndex) {
+  private static int search(int[] arr, int key, int fromIndex, int toIndex) {
     if (arr.length == 0)
       return -1; // empty array
 

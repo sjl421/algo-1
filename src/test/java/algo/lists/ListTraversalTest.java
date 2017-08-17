@@ -4,11 +4,6 @@ import algo.lists.ListTraversal.Node;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Test for {@link ListTraversal}
- *
- * @author akhalikov
- */
 public class ListTraversalTest {
   @Test
   public void tesGetNode1() {

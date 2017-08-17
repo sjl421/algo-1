@@ -4,7 +4,6 @@ import algo.ArrayPartition;
 
 /**
  * Quick sort implementation
- * @author ahalikov
  */
 public class QuickSort {
 

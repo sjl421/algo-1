@@ -4,11 +4,6 @@ import utils.Stopwatch;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- * Test {@link algo.numbers.prime.Eratosthenes}
- *
- * @author Artur Khalikov
- */
 public class EratosthenesTest {
     @Test
     public void testSieve1() throws Exception {

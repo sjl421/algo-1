@@ -1,33 +1,33 @@
 package algo.tree;
 
+import algo.tree.Tree.Node;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
 /**
  * Level-order view of a tree
- *
- * @author akhalikov
  */
 public class LevelView {
 
-  public static void printLevelOrder(Tree tree) {
+  static void printLevelOrder(Tree tree) {
     printLevelOrder(tree.getRoot());
   }
 
-  static void printLevelOrder(Tree.Node root) {
+  private static void printLevelOrder(Node root) {
     if (root == null)
       return;
 
     // New line marker
-    final Tree.Node nlMarker = new Tree.Node(null);
+    final Node nlMarker = new Node(null);
 
     // Level order queue
-    final Queue<Tree.Node> q = new LinkedList<>();
+    final Queue<Node> q = new LinkedList<>();
     q.add(root);
     q.add(nlMarker);
 
     while (!q.isEmpty()) {
-      Tree.Node n = q.poll();
+      Node n = q.poll();
       if (n == nlMarker) {
         System.out.println();
         if (!q.isEmpty())

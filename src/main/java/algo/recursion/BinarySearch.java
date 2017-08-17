@@ -7,10 +7,8 @@ package algo.recursion;
  * Worst space complexity - O(log n)
  *
  * todo: compare execution time with iterative search
- *
- * @author ahalikov
  */
-public class BinarySearch {
+class BinarySearch {
 
   /**
    * Search for key in array of objects
@@ -20,7 +18,7 @@ public class BinarySearch {
    * @return > 0 - position of the key in array
    * < 0 - if key is not found in array
    */
-  public static int search(Object[] a, Object key) {
+  static int search(Object[] a, Object key) {
     return searchRec(a, 0, a.length - 1, key);
   }
 

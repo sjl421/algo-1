@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link Trie}
- */
 public class TrieTest {
   @Test
   public void testInsert() {
@@ -26,7 +23,7 @@ public class TrieTest {
     assertTrie(dict, "", "xyz");
   }
 
-  void assertTrie(Trie dict, String test, String input) {
+  private void assertTrie(Trie dict, String test, String input) {
     String actual = dict.getMatchingPrefix(input);
     System.out.println(input + ": " + actual);
     assertEquals(test, actual);

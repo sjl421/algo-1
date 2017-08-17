@@ -3,11 +3,6 @@ package algo.sort;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Test for {@link SelectionSort}
- *
- * @author ahalikov
- */
 public class SelectionSortTest {
 
   @Test

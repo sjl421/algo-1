@@ -4,8 +4,6 @@ package algo.stack;
  * Implementation of MultiStack interface.
  * Number of stacks is fixed and defined in constructor.
  * Each stack has fixed capacity.
- *
- * @author akhalikov
  */
 public class FixedMultiStack<E> implements MultiStack<E> {
   private Object[] elements;
@@ -13,7 +11,7 @@ public class FixedMultiStack<E> implements MultiStack<E> {
   private int numberOfStacks;
   private int[] sizes;
 
-  public FixedMultiStack(int stackCapacity, int numberOfStacks) {
+  FixedMultiStack(int stackCapacity, int numberOfStacks) {
     this.stackCapacity = stackCapacity;
     this.numberOfStacks = numberOfStacks;
     this.elements = new Object[numberOfStacks * stackCapacity];

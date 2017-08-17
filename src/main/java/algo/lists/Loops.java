@@ -3,7 +3,7 @@ package algo.lists;
 /**
  * Finding a loop in a linked list
  */
-public class Loops {
+class Loops {
   /**
    * Detect cycle in a linked list
    * Classic approach: Floyd's Tortoise-Hare O(n) algorithm

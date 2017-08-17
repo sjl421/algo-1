@@ -7,11 +7,6 @@ import java.util.Arrays;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
-/**
- * Test for {@link ArrayPartition}
- *
- * Created by ahalikov on 24/04/15.
- */
 public class ArrayPartitionTest {
   @Test(expected = IllegalArgumentException.class)
   public void testPartitionNullArray() throws Exception {

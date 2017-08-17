@@ -4,22 +4,20 @@ import java.util.Iterator;
 
 /**
  * Binary search tree implementation
- *
- * @author akhalikov
  */
 public class BinarySearchTree<E> implements Tree<E> {
   private Tree.Node<E> root;
   private int size;
 
-  public BinarySearchTree() {
+  BinarySearchTree() {
   }
 
-  public BinarySearchTree(Node<E> root) {
+  BinarySearchTree(Node<E> root) {
     this.root = root;
     this.size = TreeProperties.height(root);
   }
 
-  public BinarySearchTree(E... items) {
+  BinarySearchTree(E... items) {
     insert(items);
   }
 

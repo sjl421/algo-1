@@ -5,10 +5,8 @@ import algo.queue.Queue;
 
 /**
  * Basic methods of traversing a binary tree
- *
- * @author ahalikov
  */
-public class BasicTraversal {
+class BasicTraversal {
   /**
    * Level-order (breadth-first) traversal of a tree
    *

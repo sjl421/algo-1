@@ -12,13 +12,11 @@ import java.util.Map;
  * are usually strings.
  *
  * {@see https://en.wikipedia.org/wiki/Trie}
- *
- * Created by akhalikov on 24/02/16
  */
 public class Trie {
   private TrieNode root = TrieNode.EMPTY;
 
-  public Trie() {
+  Trie() {
   }
 
   public Trie(String[] words) {
@@ -56,7 +54,7 @@ public class Trie {
   /**
    * The main method that finds out the longest string 'input'
    */
-  public String getMatchingPrefix(String input) {
+  String getMatchingPrefix(String input) {
     String result = "";
     int length = input.length();
 
@@ -92,13 +90,13 @@ public class Trie {
   }
 
   final static class TrieNode {
-    public static final TrieNode EMPTY = new TrieNode((char) 0);
+    static final TrieNode EMPTY = new TrieNode((char) 0);
 
     private char value;
     private boolean isEnd;
     private Map<Character, TrieNode> children;
 
-    public TrieNode(char ch) {
+    TrieNode(char ch) {
       this.value = ch;
       children = new HashMap<>();
       isEnd = false;
@@ -112,15 +110,15 @@ public class Trie {
       this.value = value;
     }
 
-    public boolean isEnd() {
+    boolean isEnd() {
       return isEnd;
     }
 
-    public void setIsEnd(boolean isEnd) {
+    void setIsEnd(boolean isEnd) {
       this.isEnd = isEnd;
     }
 
-    public Map<Character, TrieNode> getChildren() {
+    Map<Character, TrieNode> getChildren() {
       return children;
     }
 

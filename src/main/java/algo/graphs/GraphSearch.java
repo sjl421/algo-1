@@ -1,25 +1,23 @@
 package algo.graphs;
 
+import algo.graphs.Graph.Node;
 import algo.graphs.Graph.Node.State;
 import algo.queue.LinkedQueue;
 import algo.queue.Queue;
+import static java.lang.System.out;
 
 /**
  * Searching a graph: BFS, DFS
- *
- * @author akhalikov
  */
-public class GraphSearch {
-  /**
-   * Iterative queue-based breadth-first search
-   * @param node
-   */
-  static void breadthFirstSearch(Graph.Node node) {
-    final Queue<Graph.Node> queue = new LinkedQueue();
+class GraphSearch {
+
+  // Iterative queue-based breadth-first search
+  static void breadthFirstSearch(Node node) {
+    final Queue<Node> queue = new LinkedQueue<>();
     node.setState(State.Visited);
     queue.add(node);
     while (!queue.isEmpty()) {
-      Graph.Node p = queue.remove();
+      Node p = queue.remove();
       p.setState(State.Visited);
       visitNode(p);
       p.getAdjacentNodes().forEach(adjacent -> {
@@ -31,11 +29,8 @@ public class GraphSearch {
     }
   }
 
-  /**
-   * Recursive depth-first search
-   * @param node
-   */
-  static void depthFirstSearch(Graph.Node node) {
+  // Recursive depth-first search
+  static void depthFirstSearch(Node node) {
     if (node == null)
       return;
     node.setState(State.Visited);
@@ -46,7 +41,7 @@ public class GraphSearch {
     });
   }
 
-  static void visitNode(Graph.Node node) {
-    System.out.print(node.getName() + " ");
+  private static void visitNode(Node node) {
+    out.print(node.getName() + " ");
   }
 }

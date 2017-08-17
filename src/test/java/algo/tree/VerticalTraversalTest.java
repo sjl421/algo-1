@@ -2,11 +2,6 @@ package algo.tree;
 
 import org.junit.Test;
 
-/**
- * Test for {@link VerticalTraversal}
- *
- * @author akhalikov
- */
 public class VerticalTraversalTest {
   @Test
   public void testPrintVerticalOrder1() throws Exception {

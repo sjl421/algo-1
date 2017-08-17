@@ -3,11 +3,6 @@ package algo.tree;
 import algo.tree.Tree.Node;
 import org.junit.Test;
 
-/**
- * A test for {@link BasicTraversal}
- *
- * @author ahalikov
- */
 public class BasicTraversalTest {
 
   static final Node<Character> TEST_TREE = new Node('A',

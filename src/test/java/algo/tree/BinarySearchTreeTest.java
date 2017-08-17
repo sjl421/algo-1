@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link BinarySearchTree}
- *
- * @author ahalikov
- */
 public class BinarySearchTreeTest {
   @Test
   public void testInsert() throws Exception {

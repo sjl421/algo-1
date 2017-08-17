@@ -4,8 +4,6 @@ package algo.selection;
  * Median of Medians algorithm implementation
  *
  * @link https://en.wikipedia.org/wiki/Median_of_medians
- *
- * Created by akhalikov on 10/02/16
  */
 public class MedianOfMedians {
 

@@ -2,11 +2,6 @@ package algo.sort;
 
 import org.junit.Test;
 
-/**
- * Test for {@link QuickSort}
- *
- * Created by akhalikov on 06/02/16
- */
 public class QuickSortTest {
   @Test
   public void testSort() throws Exception {

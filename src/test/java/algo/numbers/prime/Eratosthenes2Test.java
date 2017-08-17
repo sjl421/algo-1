@@ -3,11 +3,6 @@ package algo.numbers.prime;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- * Test {@link algo.numbers.prime.Eratosthenes2}
- *
- * @author Artur Khalikov
- */
 public class Eratosthenes2Test {
 
     @Test

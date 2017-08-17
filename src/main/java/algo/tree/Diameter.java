@@ -7,16 +7,14 @@ import utils.Util;
  *
  * Brute-force quadratic solution is here {@link TreeProperties}
  * This version provides O(n) time complexity.
- *
- * Created by akhalikov on 06/03/16
  */
-public class Diameter {
+class Diameter {
 
-  public static int diameter(Tree.Node root) {
+  static int diameter(Tree.Node root) {
     return diamUtil(root, new Height());
   }
 
-  public static int diameter2(Tree.Node root) {
+  static int diameter2(Tree.Node root) {
     Pair p = diamUtil2(root);
     return p.diameter;
   }
@@ -65,7 +63,7 @@ public class Diameter {
     int diameter;
     int height;
 
-    public Pair(int diameter, int height) {
+    Pair(int diameter, int height) {
       this.diameter = diameter;
       this.height = height;
     }

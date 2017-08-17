@@ -5,10 +5,8 @@ package algo.sort;
  *
  * 1. Sedgewick R., Wayne K. Algorithms, page 250
  * 2. {@see http://geeksquiz.com/insertion-sort/}
- *
- * @author ahalikov
  */
-public class InsertionSort {
+class InsertionSort {
 
   static void sort(int[] a) {
     if (a == null)

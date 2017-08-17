@@ -11,7 +11,7 @@ public class ArrayPartition {
    *
    * @return partition index
    */
-  public static int partition(int[] a, int left, int right, int pivotIndex) {
+  static int partition(int[] a, int left, int right, int pivotIndex) {
     validateInput(a, left, right, pivotIndex);
     if (a.length == 0)
       return -1;

@@ -4,7 +4,7 @@ package algo.numbers;
  * pow(x, n)
  * Created by akhalikov on 03/03/16
  */
-public class Power {
+class Power {
   /**
    * Run-time complexity: O(n)
    * Space complexity: O(1)

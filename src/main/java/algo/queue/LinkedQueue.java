@@ -2,8 +2,6 @@ package algo.queue;
 
 /**
  * Basic FIFO queue based on linked list
- *
- * @author akhalikov
  */
 public class LinkedQueue<E> implements Queue<E> {
   protected QueueNode<E> first;
@@ -49,7 +47,7 @@ public class LinkedQueue<E> implements Queue<E> {
     private E data;
     private QueueNode<E> next;
 
-    public QueueNode(E data) {
+    QueueNode(E data) {
       this.data = data;
     }
   }

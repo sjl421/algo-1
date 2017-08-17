@@ -5,11 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link TreeProperties}
- *
- * @author akhalikov
- */
 public class TreePropertiesTest {
   @Test
   public void testHeight1() throws Exception {

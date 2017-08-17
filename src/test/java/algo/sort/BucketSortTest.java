@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
-/**
- * Test for {@link BucketSort}
- *
- * Created by akhalikov on 22/01/16
- */
 public class BucketSortTest {
   @Test
   public void testSort() throws Exception {

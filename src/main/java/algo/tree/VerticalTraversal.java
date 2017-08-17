@@ -19,18 +19,15 @@ import java.util.TreeMap;
  * ... and so on.
  *
  * Vertical nodes are nodes that have the same hd from the root.
- *
- * @author akhalikov
  */
-public class VerticalTraversal {
+class VerticalTraversal {
   private static Map<Integer, List<Object>> verticalOrderMap;
 
   /**
    * Map based solution with time-complexity: O(n)
-   * @param tree
    */
   static void printVerticalOrder(Tree tree) {
-    verticalOrderMap = new TreeMap();
+    verticalOrderMap = new TreeMap<>();
     fillVerticalOrderMap(tree.getRoot(), 0);
     verticalOrderMap.keySet().forEach(key ->
         System.out.println(verticalOrderMap.get(key))

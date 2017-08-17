@@ -7,8 +7,6 @@ import java.util.Iterator;
 
 /**
  * Basic implementation of queue supporting dynamic size.
- *
- * @author akhalikov
  */
 public class DynamicQueue<E> implements Queue<E>, Collection<E> {
 

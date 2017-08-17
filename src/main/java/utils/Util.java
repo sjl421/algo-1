@@ -2,15 +2,10 @@ package utils;
 
 import java.util.Random;
 
-/**
- * Util
- *
- * Created by akhalikov on 06/02/16
- */
 public class Util {
   static final Random RANDOM = new Random();
 
-  public static int[] range(int start, int end) {
+  private static int[] range(int start, int end) {
     int[] result = new int[end - start];
     for (int i = 0; i < result.length; i++)
       result[i] = start++;
@@ -39,7 +34,7 @@ public class Util {
     a[j] = buffer;
   }
 
-  public static int[] randomInts(int n) {
+  private static int[] randomInts(int n) {
     return randomInts(Integer.MAX_VALUE);
   }
 
@@ -50,7 +45,7 @@ public class Util {
     return arr;
   }
 
-  public static Integer[] randomIntegers(int n) {
+  private static Integer[] randomIntegers(int n) {
     return randomIntegers(Integer.MAX_VALUE);
   }
 
@@ -86,9 +81,6 @@ public class Util {
 
   /**
    * Finds index of minimum element in array of objects
-   *
-   * @param a array of ints
-   * @return min element
    */
   public static <T extends Comparable<? super T>> int min(T[] a) {
     return min(a, 0);
@@ -96,10 +88,6 @@ public class Util {
 
   /**
    * Finds minimum element in array of objects from a given index
-   *
-   * @param arr array of objects
-   * @param fromIndex index
-   * @return min element
    */
   public static <T extends Comparable<? super T>>
   int min(T[] arr, int fromIndex) {
@@ -147,9 +135,9 @@ public class Util {
   }
 
   public static void print(int[][] matrix) {
-    for(int i = 0; i < matrix.length; ++i) {
-      for(int j = 0; j < matrix[i].length; ++j) {
-        System.out.print(matrix[i][j] + " ");
+    for (int[] aMatrix : matrix) {
+      for (int anAMatrix : aMatrix) {
+        System.out.print(anAMatrix + " ");
       }
       System.out.println();
     }

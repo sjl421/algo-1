@@ -4,11 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link LinkedDequeue}
- *
- * @author akhalikov
- */
 public class LinkedDequeueTest {
 
   @Test

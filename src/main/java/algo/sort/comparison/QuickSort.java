@@ -2,9 +2,6 @@ package algo.sort.comparison;
 
 import utils.Util;
 
-/**
- * Created by akhalikov on 12/02/16
- */
 public class QuickSort<E> extends ComparisonSort<E> {
   @Override
   public void sort(E[] array) {

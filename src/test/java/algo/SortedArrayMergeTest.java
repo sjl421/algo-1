@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
-/**
- * Test for {@link SortedArrayMerge}
- */
 public class SortedArrayMergeTest {
 
   @Test

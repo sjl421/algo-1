@@ -6,14 +6,12 @@ import java.util.NoSuchElementException;
 /**
  * Having iterator by numbers,
  * design an iterator that returns even numbers.
- *
- * @author ahalikov
  */
 public class EvenIterator implements Iterator<Integer> {
   private Iterator<Integer> numbers;
   private Integer next;
 
-  public EvenIterator(Iterator<Integer> numbers) {
+  EvenIterator(Iterator<Integer> numbers) {
     this.numbers = numbers;
     setNext();
   }
@@ -34,7 +32,7 @@ public class EvenIterator implements Iterator<Integer> {
     }
   }
 
-  protected void setNext() {
+  private void setNext() {
     while (numbers.hasNext()) {
       Integer n = numbers.next();
       if (n % 2 == 0 && n != 0) {

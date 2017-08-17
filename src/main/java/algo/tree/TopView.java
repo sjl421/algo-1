@@ -14,10 +14,8 @@ import java.util.TreeMap;
  * Horizontal distance of left child of a node x is equal to horizontal distance of x minus 1,
  * and that of right child is horizontal distance of x plus 1.
  * See also: {@link VerticalTraversal}
- *
- * @author akhalikov
  */
-public class TopView {
+class TopView {
   /**
    * Solution based on vertical-order traversal
    * Compared to {@link VerticalTraversal}, only node with minimal height is stored.
@@ -30,8 +28,8 @@ public class TopView {
     );
   }
 
-  static void fillVerticalOrderMap(Tree.Node node, int hd, int height,
-                                   Map<Integer, MapItem> map) {
+  private static void fillVerticalOrderMap(Tree.Node node, int hd, int height,
+                                           Map<Integer, MapItem> map) {
     if (node == null)
       return;
 
@@ -48,7 +46,7 @@ public class TopView {
     Object data;
     int height;
 
-    public MapItem(Object data, int height) {
+    MapItem(Object data, int height) {
       this.data = data;
       this.height = height;
     }
@@ -90,7 +88,7 @@ public class TopView {
     Tree.Node node;
     int hd;
 
-    public QueueNode(Tree.Node node, int hd) {
+    QueueNode(Tree.Node node, int hd) {
       this.node = node;
       this.hd = hd;
     }

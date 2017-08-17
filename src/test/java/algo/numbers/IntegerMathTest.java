@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Test for {@link IntegerMath}
- */
 public class IntegerMathTest {
   @Test
   public void testMod() {

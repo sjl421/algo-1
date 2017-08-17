@@ -2,8 +2,6 @@ package algo.lists;
 
 /**
  * Reversing a linked list
- *
- * @author akhalikov
  */
 class ListReverse {
   /**

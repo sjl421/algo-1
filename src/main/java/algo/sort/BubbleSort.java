@@ -6,10 +6,8 @@ import utils.Util;
  * Bubble sort review
  * https://en.wikipedia.org/wiki/Bubble_sort
  * https://www.youtube.com/watch?v=Jdtq5uKz-w4
- *
- * @author ahalikov
  */
-public class BubbleSort {
+class BubbleSort {
   /**
    * Optimized bubble sort
    */

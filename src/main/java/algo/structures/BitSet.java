@@ -2,10 +2,9 @@ package algo.structures;
 
 /**
  * Simple BitSet implementation
- *
- * Created by akhalikov on 22/01/16
  */
 public class BitSet {
+
   // 2^WORD_SIZE = 32
   private static final int WORD_SIZE = 5;
   private static final int BIT_MASK = 0x1F;

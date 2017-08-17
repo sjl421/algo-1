@@ -4,8 +4,6 @@ import java.util.Stack;
 
 /**
  * Traversing a linked list
- *
- * @author akhalikov
  */
 public class ListTraversal {
   public static class Node {

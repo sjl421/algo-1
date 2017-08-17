@@ -16,7 +16,7 @@ class IntegerMath {
    * Basic power of a and b: a^b
    * Runtime: O(b), space complexity: O(b)
    */
-  static int power(int a, int b) {
+  private static int power(int a, int b) {
     if (b < 0)
       return Integer.MIN_VALUE; // error
     else if (b == 0)

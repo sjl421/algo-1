@@ -8,11 +8,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-/**
- * Test for {@link EveryThirdIterator}
- *
- * @author ahalikov
- */
 public class EveryThirdIteratorTest {
   @Test
   public void testNext() throws Exception {

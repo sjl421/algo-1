@@ -2,7 +2,6 @@ package utils;
 
 /**
  * Basic stopwatch
- * @author akhalikov
  */
 public class Stopwatch {
   private final static double NANO_FACTOR = 1000.0 * 1000 * 1000;

@@ -6,11 +6,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Test for {@link LinkedStack}
- *
- * @author akhalikov
- */
 public class LinkedStackTest {
   @Test
   public void testPushPop() throws Exception {

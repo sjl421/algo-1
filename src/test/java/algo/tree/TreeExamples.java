@@ -1,10 +1,6 @@
 package algo.tree;
 
-/**
- * Tree examples
- * @author akhalikov
- */
-public class TreeExamples {
+class TreeExamples {
   /**
    *       3
    *      / \

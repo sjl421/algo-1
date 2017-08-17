@@ -1,35 +1,22 @@
 package algo.graphs;
 
+import static java.util.Arrays.asList;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-/**
- * A Graph
- *
- * @author akhalikov
- */
 public class Graph {
-  private List<Node> nodes = new ArrayList();
+  private List<Node> nodes = new ArrayList<>();
 
-  public Graph() {
+  Graph(Node... nodes) {
+    this.nodes.addAll(asList(nodes));
   }
 
-  public Graph(Node... nodes) {
-    for (Node node: nodes)
-      this.nodes.add(node);
-  }
-
-  public List<Node> getNodes() {
-    return nodes;
-  }
-
-  public Node getNode(int index) {
+  Node getNode(int index) {
     return nodes.get(index);
   }
 
-  /**
-   * Graph node
-   */
   public static class Node {
     public enum State {
       Unvisited,
@@ -50,24 +37,23 @@ public class Graph {
       setAdjacentNodes(adjacentNodes);
     }
 
-    public String getName() {
+    String getName() {
       return name;
     }
 
-    public void setAdjacentNodes(Node... adjacentNodes) {
-      for (Node node: adjacentNodes)
-        this.adjacentNodes.add(node);
+    void setAdjacentNodes(Node... adjacentNodes) {
+      this.adjacentNodes.addAll(asList(adjacentNodes));
     }
 
-    public List<Node> getAdjacentNodes() {
+    List<Node> getAdjacentNodes() {
       return adjacentNodes;
     }
 
-    public State getState() {
+    State getState() {
       return state;
     }
 
-    public void setState(State state) {
+    void setState(State state) {
       this.state = state;
     }
   }

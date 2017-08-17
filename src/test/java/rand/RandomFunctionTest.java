@@ -2,13 +2,7 @@ package rand;
 
 import org.junit.Test;
 
-/**
- * Test for {@link RandomFunction}
- *
- * Created by akhalikov on 23.09.2015.
- */
 public class RandomFunctionTest {
-
   static final int COUNT_TESTS = 1_000_000;
 
   @Test

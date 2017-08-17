@@ -6,11 +6,6 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertArrayEquals;
 
-/**
- * Test for {@link HeapSort}
- *
- * Created by akhalikov on 21/01/16
- */
 public class HeapSortTest {
   @Test
   public void testSort1() throws Exception {

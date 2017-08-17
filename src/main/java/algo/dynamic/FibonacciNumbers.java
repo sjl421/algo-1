@@ -10,8 +10,6 @@ package algo.dynamic;
  * F(n) = F(n-1) + F(n-2)
  *
  * 0 1 1 2 3 5 8 13 ...
- *
- * @author akhalikov
  */
 public class FibonacciNumbers {
   /**
