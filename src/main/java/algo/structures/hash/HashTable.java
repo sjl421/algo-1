@@ -3,9 +3,6 @@ package algo.structures.hash;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * HashTable interface
- */
 public class HashTable<K, V> {
   private List<Node<K, V>> data;
 
@@ -13,9 +10,6 @@ public class HashTable<K, V> {
     this.data = new ArrayList<>();
   }
 
-  /**
-   * Put key, value pair into the table and return value
-   */
   public V put(K key, V value) {
     Node<K, V> node = getNodeForKey(key);
     if (node != null) {
@@ -34,18 +28,11 @@ public class HashTable<K, V> {
     return value;
   }
 
-  /**
-   * Find value of a key
-   */
   public V get(K key) {
     final Node<K, V> node = getNodeForKey(key);
     return node != null ? node.value : null;
   }
 
-  /**
-   * Remove key and return value
-   * @return value of removed entry or null if it is not exist
-   */
   public V remove(K key) {
     Node<K, V> node = getNodeForKey(key);
     if (node == null)
