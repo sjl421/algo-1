@@ -1,8 +1,5 @@
 package algo.structures;
 
-/**
- * Simple BitSet implementation
- */
 public class BitSet {
 
   // 2^WORD_SIZE = 32
