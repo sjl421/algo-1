@@ -1,0 +1,6 @@
+INFO 2018-01-05 19:19:03,391 - what's happening ?
+INFO 2018-01-05 19:20:41,322 - what's happening ?
+ERROR 2018-01-05 19:20:41,323 - failed to execute program
+INFO 2018-01-05 19:20:57,295 - what's happening ?
+ERROR 2018-01-05 19:20:57,296 - failed to execute program
+CRITICAL 2018-01-05 19:20:57,296 - boom!

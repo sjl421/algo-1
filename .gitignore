@@ -8,3 +8,7 @@ out/
 target/
 
 *.sublime*
+
+*.pyc
+.ropeproject/
+.cache/
