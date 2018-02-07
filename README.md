@@ -1,4 +1,4 @@
-## Data structures and algorithms from my point of view
+## Data structures and algorithms from my POV
 
 ### Books:
 
