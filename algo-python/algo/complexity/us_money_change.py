@@ -8,14 +8,13 @@ Input:
     in decreasing order of value (c1 > c2 > ... > cd).
 
 Output:
-    A list of d integers i1; i2; : : : ; id such that c1*i1 + c2*i2 + ... + cd*id = money;
+    A list of d integers i1; i2; : : : ; id such that c1*i1 + c2*i2 + ... + cd*id = money
     and i1 + i2 + ... + id is as small as possible.
 
-Assumptions:
-    Denominations are limited to: 25, 10, 5, 1 (US coins)
+Let's assume that denominations are limited to US coins: 25, 10, 5, 1.
 
-Running time:
-    d * ( money^d / c1 * ... * cd)
+Algorithm: exhaustive search (brute force)
+Running time is exponential: O(n) = d * ( money ^ d / c1 * ... * cd )
 """
 
 
