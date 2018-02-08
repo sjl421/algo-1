@@ -36,8 +36,8 @@ def get_change_brute_force(money):
                         if num_of_coins < min_num_of_coins:
                             min_num_of_coins = num_of_coins
                             change = (i1, i2, i3, i4)
-                        num_of_operations += 4
-                    num_of_operations += 4
+                        num_of_operations += 3
+                    num_of_operations += 4 * 3
     return change, num_of_operations
 
 
