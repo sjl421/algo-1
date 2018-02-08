@@ -4,11 +4,11 @@ Change Problem:
     using the smallest possible number of coins.
 
 Input:
-    An integer money and an array of d denominations c = (c1, c2,...,cd),
+    An integer money and an array of d denominations c = (c1, c2, ..., cd),
     in decreasing order of value (c1 > c2 > ... > cd).
 
 Output:
-    A list of d integers i1; i2; : : : ; id such that c1*i1 + c2*i2 + ... + cd*id = money
+    A list of d integers i1, i2, ..., id such that c1*i1 + c2*i2 + ... + cd*id = money
     and i1 + i2 + ... + id is as small as possible.
 
 Let's assume that denominations are limited to US coins: 25, 10, 5, 1.
