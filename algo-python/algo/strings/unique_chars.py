@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 Write an algorithm to determine if a string has all unique characters.
 What if additional data structures are not allowed ?

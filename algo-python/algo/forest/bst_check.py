@@ -1,11 +1,10 @@
-# coding=utf-8
 from algo.structures.binary_tree import BinaryTree
 from algo.forest.binary_tree_traversals import in_order
 
 """
 Binary search tree is a rooted binary tree that satisfies binary search property
-which states that the key in each node must be greater than or equal to any key 
-stored in the left sub-tree, and less than or equal to any key 
+which states that the key in each node must be greater than or equal to any key
+stored in the left sub-tree, and less than or equal to any key
 stored in the right sub-tree.
 
 https://en.wikipedia.org/wiki/Binary_search_tree

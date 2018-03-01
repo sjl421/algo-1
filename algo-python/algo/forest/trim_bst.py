@@ -1,11 +1,10 @@
-# coding=utf-8
 from algo.forest.binary_tree_traversals import level_order
 from algo.forest.bst_check import create_valid_bst
 from algo.structures.binary_tree import BinaryTree
 
 """
-Given the root of a BST and 2 numbers min and max, trim the tree such that 
-all the numbers in the new tree are between min and max (inclusive). 
+Given the root of a BST and 2 numbers min and max, trim the tree such that
+all the numbers in the new tree are between min and max (inclusive).
 The resulting tree should still be a valid BST.
 """
 

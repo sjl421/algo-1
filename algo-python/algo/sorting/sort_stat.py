@@ -1,5 +1,3 @@
-
-
 class SortStat:
 
     def __init__(self, test_data_length=0):
@@ -26,5 +24,3 @@ P is number of passes made
 C is number of comparisons made
 S is swaps
 """)
-
-

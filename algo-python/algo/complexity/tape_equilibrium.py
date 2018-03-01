@@ -1,5 +1,3 @@
-# coding=utf-8
-
 
 def find_equilibrium(nums):
     head, tail = nums[0], sum(nums[1:])

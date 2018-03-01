@@ -1,10 +1,9 @@
-# coding=utf-8
 from algo.forest.bst_check import create_valid_bst
 from algo.forest.tree_height import TreeNode, tree_height
 
 """
 Check if a binary tree is balanced.
-A height-balanced binary tree is defined as a binary tree in which 
+A height-balanced binary tree is defined as a binary tree in which
 the depth of the two subtrees of every node never differ by more than 1.
 """
 

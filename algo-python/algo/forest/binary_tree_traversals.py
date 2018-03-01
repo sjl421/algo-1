@@ -1,4 +1,3 @@
-# coding=utf-8
 from algo.structures.queue import Queue
 from algo.structures.binary_tree import get_test_tree
 

@@ -1,5 +1,4 @@
 from abc import abstractmethod
-
 from algo.sorting.sort_stat import SortStat
 
 

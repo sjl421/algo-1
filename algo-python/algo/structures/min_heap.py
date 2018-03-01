@@ -1,5 +1,3 @@
-# coding=utf-8
-
 """
 Basic implementation of a binary heap (min heap)
 https://en.wikipedia.org/wiki/Binary_heap

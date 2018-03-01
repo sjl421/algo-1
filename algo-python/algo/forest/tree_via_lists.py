@@ -1,5 +1,3 @@
-# coding=utf-8
-
 """
 Probably the simplest way to implement a tree is to use lists of lists.
 

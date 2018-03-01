@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 Given a string of words, reverse all the words
 """

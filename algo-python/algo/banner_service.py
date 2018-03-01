@@ -1,6 +1,3 @@
-# coding=utf-8
-
-
 class BannerService:
 
     def __init__(self, banners):

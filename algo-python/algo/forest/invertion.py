@@ -1,5 +1,3 @@
-# coding=utf-8
-
 from algo.forest.binary_tree_traversals import level_order
 from algo.forest.bst_check import create_valid_bst
 

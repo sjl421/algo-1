@@ -1,6 +1,3 @@
-# coding=utf-8
-
-
 class Queue2Stacks:
     """Queue implementation using on two stacks """
 

@@ -1,5 +1,3 @@
-# coding=utf-8
-
 """
 Given a binary tree, find its minimum depth.
 The minimum depth is the number of nodes along the shortest path from the root

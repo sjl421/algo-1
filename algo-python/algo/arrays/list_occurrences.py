@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 Given 2 lists:
     white_list = [4, 2, 6]

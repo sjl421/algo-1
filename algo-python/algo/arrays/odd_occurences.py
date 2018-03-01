@@ -1,5 +1,3 @@
-# coding=utf-8
-
 """
 A non-empty zero-indexed array A consisting of N integers is given.
 The array contains an odd number of elements, and each element of the array

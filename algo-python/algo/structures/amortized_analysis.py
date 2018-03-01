@@ -1,7 +1,4 @@
-# coding=utf-8
-
 import math
-
 from algo.structures.dynamic_array import DynamicArray
 
 
@@ -27,14 +24,14 @@ let's find number of doubles
 
 c0 = 10 is initial capacity
 
-before 1st grow: c0                                   = c0*2^0 
+before 1st grow: c0                                   = c0*2^0
 before 2nd grow: c0 + c0                              = c0*2^1
 before 3rd grow: c0 + c0 + 2*c0                       = c0*2^2
 before 4th grow: c0 + c0 + 2*c0 + 2*2*c0              = c0*2^3
 before 5th grow: c0 + c0 + 2*c0 + 2*2*c0 + 2*2*2*c0   = c0*2^4
 and so on...
 
-it is clear that: 
+it is clear that:
 
     c0*2^3 <= 100 <= c0*2^4
 

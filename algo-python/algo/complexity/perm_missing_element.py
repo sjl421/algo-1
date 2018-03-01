@@ -1,5 +1,3 @@
-# coding=utf-8
-
 
 def find_missing_element(nums):
     n = len(nums)

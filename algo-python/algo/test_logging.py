@@ -1,4 +1,3 @@
-
 import logging
 
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"

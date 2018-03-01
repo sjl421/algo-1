@@ -1,9 +1,7 @@
-# coding=utf-8
-
 from collections import deque
 
 """
-Basic implementation of breadth-first search algorithm, featuring 
+Basic implementation of breadth-first search algorithm, featuring
 collections.deque as the implementation of a queue and Python's generators.
 
 https://jeremykun.com/2013/01/22/depth-and-breadth-first-search/

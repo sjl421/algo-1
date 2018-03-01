@@ -1,5 +1,3 @@
-# coding=utf-8
-
 
 def count_bits(num):
     """

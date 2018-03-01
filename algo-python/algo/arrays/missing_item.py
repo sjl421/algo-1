@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 There is an array of non-negative integers.
 A second array is formed by shuffling the elements of the first array and deleting a random element.
@@ -45,5 +44,3 @@ def find_missing_item2(arr1, arr2):
 
 x = find_missing_item2([1, 2, 3, 4, 5, 6, 7], [3, 7, 2, 1, 4, 6])
 print(x)
-
-

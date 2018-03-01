@@ -1,4 +1,3 @@
-
 def count_primes(n):
     """
     Sieve of Eratosthenes

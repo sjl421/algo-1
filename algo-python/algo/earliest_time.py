@@ -1,9 +1,10 @@
-# coding=utf-8
 import itertools
 
 """
 Given 6 numbers, find the earliest time in the format HH:MM:SS,
 that can be composed by permuting these numbers.
+
+If it is not possible return "not_possible".
 """
 
 def get_sum(hh, mm, ss):
@@ -36,15 +37,10 @@ def earliest_time(a, b, c, d, e, f):
 
 
 assert '00:00:00' == earliest_time(0, 0, 0, 0, 0, 0)
-
 assert '00:00:01' == earliest_time(0, 1, 0, 0, 0, 0)
-
 assert '23:59:59' == earliest_time(2, 3, 9, 9, 5, 5)
-
 assert '12:36:48' == earliest_time(2, 1, 3, 8, 6, 4)
-
-assert "07:08:09" == earliest_time(0, 0, 0, 7, 8, 9)
-
+assert '07:08:09' == earliest_time(0, 0, 0, 7, 8, 9)
 assert '16:39:49' == earliest_time(9, 9, 3, 4, 6, 1)
 
 assert 'not_possible' == earliest_time(9, 9, 3, 4, 6, 3)

@@ -1,5 +1,3 @@
-# coding=utf-8
-
 """
 Basic implementation of depth-first search algorithm
 featuring Python's generators.

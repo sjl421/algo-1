@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 In an array of integers where the numbers go increasingly,
 and at some point will start decreasing like this: -1 2 3 4 5 6 7 8 4 3 0
@@ -22,4 +21,3 @@ def find_peak(nums):
             return binary_search(arr, 0, mid-1)
 
     return binary_search(nums, 0, len(nums) - 1)
-

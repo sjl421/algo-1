@@ -1,6 +1,3 @@
-# coding=utf-8
-
-
 def is_balanced(string):
     if len(string) < 2:
         return False

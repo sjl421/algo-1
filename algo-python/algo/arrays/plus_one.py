@@ -1,5 +1,3 @@
-# coding=utf-8
-
 """
 Given a non-negative integer represented as a non-empty array of digits,
 plus one to the integer. You may assume the integer do not contain any leading zero,

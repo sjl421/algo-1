@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 A zero-indexed array A consisting of N integers is given.
 Rotation of the array means that each element is shifted right by one index,
@@ -34,4 +33,3 @@ print(b)
 a = []
 b = rotate(a, 1)
 print(b)
-

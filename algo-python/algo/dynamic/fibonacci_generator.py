@@ -1,6 +1,3 @@
-# coding=utf-8
-
-
 """
 Fibonacci sequence is defined as: f(n) = f(n-1) + f(n-2)
 """

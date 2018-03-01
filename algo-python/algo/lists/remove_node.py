@@ -1,7 +1,8 @@
+from algo.lists.list_reverse import ListNode
+
 """
 Removing a node having only access to that node
 """
-from algo.lists.list_reverse import ListNode
 
 
 def remove(node):

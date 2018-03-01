@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 Given an array of integers (positive and negative) find the largest continuous sum.
 """

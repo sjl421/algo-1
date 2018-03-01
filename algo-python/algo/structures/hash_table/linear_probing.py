@@ -1,5 +1,3 @@
-# coding=utf-8
-
 """
 Trivial implementation of a hash table using list as a base,
     most simple hash function ever - mod,

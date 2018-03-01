@@ -1,5 +1,3 @@
-# coding=utf-8
-
 """
 Given a string in the form 'AAAABBBBCCCCCDDEEEE' compress it to become 'A4B4C5D2E4'.
 For this problem, you can falsely "compress" strings of single or double letters.

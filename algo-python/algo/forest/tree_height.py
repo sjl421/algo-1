@@ -1,5 +1,3 @@
-# coding=utf-8
-
 
 class TreeNode:
     def __init__(self, x, left=None, right=None):

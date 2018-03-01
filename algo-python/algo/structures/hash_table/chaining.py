@@ -1,5 +1,3 @@
-# coding=utf-8
-
 
 class Node:
     def __init__(self, key, value, next_node=None):
@@ -18,4 +16,3 @@ class HashTable:
 
     def put(self, key, value):
         key_hash = hash(key)
-
