@@ -1,6 +1,10 @@
 # coding=utf-8
 import itertools
 
+"""
+Given 6 numbers, find the earliest time in the format HH:MM:SS,
+that can be composed by permuting these numbers.
+"""
 
 def get_sum(hh, mm, ss):
     return hh * 10000 + mm * 100 + ss
