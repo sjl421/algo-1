@@ -4,20 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Given 2 always defined non-empty lists, find the starting index
+ * where the second list occurs as a sub-list in the first list.
+ * Return -1 if the sub-list cannot be found.
+ */
 public class FindAList {
 
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-
-    int[] list1 = readNumbers(scanner);
-    int[] list2 = readNumbers(scanner);
-
-    int result = find(list1, list2);
-
-    System.out.println(result);
-  }
-
-  private static int find(int[] list1, int[] list2) {
+  static int find(int[] list1, int[] list2) {
     if (list2.length > list1.length) {
       return -1;
     }
@@ -61,5 +55,16 @@ public class FindAList {
       numbers[i] = scanner.nextInt();
     }
     return numbers;
+  }
+
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    int[] list1 = readNumbers(scanner);
+    int[] list2 = readNumbers(scanner);
+
+    int result = find(list1, list2);
+
+    System.out.println(result);
   }
 }
