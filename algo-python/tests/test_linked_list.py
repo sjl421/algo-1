@@ -1,8 +1,6 @@
-# coding=utf-8
-
 from unittest import TestCase
 
-from interview.structures.linked_list import LinkedList
+from algo.structures.linked_list import LinkedList
 
 
 class TestLinkedList(TestCase):

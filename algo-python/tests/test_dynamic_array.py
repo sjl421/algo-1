@@ -1,8 +1,6 @@
-# coding=utf-8
-
 import unittest
 
-from interview.structures.dynamic_array import DynamicArray
+from algo.structures.dynamic_array import DynamicArray
 
 
 class TestDynamicArray(unittest.TestCase):

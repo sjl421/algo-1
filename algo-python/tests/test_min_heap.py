@@ -1,7 +1,6 @@
-# coding=utf-8
 import unittest
 
-from interview.structures.min_heap import MinHeap
+from algo.structures.min_heap import MinHeap
 
 
 class TestMinHeap(unittest.TestCase):

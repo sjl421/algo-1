@@ -1,7 +1,6 @@
-# coding=utf-8
 
 from unittest import TestCase
-from interview.strings.word_distance_finder import WordDistanceFinder
+from algo.strings.word_distance_finder import WordDistanceFinder
 
 
 class TestWordDistance(TestCase):

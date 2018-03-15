@@ -1,7 +1,6 @@
-# coding=utf-8
 from unittest import TestCase
 
-from interview.arrays.missing_item import find_missing_item
+from algo.arrays.missing_item import find_missing_item
 
 
 class TestMissingItem(TestCase):

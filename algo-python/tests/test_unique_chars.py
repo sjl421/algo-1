@@ -1,6 +1,6 @@
-from unittest import TestCase
 
-from interview.strings.unique_chars import is_unique
+from unittest import TestCase
+from algo.strings.unique_chars import is_unique
 
 
 class TestUniqueChars(TestCase):
